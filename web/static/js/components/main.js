@@ -5,8 +5,10 @@ class Main extends Component {
     return (
       <section>
         <div className="o-wrapper">
-          <div className="o-layout__item u-2/3">
-            <h1>On WI PCA</h1>
+          <div className="o-layout o-layout--center">
+            <div className="o-layout__item u-2/3">
+              <h1>On WI PCA</h1>
+            </div>
           </div>
         </div>
       </section>
