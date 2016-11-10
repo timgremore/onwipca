@@ -9,7 +9,7 @@
 
     <title>On WI PCA</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <link href="https://fonts.googleapis.com/css?family=Passion+One:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cantata+One|Caveat" rel="stylesheet">
   </head>
 
   <body>

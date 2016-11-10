@@ -6,9 +6,9 @@ class Main extends Component {
       <section>
         <div className="o-wrapper">
           <h1>
-            On<br />
-            Wisconsin<br />
-            PCA
+            <span>On</span>
+            <span>Wisconsin</span>
+            <span>PCA</span>
           </h1>
         </div>
       </section>
