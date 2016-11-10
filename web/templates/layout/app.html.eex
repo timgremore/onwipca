@@ -12,12 +12,7 @@
   </head>
 
   <body>
-    <div class="o-layout o-layout--center">
-      <div class="o-layout__item u-1/2">
-        <h1>Welcome to On WI PCA</h1>
-        <div id="fph-app"></div>
-      </div>
-    </div>
+    <div id="fph-app"></div>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
