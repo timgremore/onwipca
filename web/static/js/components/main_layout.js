@@ -7,9 +7,7 @@ class MainLayout extends Component {
         <div className="o-layout__item u-1/1">
           <img src="/images/logo.svg" />
         </div>
-        <div className="o-layout__item u-2/3">
-          {this.props.children}
-        </div>
+        {this.props.children}
       </div>
     )
   }
