@@ -1,4 +1,12 @@
 section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   background-color: $red;
+}
+
+h1 {
+  font-size: inuit-rem(72px);
+  font-family: 'Passion One', cursive;
 }
