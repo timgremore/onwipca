@@ -13,19 +13,19 @@ class Mast extends Component {
 
               <div className="c-navbar o-pack u-float-right u-1/2">
                 <div className="o-pack__item">
-                  <Link to="/">History</Link>
+                  <Link to="/" hash="history">History</Link>
                 </div>
                 <div className="o-pack__item">
-                  <Link to="/">Mission</Link>
+                  <Link to="/" hash="mission">Mission</Link>
                 </div>
                 <div className="o-pack__item">
-                  <Link to="/">Pathways</Link>
+                  <Link to="/" hash="pathways">Pathways</Link>
                 </div>
                 <div className="o-pack__item">
-                  <Link to="/">Directory</Link>
+                  <Link to="/" hash="directory">Directory</Link>
                 </div>
                 <div className="o-pack__item">
-                  <Link to="/">Funding</Link>
+                  <Link to="/" hash="funding">Funding</Link>
                 </div>
               </div>
             </div>
