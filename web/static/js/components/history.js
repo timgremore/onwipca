@@ -4,7 +4,7 @@ class History extends Component {
   render() {
     return (
       <section id="history">
-        <h1>History</h1>
+        <h1 className="u-copy-cursive">History</h1>
       </section>
     )
   }

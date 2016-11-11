@@ -1,9 +1,17 @@
 section {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
+  padding-top: inuit-rem(96px);
+  color: $white;
+  background-color: $blue;
 
-  &#home    { background-color: $red; }
-  &#history { background-color: $white; }
+  &#home {
+    background-color: $red;
+    align-items: center;
+    padding-top: 0px;
+  }
+
+  &#history {
+  }
 }
