@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Sticky from 'react-stickynode'
 import { Link } from 'react-router'
+import Scrollchor from 'react-scrollchor'
 
 class Mast extends Component {
   render () {
@@ -9,23 +10,25 @@ class Mast extends Component {
         <div className="o-wrapper">
           <div className="o-layout">
             <div className="o-layout__item u-1/1">
-              <img src="/images/logo.svg" />
+              <Scrollchor to="home">
+                <img src="/images/logo.svg" />
+              </Scrollchor>
 
               <div className="c-navbar o-pack u-float-right u-1/2">
                 <div className="o-pack__item">
-                  <Link to="/" hash="history">History</Link>
+                  <Scrollchor to="history">History</Scrollchor>
                 </div>
                 <div className="o-pack__item">
-                  <Link to="/" hash="mission">Mission</Link>
+                  <Scrollchor to="mission">Mission</Scrollchor>
                 </div>
                 <div className="o-pack__item">
-                  <Link to="/" hash="pathways">Pathways</Link>
+                  <Scrollchor to="pathways">Pathways</Scrollchor>
                 </div>
                 <div className="o-pack__item">
-                  <Link to="/" hash="directory">Directory</Link>
+                  <Scrollchor to="directory">Directory</Scrollchor>
                 </div>
                 <div className="o-pack__item">
-                  <Link to="/" hash="funding">Funding</Link>
+                  <Scrollchor to="funding">Funding</Scrollchor>
                 </div>
               </div>
             </div>
