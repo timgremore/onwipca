@@ -11,7 +11,7 @@ class Home extends Component {
               <span>Wisconsin</span>
               <span>PCA</span>
             </h1>
-            <h2>A church planting story</h2>
+            <h2>Planting tomorrow's churches<br />in Wisconsin</h2>
           </div>
         </div>
       </section>
