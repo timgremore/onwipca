@@ -1,20 +1,22 @@
 import React, { Component } from "react"
+import Home from './home'
+import History from './history'
+import Mission from './mission'
+import Directory from './directory'
+import Pathways from './pathways'
+import Funding from './funding'
 
 class Main extends Component {
   render() {
     return (
-      <section>
-        <div className="o-wrapper">
-          <div className="o-hero">
-            <h1>
-              <span>On</span>
-              <span>Wisconsin</span>
-              <span>PCA</span>
-            </h1>
-            <h2>A church planting story</h2>
-          </div>
-        </div>
-      </section>
+      <div>
+        <Home />
+        <History />
+        <Mission />
+        <Pathways />
+        <Directory />
+        <Funding />
+      </div>
     )
   }
 }

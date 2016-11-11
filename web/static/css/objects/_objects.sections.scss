@@ -3,5 +3,7 @@ section {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: $red;
+
+  &#home    { background-color: $red; }
+  &#history { background-color: $white; }
 }
