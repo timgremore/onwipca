@@ -3,6 +3,7 @@ import { Provider } from "react-redux"
 import { Router, Route, browserHistory } from "react-router"
 
 import configureStore from './configure_store'
+import MainLayout from "./components/main_layout"
 import Main from "./components/main"
 
 const store = configureStore()
@@ -12,7 +13,9 @@ class Root extends Component {
     return (
       <Provider store={store}>
         <Router history={browserHistory}>
-          <Route path="/" component={Main} />
+          <Route component={MainLayout}>
+            <Route path="/" component={Main} />
+          </Route>
         </Router>
       </Provider>
     )
