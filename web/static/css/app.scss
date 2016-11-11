@@ -141,6 +141,7 @@
 //
 // Build and include your project’s UI Compoments here.
 @import "components/components.buttons";
+@import "components/components.navbar";
 
 
 
@@ -148,6 +149,7 @@
 
 // UTILITIES
 @import "utilities/utilities.alignment";
+@import "utilities/utilities.float";
 
 @import "utilities/utilities.clearfix";
 
