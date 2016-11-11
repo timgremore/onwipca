@@ -1,0 +1,33 @@
+.o-hero {
+  color: $white;
+
+  h1 {
+    line-height: inuit-rem(72px);
+    font-family: 'Cantana One', serif;
+
+    span {
+      &:first-child {
+        font-size: inuit-rem(36px);
+      }
+
+      &:nth-child(2) {
+        display: block;
+        font-family: 'Caveat', cursive;
+        font-size: inuit-rem(96px);
+        transform: rotateZ(-10deg) translateX(-10px) translateY(-40px);
+      }
+
+      &:last-child {
+        font-weight: 100;
+        display: block;
+        font-size: inuit-rem(96px);
+        transform: translateX(135px) translateY(-30px);
+      }
+    }
+  }
+
+  h2 {
+    text-align: center;
+    @include inuit-font-size(22px);
+  }
+}

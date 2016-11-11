@@ -5,11 +5,14 @@ class Main extends Component {
     return (
       <section>
         <div className="o-wrapper">
-          <h1>
-            <span>On</span>
-            <span>Wisconsin</span>
-            <span>PCA</span>
-          </h1>
+          <div className="o-hero">
+            <h1>
+              <span>On</span>
+              <span>Wisconsin</span>
+              <span>PCA</span>
+            </h1>
+            <h2>A church planting story</h2>
+          </div>
         </div>
       </section>
     )
