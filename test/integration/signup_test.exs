@@ -20,6 +20,6 @@ defmodule OnWiPca.SignupTest do
   test "Signup", context do
     navigate_to "/"
 
-    assert page_source =~ "Welcome to On WI PCA"
+    assert page_source =~ "On WI PCA"
   end
 end
