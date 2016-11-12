@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { connect } from 'react-redux'
 
 class History extends Component {
   render() {
@@ -17,24 +18,13 @@ class History extends Component {
             <div className="o-layout__item u-2/5">
               <p>The Wisconsin presbytery was composed of six particularized churches from 1992 until 2013:</p>
               <ul>
-                <li>
-                  Christ Covenant Church, <em>La Crosse, WI</em>
-                </li>
-                <li>
-                  Grace Presbyterian Church, <em>Pardeeville, WI</em>
-                </li>
-                <li>
-                  Lake Trails Church, <em>Madison, WI</em>
-                </li>
-                <li>
-                  Bible Presbyterian Church, <em>Merrill, WI</em>
-                </li>
-                <li>
-                  Trinity Presbyterian Church, <em>Waukesha, WI</em>
-                </li>
-                <li>
-                  Cornerstone Presbyterian Church, <em>Delafield, WI</em>
-                </li>
+              {this.props.churches.map((item) => {
+                return (
+                  <li>
+                    {item.name}, <em>{item.city}, {item.state}</em>
+                  </li>
+                )
+              })}
               </ul>
             </div>
           </div>
@@ -44,5 +34,12 @@ class History extends Component {
   }
 }
 
-export default History
+function mapStateToProps(state) {
+  const { churches } = state
 
+  return {
+    churches: churches.items,
+  }
+}
+
+export default connect(mapStateToProps)(History)
