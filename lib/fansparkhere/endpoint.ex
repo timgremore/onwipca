@@ -1,7 +1,7 @@
-defmodule OnWiPca.Endpoint do
+defmodule Onwipca.Endpoint do
   use Phoenix.Endpoint, otp_app: :onwipca
 
-  socket "/socket", OnWiPca.UserSocket
+  socket "/socket", Onwipca.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -38,5 +38,5 @@ defmodule OnWiPca.Endpoint do
     key: "_onwipca_key",
     signing_salt: "5LPCkC2Y"
 
-  plug OnWiPca.Router
+  plug Onwipca.Router
 end

@@ -1,7 +1,7 @@
-defmodule OnWiPca.SignupTest do
-  use OnWiPca.IntegrationCase
+defmodule Onwipca.SignupTest do
+  use Onwipca.IntegrationCase
 
-  alias OnWiPca.User
+  alias Onwipca.User
 
   setup _context do
     user = %User{

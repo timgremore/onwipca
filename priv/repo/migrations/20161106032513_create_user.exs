@@ -1,4 +1,4 @@
-defmodule OnWiPca.Repo.Migrations.CreateUser do
+defmodule Onwipca.Repo.Migrations.CreateUser do
   use Ecto.Migration
 
   def change do

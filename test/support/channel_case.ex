@@ -1,4 +1,4 @@
-defmodule OnWiPca.ChannelCase do
+defmodule Onwipca.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -20,22 +20,22 @@ defmodule OnWiPca.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias OnWiPca.Repo
+      alias Onwipca.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
 
       # The default endpoint for testing
-      @endpoint OnWiPca.Endpoint
+      @endpoint Onwipca.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(OnWiPca.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Onwipca.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(OnWiPca.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Onwipca.Repo, {:shared, self()})
     end
 
     :ok

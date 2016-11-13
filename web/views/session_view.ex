@@ -1,3 +1,3 @@
-defmodule OnWiPca.SessionView do
-  use OnWiPca.Web, :view
+defmodule Onwipca.SessionView do
+  use Onwipca.Web, :view
 end

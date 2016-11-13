@@ -1,8 +1,8 @@
-defmodule OnWiPca.UserController do
-  use OnWiPca.Web, :controller
+defmodule Onwipca.UserController do
+  use Onwipca.Web, :controller
 
-  import OnWiPca.Authorize
-  alias OnWiPca.User
+  import Onwipca.Authorize
+  alias Onwipca.User
 
   plug :user_check when action in [:index, :show]
   plug :id_check when action in [:edit, :update, :delete]

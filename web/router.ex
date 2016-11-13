@@ -1,5 +1,5 @@
-defmodule OnWiPca.Router do
-  use OnWiPca.Web, :router
+defmodule Onwipca.Router do
+  use Onwipca.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -14,13 +14,13 @@ defmodule OnWiPca.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", OnWiPca do
+  scope "/api", Onwipca do
     pipe_through :api
 
     resources "/churches", ChurchController, only: [:index]
   end
 
-  scope "/", OnWiPca do
+  scope "/", Onwipca do
     pipe_through :browser
 
     get "/", PageController, :index

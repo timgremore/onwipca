@@ -1,12 +1,12 @@
-defmodule OnWiPca.ChurchView do
-  use OnWiPca.Web, :view
+defmodule Onwipca.ChurchView do
+  use Onwipca.Web, :view
 
   def render("index.json", %{churches: churches}) do
-    %{data: render_many(churches, OnWiPca.ChurchView, "church.json")}
+    %{data: render_many(churches, Onwipca.ChurchView, "church.json")}
   end
 
   def render("show.json", %{church: church}) do
-    %{data: render_one(church, OnWiPca.ChurchView, "church.json")}
+    %{data: render_one(church, Onwipca.ChurchView, "church.json")}
   end
 
   def render("church.json", %{church: church}) do

@@ -1,4 +1,4 @@
-defmodule OnWiPca do
+defmodule Onwipca do
   use Application
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
@@ -9,23 +9,23 @@ defmodule OnWiPca do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(OnWiPca.Repo, []),
+      supervisor(Onwipca.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(OnWiPca.Endpoint, []),
-      # Start your own worker by calling: OnWiPca.Worker.start_link(arg1, arg2, arg3)
-      # worker(OnWiPca.Worker, [arg1, arg2, arg3]),
+      supervisor(Onwipca.Endpoint, []),
+      # Start your own worker by calling: Onwipca.Worker.start_link(arg1, arg2, arg3)
+      # worker(Onwipca.Worker, [arg1, arg2, arg3]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: OnWiPca.Supervisor]
+    opts = [strategy: :one_for_one, name: Onwipca.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    OnWiPca.Endpoint.config_change(changed, removed)
+    Onwipca.Endpoint.config_change(changed, removed)
     :ok
   end
 end

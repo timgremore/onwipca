@@ -1,5 +1,5 @@
-defmodule OnWiPca.Church do
-  use OnWiPca.Web, :model
+defmodule Onwipca.Church do
+  use Onwipca.Web, :model
 
   schema "churches" do
     field :name, :string

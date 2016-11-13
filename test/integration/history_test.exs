@@ -1,7 +1,7 @@
-defmodule OnWiPca.HistoryTest do
-  use OnWiPca.IntegrationCase
+defmodule Onwipca.HistoryTest do
+  use Onwipca.IntegrationCase
 
-  alias OnWiPca.Church
+  alias Onwipca.Church
 
   setup _context do
     church = %Church{

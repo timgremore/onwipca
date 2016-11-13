@@ -1,4 +1,4 @@
-defmodule OnWiPca.Repo.Migrations.CreateChurch do
+defmodule Onwipca.Repo.Migrations.CreateChurch do
   use Ecto.Migration
 
   def change do

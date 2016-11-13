@@ -1,4 +1,4 @@
-defmodule OnWiPca.ErrorHelpers do
+defmodule Onwipca.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule OnWiPca.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(OnWiPca.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(Onwipca.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(OnWiPca.Gettext, "errors", msg, opts)
+      Gettext.dgettext(Onwipca.Gettext, "errors", msg, opts)
     end
   end
 end

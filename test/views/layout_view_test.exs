@@ -1,3 +1,3 @@
-defmodule OnWiPca.LayoutViewTest do
-  use OnWiPca.ConnCase, async: true
+defmodule Onwipca.LayoutViewTest do
+  use Onwipca.ConnCase, async: true
 end

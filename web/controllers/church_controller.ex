@@ -1,7 +1,7 @@
-defmodule OnWiPca.ChurchController do
-  use OnWiPca.Web, :controller
+defmodule Onwipca.ChurchController do
+  use Onwipca.Web, :controller
 
-  alias OnWiPca.Church
+  alias Onwipca.Church
 
   def index(conn, _params) do
     churches = Repo.all(Church)
@@ -20,7 +20,7 @@ defmodule OnWiPca.ChurchController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(OnWiPca.ChangesetView, "error.json", changeset: changeset)
+        |> render(Onwipca.ChangesetView, "error.json", changeset: changeset)
     end
   end
 
@@ -39,7 +39,7 @@ defmodule OnWiPca.ChurchController do
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(OnWiPca.ChangesetView, "error.json", changeset: changeset)
+        |> render(Onwipca.ChangesetView, "error.json", changeset: changeset)
     end
   end
 

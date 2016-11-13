@@ -1,14 +1,14 @@
-defmodule OnWiPca.UserControllerTest do
-  use OnWiPca.ConnCase
+defmodule Onwipca.UserControllerTest do
+  use Onwipca.ConnCase
 
-  import OnWiPca.TestHelpers
-  alias OnWiPca.User
+  import Onwipca.TestHelpers
+  alias Onwipca.User
 
   @valid_attrs %{username: "bill", email: "bill@mail.com", password: "^hEsdg*F899"}
   @invalid_attrs %{email: "albert@mail.com", password: "password"}
 
   setup %{conn: conn} = config do
-    conn = conn |> bypass_through(OnWiPca.Router, :browser) |> get("/")
+    conn = conn |> bypass_through(Onwipca.Router, :browser) |> get("/")
 
     if username = config[:login] do
       user = add_user(username)

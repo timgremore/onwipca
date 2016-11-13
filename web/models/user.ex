@@ -1,5 +1,5 @@
-defmodule OnWiPca.User do
-  use OnWiPca.Web, :model
+defmodule Onwipca.User do
+  use Onwipca.Web, :model
 
   alias Openmaize.Database, as: DB
 

@@ -1,5 +1,5 @@
-defmodule OnWiPca.PageController do
-  use OnWiPca.Web, :controller
+defmodule Onwipca.PageController do
+  use Onwipca.Web, :controller
 
   def index(conn, _params) do
     render conn, "index.html"

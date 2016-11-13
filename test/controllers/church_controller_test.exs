@@ -1,7 +1,7 @@
-defmodule OnWiPca.ChurchControllerTest do
-  use OnWiPca.ConnCase
+defmodule Onwipca.ChurchControllerTest do
+  use Onwipca.ConnCase
 
-  alias OnWiPca.Church
+  alias Onwipca.Church
   @valid_attrs %{city: "some content", name: "some content", particularized_at: %{day: 17, hour: 14, min: 0, month: 4, sec: 0, year: 2010}, state: "some content", street: "some content", zipcode: "some content"}
   @invalid_attrs %{}
 

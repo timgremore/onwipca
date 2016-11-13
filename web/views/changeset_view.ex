@@ -1,11 +1,11 @@
-defmodule OnWiPca.ChangesetView do
-  use OnWiPca.Web, :view
+defmodule Onwipca.ChangesetView do
+  use Onwipca.Web, :view
 
   @doc """
   Traverses and translates changeset errors.
 
   See `Ecto.Changeset.traverse_errors/2` and
-  `OnWiPca.ErrorHelpers.translate_error/1` for more details.
+  `Onwipca.ErrorHelpers.translate_error/1` for more details.
   """
   def translate_errors(changeset) do
     Ecto.Changeset.traverse_errors(changeset, &translate_error/1)

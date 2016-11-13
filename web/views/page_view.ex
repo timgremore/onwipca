@@ -1,3 +1,3 @@
-defmodule OnWiPca.PageView do
-  use OnWiPca.Web, :view
+defmodule Onwipca.PageView do
+  use Onwipca.Web, :view
 end
