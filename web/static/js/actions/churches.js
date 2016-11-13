@@ -20,7 +20,7 @@ export function fetchChurches() {
   return function (dispatch) {
     dispatch(requestChurches())
 
-    return fetch('/api/churches.json', {
+    return fetch('/api/churches', {
       method: 'GET',
     })
       .then((response) => response.json())

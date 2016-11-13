@@ -21,7 +21,7 @@ defmodule Onwipca.HistoryTest do
     navigate_to "/"
 
     assert page_source =~ "Christ Covenant Church"
-    assert page_source =~ "La Crosse, WI"
+    assert page_source =~ "La Crosse"
   end
 end
 
