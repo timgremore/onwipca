@@ -18,9 +18,9 @@ class History extends Component {
             <div className="o-layout__item u-2/5">
               <p>The Wisconsin presbytery was composed of six particularized churches from 1992 until 2013:</p>
               <ul>
-              {this.props.churches.map((item) => {
+              {this.props.churches.map((item, index) => {
                 return (
-                  <li>
+                  <li key={index}>
                     {item.name}, <em>{item.city}, {item.state}</em>
                   </li>
                 )
