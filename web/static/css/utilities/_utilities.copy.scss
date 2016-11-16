@@ -1,0 +1,9 @@
+.u-copy-cursive {
+  font-family: 'Cantana One', serif;
+  @include inuit-font-size(72px);
+}
+
+.u-copy-serif {
+  font-family: 'Caveat', cursive;
+  @include inuit-font-size(72px);
+}

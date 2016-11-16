@@ -1,4 +1,4 @@
-defmodule OnWiPca.ModelCase do
+defmodule Onwipca.ModelCase do
   @moduledoc """
   This module defines the test case to be used by
   model tests.
@@ -16,20 +16,20 @@ defmodule OnWiPca.ModelCase do
 
   using do
     quote do
-      alias OnWiPca.Repo
+      alias Onwipca.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import OnWiPca.ModelCase
+      import Onwipca.ModelCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(OnWiPca.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Onwipca.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(OnWiPca.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Onwipca.Repo, {:shared, self()})
     end
 
     :ok
@@ -59,7 +59,7 @@ defmodule OnWiPca.ModelCase do
   """
   def errors_on(struct, data) do
     struct.__struct__.changeset(struct, data)
-    |> Ecto.Changeset.traverse_errors(&OnWiPca.ErrorHelpers.translate_error/1)
+    |> Ecto.Changeset.traverse_errors(&Onwipca.ErrorHelpers.translate_error/1)
     |> Enum.flat_map(fn {key, errors} -> for msg <- errors, do: {key, msg} end)
   end
 end

@@ -7,14 +7,14 @@ use Mix.Config
 
 # General application configuration
 config :onwipca,
-  ecto_repos: [OnWiPca.Repo]
+  ecto_repos: [Onwipca.Repo]
 
 # Configures the endpoint
-config :onwipca, OnWiPca.Endpoint,
+config :onwipca, Onwipca.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "bGpVl8TJkAcggeMugc6fIg28y7ovpLQ/O4xAoivmme2hVbhZnTl+6usWVLRPqb2I",
-  render_errors: [view: OnWiPca.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: OnWiPca.PubSub,
+  render_errors: [view: Onwipca.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Onwipca.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

@@ -1,5 +1,5 @@
-defmodule OnWiPca.Router do
-  use OnWiPca.Web, :router
+defmodule Onwipca.Router do
+  use Onwipca.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -10,7 +10,17 @@ defmodule OnWiPca.Router do
     plug Openmaize.Authenticate
   end
 
-  scope "/", OnWiPca do
+  pipeline :api do
+    plug :accepts, ["json"]
+  end
+
+  scope "/api", Onwipca do
+    pipe_through :api
+
+    resources "/churches", ChurchController, only: [:index]
+  end
+
+  scope "/", Onwipca do
     pipe_through :browser
 
     get "/", PageController, :index

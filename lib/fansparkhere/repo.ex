@@ -1,3 +1,3 @@
-defmodule OnWiPca.Repo do
+defmodule Onwipca.Repo do
   use Ecto.Repo, otp_app: :onwipca
 end

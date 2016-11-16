@@ -1,7 +1,7 @@
-defmodule OnWiPca.SignupTest do
-  use OnWiPca.IntegrationCase
+defmodule Onwipca.SignupTest do
+  use Onwipca.IntegrationCase
 
-  alias OnWiPca.User
+  alias Onwipca.User
 
   setup _context do
     user = %User{
@@ -20,6 +20,6 @@ defmodule OnWiPca.SignupTest do
   test "Signup", context do
     navigate_to "/"
 
-    assert page_source =~ "Welcome to On WI PCA"
+    assert page_source =~ "On WI PCA"
   end
 end

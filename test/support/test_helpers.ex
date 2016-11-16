@@ -1,7 +1,7 @@
-defmodule OnWiPca.TestHelpers do
+defmodule Onwipca.TestHelpers do
 
 
-  alias OnWiPca.{Repo, User}
+  alias Onwipca.{Repo, User}
 
   def add_user(username) do
     user = %{username: username, email: "#{username}@mail.com",

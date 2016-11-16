@@ -1,7 +1,7 @@
-defmodule OnWiPca.SessionController do
-  use OnWiPca.Web, :controller
+defmodule Onwipca.SessionController do
+  use Onwipca.Web, :controller
 
-  import OnWiPca.Authorize
+  import Onwipca.Authorize
 
   plug Openmaize.Login when action in [:create]
   #plug Openmaize.Login, [unique_id: :email] when action in [:create]

@@ -1,12 +1,12 @@
-defmodule OnWiPca.Web do
+defmodule Onwipca.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use OnWiPca.Web, :controller
-      use OnWiPca.Web, :view
+      use Onwipca.Web, :controller
+      use Onwipca.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule OnWiPca.Web do
     quote do
       use Phoenix.Controller
 
-      alias OnWiPca.Repo
+      alias Onwipca.Repo
       import Ecto
       import Ecto.Query
 
-      import OnWiPca.Router.Helpers
-      import OnWiPca.Gettext
+      import Onwipca.Router.Helpers
+      import Onwipca.Gettext
     end
   end
 
@@ -49,9 +49,9 @@ defmodule OnWiPca.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import OnWiPca.Router.Helpers
-      import OnWiPca.ErrorHelpers
-      import OnWiPca.Gettext
+      import Onwipca.Router.Helpers
+      import Onwipca.ErrorHelpers
+      import Onwipca.Gettext
     end
   end
 
@@ -65,10 +65,10 @@ defmodule OnWiPca.Web do
     quote do
       use Phoenix.Channel
 
-      alias OnWiPca.Repo
+      alias Onwipca.Repo
       import Ecto
       import Ecto.Query
-      import OnWiPca.Gettext
+      import Onwipca.Gettext
     end
   end
 

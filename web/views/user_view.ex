@@ -1,3 +1,3 @@
-defmodule OnWiPca.UserView do
-  use OnWiPca.Web, :view
+defmodule Onwipca.UserView do
+  use Onwipca.Web, :view
 end

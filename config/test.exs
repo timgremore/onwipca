@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :onwipca, OnWiPca.Endpoint,
+config :onwipca, Onwipca.Endpoint,
   http: [port: 4001],
   server: true
 
@@ -10,7 +10,7 @@ config :onwipca, OnWiPca.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :onwipca, OnWiPca.Repo,
+config :onwipca, Onwipca.Repo,
   adapter: Ecto.Adapters.Postgres,
   database: "onwipca_test",
   hostname: "localhost",

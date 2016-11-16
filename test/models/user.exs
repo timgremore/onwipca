@@ -1,7 +1,7 @@
-defmodule OnWiPca.UserTest do
-  use OnWiPca.ModelCase
+defmodule Onwipca.UserTest do
+  use Onwipca.ModelCase
 
-  alias OnWiPca.User
+  alias Onwipca.User
 
   @valid_attrs %{username: "fred", email: "fred@mail.com", password: "mangoes&gooseberries"}
   @invalid_attrs %{email: "fred@mail.com", password: "mangoes&gooseberries"}

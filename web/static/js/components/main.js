@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import { connect } from 'react-redux'
+
 import Home from './home'
 import History from './history'
 import Mission from './mission'
@@ -6,7 +8,14 @@ import Directory from './directory'
 import Pathways from './pathways'
 import Funding from './funding'
 
+import { fetchChurches } from '../actions/churches';
+
 class Main extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props
+    dispatch(fetchChurches())
+  }
+
   render() {
     return (
       <div>
@@ -21,4 +30,4 @@ class Main extends Component {
   }
 }
 
-export default Main
+export default connect()(Main)

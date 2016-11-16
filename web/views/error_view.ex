@@ -1,5 +1,5 @@
-defmodule OnWiPca.ErrorView do
-  use OnWiPca.Web, :view
+defmodule Onwipca.ErrorView do
+  use Onwipca.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

@@ -1,5 +1,5 @@
-defmodule OnWiPca.PageControllerTest do
-  use OnWiPca.ConnCase
+defmodule Onwipca.PageControllerTest do
+  use Onwipca.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

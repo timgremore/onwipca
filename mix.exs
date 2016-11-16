@@ -1,4 +1,4 @@
-defmodule OnWiPca.Mixfile do
+defmodule Onwipca.Mixfile do
   use Mix.Project
 
   def project do
@@ -17,7 +17,7 @@ defmodule OnWiPca.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {OnWiPca, []},
+    [mod: {Onwipca, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex, :ex_machina, :openmaize_jwt]]
   end

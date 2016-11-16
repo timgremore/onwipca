@@ -1,13 +1,13 @@
-defmodule OnWiPca.SessionControllerTest do
-  use OnWiPca.ConnCase
+defmodule Onwipca.SessionControllerTest do
+  use Onwipca.ConnCase
 
-  import OnWiPca.TestHelpers
+  import Onwipca.TestHelpers
 
   @valid_attrs %{username: "robin", password: "mangoes&g0oseberries"}
   @invalid_attrs %{username: "robin", password: "maaaangoes&g00zeberries"}
 
   setup %{conn: conn} do
-    conn = conn |> bypass_through(OnWiPca.Router, :browser) |> get("/")
+    conn = conn |> bypass_through(Onwipca.Router, :browser) |> get("/")
     user = add_user("robin")
 
     {:ok, %{conn: conn, user: user}}
