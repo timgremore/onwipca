@@ -7,3 +7,7 @@
   font-family: 'Caveat', cursive;
   @include inuit-font-size(72px);
 }
+
+.u-copy-small {
+  @include inuit-font-size( 12px);
+}

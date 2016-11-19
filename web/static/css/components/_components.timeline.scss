@@ -25,6 +25,7 @@
       width: inuit-rem(400px);
       padding: inuit-rem(18px);
       background-color: $red;
+      border-radius: inuit-rem(4px);
 
       &:before {
         content: '';
