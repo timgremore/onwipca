@@ -1,0 +1,63 @@
+.c-timeline {
+
+  .c-timeline__item {
+    list-style-type: none;
+    position: relative;
+    width: inuit-rem(6px);
+    margin: 0 auto;
+    background: $white;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: inuit-rem(30px);
+      height: inuit-rem(30px);
+      border-radius: 50%;
+      background-color: $white;
+      bottom: 0px;
+    }
+
+    .c-timeline__item__container {
+      position: relative;
+      bottom: 0;
+      width: inuit-rem(400px);
+      padding: inuit-rem(18px);
+      background-color: $red;
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: inuit-rem(7px);
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+      }
+    }
+
+    &:nth-child(odd) {
+      .c-timeline__item__container {
+        left: inuit-rem(45px);
+
+        &:before {
+          left: inuit-rem(-15px);
+          border-width: inuit-rem(8px) inuit-rem(16px) inuit-rem(8px) 0px;
+          border-color: transparent $red transparent transparent;
+        }
+      }
+    }
+
+    &:nth-child(even) {
+      .c-timeline__item__container {
+        left: inuit-rem(-439px);
+
+        &:before {
+          right: inuit-rem(-15px);
+          border-width: inuit-rem(8px) 0px inuit-rem(8px) inuit-rem(16px);
+          border-color: transparent transparent transparent $red;
+        }
+      }
+    }
+  }
+}
