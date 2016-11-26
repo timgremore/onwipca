@@ -13,8 +13,18 @@ class Timeline extends Component {
           return (
             <li key={index} className="c-timeline__item">
               <div className="c-timeline__item__container">
-                <span className="u-float-right u-copy-small">{foundedOn}</span>
-                <h4>{item.name}</h4>
+                <h4 className="u-margin-bottom-zero">{item.name}</h4>
+                <div className="o-flag">
+                  <div className="o-flag__img">
+                  </div>
+                  <div className="o-flag__body">
+                    <p>Particularized: {foundedOn}</p>
+                    {item.founder ?
+                      <p>{item.founder.first_name} {item.founder.last_name}</p>
+                      :
+                      null}
+                  </div>
+                </div>
               </div>
             </li>
           )

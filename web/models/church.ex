@@ -1,6 +1,8 @@
 defmodule Onwipca.Church do
   use Onwipca.Web, :model
 
+  alias Onwipca.User
+
   schema "churches" do
     field :name, :string
     field :street, :string
@@ -8,6 +10,8 @@ defmodule Onwipca.Church do
     field :state, :string
     field :zipcode, :string
     field :particularized_at, Ecto.DateTime
+
+    belongs_to :founder, User, foreign_key: :founder_id
 
     timestamps()
   end

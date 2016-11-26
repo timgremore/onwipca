@@ -11,7 +11,19 @@
 # and so on) as they will fail if something goes wrong.
 
 alias Onwipca.Repo
+alias Onwipca.User
 alias Onwipca.Church
+
+user_params = %{
+  username: "iam",
+  first_name: "I",
+  last_name: "Am",
+  email: "i@am.com",
+  password: "secret"
+}
+
+founder = User.changeset(%User{}, user_params)
+          |> Repo.insert!
 
 church = %Church{
     name: "Christ Covenant Church",
@@ -19,7 +31,8 @@ church = %Church{
     city: "La Crosse",
     state: "WI",
     zipcode: "54601",
-    particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0}
+    particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
+    founder: founder
   }
   |> Repo.insert!
 
@@ -76,6 +89,3 @@ church = %Church{
   min: 0, sec: 0}
 }
 |> Repo.insert!
-
-
-# TODO: Add 4 other of the 6 churches that were particularized between 1992 and 2013
