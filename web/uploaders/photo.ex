@@ -2,23 +2,30 @@ defmodule Onwipca.Photo do
   use Arc.Definition
   use Arc.Ecto.Definition
 
+  def __storage, do: Arc.Storage.Local # Add this
+
   # Include ecto support (requires package arc_ecto installed):
   # use Arc.Ecto.Definition
 
   @versions [:original]
 
   # To add a thumbnail version:
-  # @versions [:original, :thumb]
+  @versions [:original, :medium, :small]
 
   # Whitelist file extensions:
-  # def validate({file, _}) do
-  #   ~w(.jpg .jpeg .gif .png) |> Enum.member?(Path.extname(file.file_name))
-  # end
+  def validate({file, _}) do
+    ~w(.jpg .jpeg .gif .png) |> Enum.member?(Path.extname(file.file_name))
+  end
 
-  # Define a thumbnail transformation:
-  # def transform(:thumb, _) do
-  #   {:convert, "-strip -thumbnail 250x250^ -gravity center -extent 250x250 -format png", :png}
-  # end
+  # Define a medium transformation:
+  def transform(:medium, _) do
+    {:convert, "-resize 400x300^ -gravity center -extent 400x300 -format png -limit disk 100MB", :png}
+  end
+
+  # Define a small transformation:
+  def transform(:small, _) do
+    {:convert, "-strip -thumbnail 150x150^ -gravity center -extent 150x150 -format png -limit disk 100MB", :png}
+  end
 
   # Override the persisted filenames:
   # def filename(version, _) do

@@ -1,5 +1,6 @@
 defmodule Onwipca.Church do
   use Onwipca.Web, :model
+  use Arc.Ecto.Schema
 
   alias Onwipca.User
 
@@ -10,6 +11,7 @@ defmodule Onwipca.Church do
     field :state, :string
     field :zipcode, :string
     field :particularized_at, Ecto.DateTime
+    field :photo, Onwipca.Photo.Type
 
     belongs_to :founder, User, foreign_key: :founder_id
 
@@ -22,6 +24,7 @@ defmodule Onwipca.Church do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:name, :street, :city, :state, :zipcode, :particularized_at])
+    |> cast_attachments(params, [:photo])
     |> validate_required([:name, :street, :city, :state, :zipcode, :particularized_at])
   end
 end

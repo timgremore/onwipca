@@ -19,6 +19,7 @@ defmodule Onwipca.ChurchView do
       state: church.state,
       zipcode: church.zipcode,
       particularized_at: church.particularized_at,
-      founder: render_one(church.founder, UserView, "user.json")}
+      founder: render_one(church.founder, UserView, "user.json"),
+      photo: Onwipca.Photo.url({church.photo, church}, :medium)}
   end
 end

@@ -23,69 +23,78 @@ user_params = %{
 }
 
 founder = User.changeset(%User{}, user_params)
-          |> Repo.insert!
+  |> Repo.insert!
 
-church = %Church{
+photo_dir = Path.join(~w(#{File.cwd!} priv repo churches))
+
+Church.changeset(%Church{}, %{
     name: "Christ Covenant Church",
     street: "3630 Co Rd B",
     city: "La Crosse",
     state: "WI",
     zipcode: "54601",
     particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
-    founder: founder
-  }
+    founder: founder,
+    photo: %Plug.Upload{filename: "christ-covenant.jpg", path: Path.join(photo_dir, "christ-covenant.jpg")}
+  })
   |> Repo.insert!
 
-church = %Church{
+Church.changeset(%Church{}, %{
     name: "Grace Presbyterian Church",
     street: "N7631 WI-22",
     city: "Pardeeville",
     state: "WI",
     zipcode: "53954",
-    particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0}
-  }
+    particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
+    founder: founder,
+    photo: %Plug.Upload{filename: "grace-presbyterian.jpg", path: Path.join(photo_dir, "grace-presbyterian.jpg")}
+  })
   |> Repo.insert!
 
-church = %Church{
+Church.changeset(%Church{}, %{
   name: "Lake Trails Church",
   street: "1 Point Place Suite 1",
   city: "Madison",
   state: "WI",
   zipcode: "53719",
-  particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12,
-  min: 0, sec: 0}
-}
+  particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
+  founder: founder,
+  photo: %Plug.Upload{filename: "lake-trails.jpg", path: Path.join(photo_dir, "lake-trails.jpg")}
+})
 |> Repo.insert!
 
-church = %Church{
+Church.changeset(%Church{}, %{
   name: "Bible Presbyterian Church",
   street: "1605 Hwy G",
   city: "Merrill",
   state: "WI",
   zipcode: "54452",
-  particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12,
-  min: 0, sec: 0}
-}
+  particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
+  founder: founder,
+  photo: %Plug.Upload{filename: "bible-presbyterian.jpg", path: Path.join(photo_dir, "bible-presbyterian.jpg")}
+})
 |> Repo.insert!
 
-church = %Church{
+Church.changeset(%Church{}, %{
   name: "Trinity Presbyterian Church",
   street: "224 N.Hine Ave",
   city: "Waukesha",
   state: "WI",
   zipcode: "53188",
-  particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12,
-  min: 0, sec: 0}
-}
+  particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
+  founder: founder,
+  photo: %Plug.Upload{filename: "trinity-presbyterian.jpg", path: Path.join(photo_dir, "trinity-presbyterian.jpg")}
+})
 |> Repo.insert!
 
-church = %Church{
+Church.changeset(%Church{}, %{
   name: "Cornerstone Presbyterian Church",
   street: "N6 W31449 Alberta Drive",
   city: "Delafield",
   state: "WI",
   zipcode: "53018",
-  particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12,
-  min: 0, sec: 0}
-}
+  particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
+  founder: founder,
+  photo: %Plug.Upload{filename: "cornerstone-presbyterian.jpg", path: Path.join(photo_dir, "cornerstone-presbyterian.jpg")}
+})
 |> Repo.insert!

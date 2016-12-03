@@ -42,11 +42,7 @@ defmodule Onwipca.Mixfile do
      {:ex_machina, "~> 1.0"},
      {:openmaize_jwt, "~> 1.0.0"},
      {:arc_ecto, "~> 0.5.0-rc1"},
-     {:arc, "~> 0.6.0-rc3"},
-     {:ex_aws, "~> 1.0.0-rc3"},
-     {:hackney, "~> 1.5"},
-     {:poison, "~> 2.0"},
-     {:sweet_xml, "~> 0.5"}]
+     {:arc, "~> 0.6.0-rc3"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

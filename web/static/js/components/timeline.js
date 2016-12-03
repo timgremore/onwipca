@@ -16,6 +16,7 @@ class Timeline extends Component {
                 <h4 className="u-margin-bottom-zero">{item.name}</h4>
                 <div className="o-flag">
                   <div className="o-flag__img">
+                    <img src={item.photo} alt="{item.name}" />
                   </div>
                   <div className="o-flag__body">
                     <p>Founded: {foundedOn}</p>
