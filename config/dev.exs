@@ -39,3 +39,5 @@ config :onwipca, Onwipca.Repo,
   database: "onwipca_dev",
   hostname: "localhost",
   pool_size: 10
+
+import_config "config.secret.exs"

@@ -2,12 +2,14 @@ defmodule Onwipca.Photo do
   use Arc.Definition
   use Arc.Ecto.Definition
 
-  def __storage, do: Arc.Storage.Local # Add this
+  @acl :public_read
+
+  if Mix.env != :prod do
+    def __storage, do: Arc.Storage.Local
+  end
 
   # Include ecto support (requires package arc_ecto installed):
   # use Arc.Ecto.Definition
-
-  @versions [:original]
 
   # To add a thumbnail version:
   @versions [:original, :medium, :small]
@@ -19,18 +21,18 @@ defmodule Onwipca.Photo do
 
   # Define a medium transformation:
   def transform(:medium, _) do
-    {:convert, "-resize 400x300^ -gravity center -extent 400x300 -format png -limit disk 100MB", :png}
+    {:convert, "-resize 400x -format png -limit disk 100MB", :png}
   end
 
   # Define a small transformation:
   def transform(:small, _) do
-    {:convert, "-strip -thumbnail 150x150^ -gravity center -extent 150x150 -format png -limit disk 100MB", :png}
+    {:convert, "-strip -thumbnail 150x -format png -limit disk 100MB", :png}
   end
 
   # Override the persisted filenames:
-  # def filename(version, _) do
-  #   version
-  # end
+  def filename(version, {file, scope}) do
+    "#{file.file_name}-#{version}"
+  end
 
   # Override the storage directory:
   # def storage_dir(version, {file, scope}) do

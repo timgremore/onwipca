@@ -19,7 +19,8 @@ defmodule Onwipca.Mixfile do
   def application do
     [mod: {Onwipca, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :ex_machina, :openmaize_jwt, :arc_ecto]]
+                    :phoenix_ecto, :postgrex, :ex_machina, :openmaize_jwt, :arc_ecto,
+                    :ex_aws, :hackney, :poison]]
   end
 
   # Specifies which paths to compile per environment.
@@ -42,7 +43,11 @@ defmodule Onwipca.Mixfile do
      {:ex_machina, "~> 1.0"},
      {:openmaize_jwt, "~> 1.0.0"},
      {:arc_ecto, "~> 0.5.0-rc1"},
-     {:arc, "~> 0.6.0-rc3"}]
+     {:arc, "~> 0.6.0-rc3"},
+     {:ex_aws, "~> 1.0.0-rc3"},
+     {:hackney, "~> 1.5"},
+     {:poison, "~> 2.0"},
+     {:sweet_xml, "~> 0.5"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
