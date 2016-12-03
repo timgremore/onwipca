@@ -3,7 +3,7 @@ defmodule Onwipca.UserTest do
 
   alias Onwipca.User
 
-  @valid_attrs %{admin: true, email: "some content", first_name: "some content", last_name: "some content"}
+  @valid_attrs %{admin: true, username: "user1", email: "user@example.com", first_name: "User", last_name: "One"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

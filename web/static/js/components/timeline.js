@@ -18,7 +18,7 @@ class Timeline extends Component {
                   <div className="o-flag__img">
                   </div>
                   <div className="o-flag__body">
-                    <p>Particularized: {foundedOn}</p>
+                    <p>Founded: {foundedOn}</p>
                     {item.founder ?
                       <p>{item.founder.first_name} {item.founder.last_name}</p>
                       :
