@@ -11,6 +11,7 @@ defmodule Onwipca.Church do
     field :state, :string
     field :zipcode, :string
     field :particularized_at, Ecto.DateTime
+    field :url, :string
     field :photo, Onwipca.Photo.Type
 
     belongs_to :founder, User, foreign_key: :founder_id
@@ -23,8 +24,8 @@ defmodule Onwipca.Church do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :street, :city, :state, :zipcode, :particularized_at])
+    |> cast(params, [:name, :street, :city, :state, :zipcode, :particularized_at, :url])
     |> cast_attachments(params, [:photo])
-    |> validate_required([:name, :street, :city, :state, :zipcode, :particularized_at])
+    |> validate_required([:name, :street, :city, :state, :zipcode, :particularized_at, :url])
   end
 end

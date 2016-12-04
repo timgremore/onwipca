@@ -21,11 +21,11 @@ class History extends Component {
             </div>
             <div className="o-layout__item u-2/5">
               <p>The Wisconsin presbytery was composed of six particularized churches from 1992 until 2013:</p>
-              <ul>
+              <ul className="">
               {churches.map((item, index) => {
                 return (
                   <li key={index}>
-                    {item.name}, <em>{item.city}, {item.state}</em>
+                    {item.name}
                   </li>
                 )
               })}

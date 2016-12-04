@@ -24,6 +24,8 @@ class Timeline extends Component {
             'o-flag--reverse': !(index % 2)
           })
 
+          const mapUrl = `https://maps.google.com/?=${item.street} ${cityStateZip}`
+
           return (
             <li key={index} className={timelineItemClass}>
               <div className="c-timeline__item__container">
@@ -37,6 +39,14 @@ class Timeline extends Component {
                     <p>
                       {item.street}<br />
                       {cityStateZip}
+                    </p>
+                    <p>
+                      <a className="c-link" href={item.url}>
+                        <i className="c-material-icons u-margin-right-small">link</i>
+                      </a>
+                      <a className="c-link" href={mapUrl}>
+                        <i className="c-material-icons">directions</i>
+                      </a>
                     </p>
                   </div>
                 </div>

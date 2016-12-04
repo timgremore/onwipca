@@ -34,6 +34,7 @@ Church.changeset(%Church{}, %{
     state: "WI",
     zipcode: "54601",
     particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
+    url: "http://ccc-pca.org",
     founder: founder,
     photo: %Plug.Upload{filename: "christ-covenant.jpg", path: Path.join(photo_dir, "christ-covenant.jpg")}
   })
@@ -46,6 +47,7 @@ Church.changeset(%Church{}, %{
     state: "WI",
     zipcode: "53954",
     particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
+    url: "http://gracepresinfo.com",
     founder: founder,
     photo: %Plug.Upload{filename: "grace-presbyterian.jpg", path: Path.join(photo_dir, "grace-presbyterian.jpg")}
   })
@@ -58,6 +60,7 @@ Church.changeset(%Church{}, %{
   state: "WI",
   zipcode: "53719",
   particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
+  url: "http://laketrailschurch.org",
   founder: founder,
   photo: %Plug.Upload{filename: "lake-trails.jpg", path: Path.join(photo_dir, "lake-trails.jpg")}
 })
@@ -70,6 +73,7 @@ Church.changeset(%Church{}, %{
   state: "WI",
   zipcode: "54452",
   particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
+  url: "http://www.biblepreschurch.org",
   founder: founder,
   photo: %Plug.Upload{filename: "bible-presbyterian.jpg", path: Path.join(photo_dir, "bible-presbyterian.jpg")}
 })
@@ -82,6 +86,7 @@ Church.changeset(%Church{}, %{
   state: "WI",
   zipcode: "53188",
   particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
+  url: "http://trinitypresbyterianwi.org",
   founder: founder,
   photo: %Plug.Upload{filename: "trinity-presbyterian.jpg", path: Path.join(photo_dir, "trinity-presbyterian.jpg")}
 })
@@ -94,6 +99,7 @@ Church.changeset(%Church{}, %{
   state: "WI",
   zipcode: "53018",
   particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
+  url: "http://www.cornerstone-pca.com",
   founder: founder,
   photo: %Plug.Upload{filename: "cornerstone-presbyterian.jpg", path: Path.join(photo_dir, "cornerstone-presbyterian.jpg")}
 })

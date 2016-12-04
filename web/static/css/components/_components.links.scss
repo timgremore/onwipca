@@ -1,0 +1,16 @@
+.c-link {
+  color: $silver;
+  text-decoration: none;
+
+  &:hover, &:link {
+    color: darken($silver, 20%);
+  }
+
+  &.c-link--reverse {
+    color: $white;
+
+    &:hover, &:link {
+      color: darken($white, 20%);
+    }
+  }
+}
