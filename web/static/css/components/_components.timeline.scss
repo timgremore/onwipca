@@ -6,6 +6,15 @@
     width: inuit-rem(6px);
     margin: 0 auto;
     background: $white;
+    text-align: right;
+
+    &.c-timeline__item--reverse {
+      text-align: left;
+    }
+
+    img {
+      border-radius: $global-radius;
+    }
 
     &:after {
       content: '';
