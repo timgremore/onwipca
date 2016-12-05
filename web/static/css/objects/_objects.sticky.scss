@@ -3,3 +3,7 @@
   position: absolute;
 }
 
+.sticky-inner-wrapper {
+  background-color: darken($red, 10%);
+  padding: inuit-rem(6px) 0px;
+}

@@ -1,0 +1,35 @@
+.c-rule {
+
+  &.c-rule--plain {
+    border-top: 1px solid #8c8b8b;
+    border-bottom: 1px solid #fff;
+  }
+
+  &.c-rule--slant {
+    height: 6px;
+    background: url(/images/hr.png) repeat-x 0 0;
+    border: 0;
+  }
+
+  &.c-rule--double {
+    border-top: 1px solid #8c8b8b;
+    border-bottom: 1px solid #fff;
+
+    &:after {
+      content: '';
+      display: block;
+      margin-top: 2px;
+      border-top: 1px solid #8c8b8b;
+      border-bottom: 1px solid #fff;
+    }
+  }
+
+  &.c-rule--soft {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, $blue, $white, $blue);
+    background-image: -moz-linear-gradient(left, $blue, $white, $blue);
+    background-image: -ms-linear-gradient(left, $blue, $white, $blue);
+    background-image: -o-linear-gradient(left, $blue, $white, $blue);
+  }
+}
