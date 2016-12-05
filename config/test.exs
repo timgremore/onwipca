@@ -15,3 +15,5 @@ config :onwipca, Onwipca.Repo,
   database: "onwipca_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+import_config "config.secret.exs"

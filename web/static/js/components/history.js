@@ -1,8 +1,12 @@
 import React, { Component } from "react"
 import { connect } from 'react-redux'
 
+import Timeline from './timeline'
+
 class History extends Component {
   render() {
+    const { churches } = this.props
+
     return (
       <section id="history">
         <div className="o-wrapper">
@@ -17,15 +21,19 @@ class History extends Component {
             </div>
             <div className="o-layout__item u-2/5">
               <p>The Wisconsin presbytery was composed of six particularized churches from 1992 until 2013:</p>
-              <ul>
-              {this.props.churches.map((item, index) => {
+              <ul className="">
+              {churches.map((item, index) => {
                 return (
                   <li key={index}>
-                    {item.name}, <em>{item.city}, {item.state}</em>
+                    {item.name}
                   </li>
                 )
               })}
               </ul>
+            </div>
+            <div className="o-layout__item u-1/1">
+              <hr className="c-rule c-rule--slant u-1/1 u-margin-none" />
+              <Timeline items={churches} />
             </div>
           </div>
         </div>

@@ -1,7 +1,9 @@
 defmodule Onwipca.User do
   use Onwipca.Web, :model
+  use Arc.Ecto.Schema
 
   alias Openmaize.Database, as: DB
+  alias Onwipca.Church
 
   schema "users" do
     field :username, :string
@@ -10,6 +12,9 @@ defmodule Onwipca.User do
     field :last_name, :string
     field :password, :string, virtual: true
     field :password_hash, :string
+    field :photo, Onwipca.Photo.Type
+
+    has_many :churches, Church, foreign_key: :founder_id
 
     timestamps()
   end
@@ -19,7 +24,8 @@ defmodule Onwipca.User do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:username, :email])
+    |> cast(params, [:username, :email, :first_name, :last_name])
+    |> cast_attachments(params, [:photo])
     |> validate_required([:username, :email])
     |> unique_constraint(:username)
   end

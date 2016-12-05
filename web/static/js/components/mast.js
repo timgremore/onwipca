@@ -11,7 +11,7 @@ class Mast extends Component {
           <div className="o-layout">
             <div className="o-layout__item u-1/1">
               <Scrollchor to="home">
-                <img src="/images/logo.svg" />
+                <img src="/images/logo.svg" width="80" />
               </Scrollchor>
 
               <div className="c-navbar o-pack u-float-right u-1/2">
