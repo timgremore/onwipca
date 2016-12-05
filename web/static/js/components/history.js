@@ -32,6 +32,7 @@ class History extends Component {
               </ul>
             </div>
             <div className="o-layout__item u-1/1">
+              <hr className="c-rule c-rule--slant u-1/1 u-margin-none" />
               <Timeline items={churches} />
             </div>
           </div>
