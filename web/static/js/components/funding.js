@@ -5,6 +5,7 @@ class Funding extends Component {
     return (
       <section id="funding">
         <h1>Funding</h1>
+        <h2>content</h2>
       </section>
     )
   }
