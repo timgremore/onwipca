@@ -29,13 +29,13 @@ class Funding extends Component {
               <h3 className="">By 2022 the “On Wisconsin” network will be fully funded by the Wisconsin Presbytery</h3>
             </div>
             <div className="">
-              <h2 className="">We need outside partners to help fund the "On Wisconsin" network.</h2>
+              <h2 className="">We need outside partners to help fund the "On Wisconsin" network</h2>
             </div>
             <div className="">
               <h2 className="">To maximize a $100,000 grant opportunity</h2>
             </div>
             <div className="">
-              <h2 className="">To fully fund the "On Wisconsin" network, we need 15% from outside sources. </h2>
+              <h2 className="">To fully fund the "On Wisconsin" network, we need 15% from outside sources</h2>
             </div>
             /* need to insert image of pie chart */
             <div className="">
