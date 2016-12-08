@@ -40,6 +40,10 @@ class Pathways extends Component {
             <div className="">
               <h4 className="">Wisconsin MNA committee</h4>
             </div>
+            <div className="">
+              <h2 className="">Path one</h2>
+            </div>
+            /* need to insert image of WI with dots & stars for churches */
           </div>
         </div>
       </section>
