@@ -4,6 +4,7 @@ section {
   padding-top: inuit-rem(96px);
   color: $white;
   background-color: $blue;
+  min-height: inuit-rem(400px);
 
   &:first-child {
     height: 100vh;
@@ -21,5 +22,15 @@ section {
   }
 
   &#history {
+  }
+
+  &#mission {
+    background-color: $white;
+    color: $blue;
+  }
+
+  &#directory {
+    background-color: $white;
+    color: $blue;
   }
 }
