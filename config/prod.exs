@@ -71,7 +71,7 @@ config :onwipca, Onwipca.Repo,
 config :arc,
   storage: Arc.Storage.S3,
   bucket: System.get_env["S3_BUCKET"],
-  asset_host: "https://s3-us-west-2.amazonaws.com"
+  asset_host: "https://s3-us-west-2.amazonaws.com/#{System.get_env["S3_BUCKET"]}"
 
 config :ex_aws,
   access_key_id: System.get_env["S3_ACCESS_KEY_ID"],
