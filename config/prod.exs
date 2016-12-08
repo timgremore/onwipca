@@ -73,4 +73,9 @@ config :arc, storage: Arc.Storage.S3, bucket: System.get_env["S3_BUCKET"]
 config :ex_aws,
   access_key_id: System.get_env["S3_ACCESS_KEY_ID"],
   secret_access_key: System.get_env["S3_SECRET_ACCESS_KEY"],
-  region: "us-west-1"
+  region: "us-west-2",
+  s3: [
+    scheme: "https://",
+    host: "s3-us-west-2.amazonaws.com",
+    region: "us-west-2"
+  ]
