@@ -68,7 +68,10 @@ config :onwipca, Onwipca.Repo,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
   ssl: true
 
-config :arc, storage: Arc.Storage.S3, bucket: System.get_env["S3_BUCKET"]
+config :arc,
+  storage: Arc.Storage.S3,
+  bucket: System.get_env["S3_BUCKET"],
+  asset_host: "https://s3-us-west-2.amazonaws.com"
 
 config :ex_aws,
   access_key_id: System.get_env["S3_ACCESS_KEY_ID"],
