@@ -14,32 +14,58 @@ class PathwaysSlider extends Component {
     return (
       <Slider {...settings}>
         <div>
-          <p>Vision for future churches in Wisconsin : 3 paths</p>
-          <h3 className="">Path one: Strategic planting</h3>
+          <div className="o-layout o-layout--center">
+            <div className="o-layout__item u-1/3">
+              <h3 className="u-margin-bottom-none">Path One</h3>
+              <p><em>Strategic Planting</em></p>
+              <p className="o-margin-none">Current Status</p>
+              <ul className="o-margin-none">
+                <li>Church planter readiness: Ready now (MNA Assessment Approved)</li>
+                <li>Probable location: Strategic areas</li>
+                <li>Training: Provisional session and coach</li>
+                <li>Sender: Wisconsin MNA Committee</li>
+              </ul>
+            </div>
+            <div className="o-layout__item u-2/3">
+              <img src="/images/pathways-one.png" alt="Pathways One" />
+            </div>
+          </div>
         </div>
         <div>
-          <h4 className="">Church planter Readiness:</h4>
+          <div className="o-layout o-layout--center">
+            <div className="o-layout__item u-1/3">
+              <h3 className="u-margin-bottom-none">Path Two</h3>
+              <p><em>Strategic Planting</em></p>
+              <p className="o-margin-none">Current Status</p>
+              <ul className="o-margin-none">
+                <li>Church planter readiness: Ready now (MNA Assessment Approved)</li>
+                <li>Probable location: Strategic areas</li>
+                <li>Training: Provisional session and coach</li>
+                <li>Sender: Wisconsin MNA Committee</li>
+              </ul>
+            </div>
+            <div className="o-layout__item u-2/3">
+              <img src="/images/pathways-one.png" alt="Pathways One" />
+            </div>
+          </div>
         </div>
         <div>
-          <h4 className="">Ready now (MNA assessment approved)</h4>
-        </div>
-        <div>
-          <h4 className="">Probable location:</h4>
-        </div>
-        <div>
-          <h4>Strategic areas</h4>
-        </div>
-        <div>
-          <h4 className="">Training:</h4>
-        </div>
-        <div>
-          <h4 className="">Provisional session & coach</h4>
-        </div>
-        <div>
-          <h4 className="">Sender:</h4>
-        </div>
-        <div>
-          <h4 className="">Wisconsin MNA committee</h4>
+          <div className="o-layout o-layout--center">
+            <div className="o-layout__item u-1/3">
+              <h3 className="u-margin-bottom-none">Path Three</h3>
+              <p><em>Strategic Planting</em></p>
+              <p className="o-margin-none">Current Status</p>
+              <ul className="o-margin-none">
+                <li>Church planter readiness: Ready now (MNA Assessment Approved)</li>
+                <li>Probable location: Strategic areas</li>
+                <li>Training: Provisional session and coach</li>
+                <li>Sender: Wisconsin MNA Committee</li>
+              </ul>
+            </div>
+            <div className="o-layout__item u-2/3">
+              <img src="/images/pathways-one.png" alt="Pathways One" />
+            </div>
+          </div>
         </div>
       </Slider>
     )
