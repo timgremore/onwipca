@@ -29,7 +29,7 @@ defmodule Onwipca.ChurchTest do
     Repo.insert!(changeset)
     church = Repo.one(from x in Onwipca.Church, order_by: [desc: x.id], limit: 1)
 
-    assert church.latitude
-    assert church.longitude
+    assert church.latitude == 44.591721
+    assert church.longitude == -88.1114039
   end
 end

@@ -2,6 +2,8 @@ defmodule Onwipca.Church do
   use Onwipca.Web, :model
   use Arc.Ecto.Schema
 
+  import Onwipca.Locator
+
   alias Onwipca.User
 
   schema "churches" do
@@ -29,5 +31,6 @@ defmodule Onwipca.Church do
     |> cast(params, [:name, :street, :city, :state, :zipcode, :particularized_at, :url])
     |> cast_attachments(params, [:photo])
     |> validate_required([:name, :street, :city, :state, :zipcode, :particularized_at, :url])
+    |> locate
   end
 end

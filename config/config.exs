@@ -27,6 +27,15 @@ config :hound, driver: "chrome_driver"
 config :openmaize_jwt,
   signing_key: 'sOfbGPh9szzBS4z6DGQW8uzQ5O409R8e6G27mXKD6i56XHxJG/Vs0Qhecg1s4TXD'
 
+config :geocoder, Geocoder.Worker, [
+  size: 4,
+  max_overflow: 2
+]
+
+config :geocoder, Geocoder.Store, [
+  precision: 4 # the default
+]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

@@ -20,7 +20,7 @@ defmodule Onwipca.Mixfile do
     [mod: {Onwipca, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex, :ex_machina, :openmaize_jwt, :arc_ecto,
-                    :ex_aws, :hackney, :poison]]
+                    :ex_aws, :hackney, :poison, :geocoder]]
   end
 
   # Specifies which paths to compile per environment.
@@ -47,7 +47,8 @@ defmodule Onwipca.Mixfile do
      {:ex_aws, "~> 1.0.0-rc3"},
      {:hackney, "~> 1.5"},
      {:poison, "~> 2.0"},
-     {:sweet_xml, "~> 0.5"}]
+     {:sweet_xml, "~> 0.5"},
+     {:geocoder, "~> 0.4"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

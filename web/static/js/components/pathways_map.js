@@ -8,7 +8,7 @@ class PathwaysMap extends Component {
     const zoom = 7
     const attribution = "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>"
     const markers = this.props.churches.map((church, index) => {
-      const markerPosition = [44.7844, -91.7879]
+      const markerPosition = [church.latitude, church.longitude]
 
       return (
         <Marker key={index} position={markerPosition} />
