@@ -13,6 +13,8 @@ defmodule Onwipca.Church do
     field :particularized_at, Ecto.DateTime
     field :url, :string
     field :photo, Onwipca.Photo.Type
+    field :latitude, :float
+    field :longitude, :float
 
     belongs_to :founder, User, foreign_key: :founder_id
 
