@@ -3,7 +3,7 @@ import { Map, TileLayer, Marker } from 'react-leaflet'
 import { connect } from 'react-redux'
 import { filter } from 'lodash'
 
-import { selectStage } from '../actions/churches'
+import PathwaysButton from './pathways_button'
 
 class PathwaysMap extends Component {
   render() {
@@ -32,46 +32,10 @@ class PathwaysMap extends Component {
             {markers}
             <div className="c-panel u-1/4 u-padding">
               <h1 className="u-text-center">Pathways</h1>
-              <div class="o-block">
-                <div className="o-block__img"></div>
-                <div className="o-block__body">
-                  <a
-                    className="c-btn c-btn--primary c-btn--large c-btn--full c-btn--reverse"
-                    onClick={() => this.props.onStageClick(4)}>
-                    Pathway One
-                  </a>
-                </div>
-              </div>
-              <div class="o-block">
-                <div className="o-block__img"></div>
-                <div className="o-block__body">
-                  <a
-                    className="c-btn c-btn--primary c-btn--large c-btn--full c-btn--reverse"
-                    onClick={() => this.props.onStageClick(3)}>
-                    Pathway Two
-                  </a>
-                </div>
-              </div>
-              <div class="o-block">
-                <div className="o-block__img"></div>
-                <div className="o-block__body">
-                  <a
-                    className="c-btn c-btn--primary c-btn--large c-btn--full c-btn--reverse"
-                    onClick={() => this.props.onStageClick(2)}>
-                    Pathway Three
-                  </a>
-                </div>
-              </div>
-              <div class="o-block">
-                <div className="o-block__img"></div>
-                <div className="o-block__body">
-                  <a
-                    className="c-btn c-btn--secondary c-btn--large c-btn--full c-btn--reverse"
-                    onClick={() => this.props.onStageClick(5)}>
-                    Particularized
-                  </a>
-                </div>
-              </div>
+              <PathwaysButton label="Pathways One" stage="4" />
+              <PathwaysButton label="Pathways Two" stage="3" />
+              <PathwaysButton label="Pathways One" stage="2" />
+              <PathwaysButton label="Particularized" stage="5" />
             </div>
           </Map>
         </div>
@@ -90,11 +54,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    onStageClick: (stage) => {
-      dispatch(selectStage(stage))
-    }
-  }
+  return {}
 }
 
 export default connect(
