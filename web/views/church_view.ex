@@ -23,6 +23,8 @@ defmodule Onwipca.ChurchView do
       founder: render_one(church.founder, UserView, "user.json"),
       latitude: church.latitude,
       longitude: church.longitude,
+      stage: church.stage,
+      current_stage: Onwipca.Church.current_stage(church),
       photo: Onwipca.Photo.url({church.photo, church}, :medium)}
   end
 end
