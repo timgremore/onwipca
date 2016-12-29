@@ -2,9 +2,11 @@
   margin-top: inuit-rem(12px);
 
   .o-pack__item {
+    text-align: center;
 
     a {
       color: $white;
+      cursor: pointer;
       text-decoration: none;
       text-align: center;
       padding: inuit-rem(8px) inuit-rem(12px);
@@ -13,6 +15,10 @@
       &:hover {
         background-color: $red;
       }
+    }
+
+    &:last-child {
+      border-left: inuit-rem(1px) solid $white;
     }
   }
 }

@@ -30,7 +30,15 @@ class Mast extends Component {
                   <Scrollchor to="directory" animate={{offset: offset}}>Directory</Scrollchor>
                 </div>
                 <div className="o-pack__item">
-                  <Scrollchor to="funding" animate={{offset: offset}}>Funding</Scrollchor>
+                  <Scrollchor
+                    to="funding"
+                    className="u-margin-right"
+                    animate={{offset: offset}}>
+                    Funding
+                  </Scrollchor>
+                </div>
+                <div className="o-pack__item">
+                  <a href="#">Login</a>
                 </div>
               </div>
             </div>
