@@ -1,0 +1,11 @@
+.c-panel {
+  z-index: 1000;
+  position: absolute;
+  top: 0px;
+  right: inuit-rem(32px);
+  background-color: $white;
+  border-right: inuit-rem(2px) solid $dark-blue;
+  border-left: inuit-rem(2px) solid $dark-blue;
+  border-bottom: inuit-rem(2px) solid $dark-blue;
+  min-height: inuit-rem(500px);
+}

@@ -21,6 +21,7 @@ defmodule Onwipca.ModelCase do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
+      import Onwipca.Factory
       import Onwipca.ModelCase
     end
   end
