@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Map, TileLayer, Marker } from 'react-leaflet'
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import { connect } from 'react-redux'
 import { filter } from 'lodash'
 
@@ -15,7 +15,14 @@ class PathwaysMap extends Component {
       const markerPosition = [church.latitude, church.longitude]
 
       return (
-        <Marker key={index} position={markerPosition} />
+        <Marker key={index} position={markerPosition}>
+          <Popup>
+            <div>
+              <h3>{church.name}</h3>
+              <img src={church.photo} alt="{church.name}" />
+            </div>
+          </Popup>
+        </Marker>
       )
     })
 
