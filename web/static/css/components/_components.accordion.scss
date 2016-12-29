@@ -57,7 +57,7 @@
 
   li {
     position: relative;
-    border-top: inuit-rem(1px) solid $blue;
+    border-top: inuit-rem(1px) solid $dark-blue;
     @extend .flipin;
 
     i {
@@ -69,7 +69,7 @@
       &:before, &:after {
         content: "";
         position: absolute;
-        background-color: $blue;
+        background-color: $dark-blue;
         width: 3px;
         height: 9px;
         @extend .transition;
@@ -84,7 +84,7 @@
       }
     }
 
-    p {
+    div {
       position: relative;
       overflow: hidden;
       opacity: 1;
@@ -102,7 +102,7 @@
 
       &:checked {
 
-        &~p {
+        &~div {
           margin-top: 0;
           max-height: 0;
           opacity: 0;

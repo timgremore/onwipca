@@ -7,7 +7,7 @@ import { selectStage } from '../actions/churches'
 
 class PathwaysMap extends Component {
   render() {
-    const position = [44.7844, -87.0]
+    const position = [44.7844, -88.0]
     const zoom = 7
     const attribution = "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>"
     const churches = filter(this.props.churches, { 'stage': this.props.selectedStage })
@@ -34,7 +34,7 @@ class PathwaysMap extends Component {
             {markers}
             <div className="c-panel u-1/3 u-padding">
               <div className="c-accordion">
-                <h1 className="u-text-center">Pathways</h1>
+                <h1 className="u-text-center">Church Plant Pathways</h1>
                 <ul className="o-list-bare">
                   <li>
                     <input
@@ -43,8 +43,25 @@ class PathwaysMap extends Component {
                       onChange={() => this.props.onStageClick(4)}
                       checked={this.props.selectedStage != 4} />
                     <i></i>
-                    <h2 className="u-margin-bottom-none">Pathway One</h2>
-                    <p>This is a description of Pathway One</p>
+                    <h2 className="u-margin-bottom-none">Strategic Planting</h2>
+                    <div>
+                      <p>
+                        <strong>Church Planter Readiness:</strong><br />
+                        Ready now - MNA Assessment approved
+                      </p>
+                      <p>
+                        <strong>Probable Location:</strong><br />
+                        Strategic areas
+                      </p>
+                      <p>
+                        <strong>Training:</strong><br />
+                        Provisional session and coach
+                      </p>
+                      <p>
+                        <strong>Sender:</strong><br />
+                        Wisconsin MNA Committee
+                      </p>
+                    </div>
                   </li>
                   <li>
                     <input
@@ -53,8 +70,25 @@ class PathwaysMap extends Component {
                       onChange={() => this.props.onStageClick(3)}
                       checked={this.props.selectedStage != 3} />
                     <i></i>
-                    <h2 className="u-margin-bottom-none">Pathway Two</h2>
-                    <p>This is a description of Pathway Two</p>
+                    <h2 className="u-margin-bottom-none">Apprentice Planting</h2>
+                    <div>
+                      <p>
+                        <strong>Church Planter Readiness:</strong><br />
+                        Need 1-3 year internship (ordainable seminary education)
+                      </p>
+                      <p>
+                        <strong>Probable Location:</strong><br />
+                        Within 45 minutes of established church
+                      </p>
+                      <p>
+                        <strong>Training:</strong><br />
+                        Above plus internship with sending church 
+                      </p>
+                      <p>
+                        <strong>Sender:</strong><br />
+                        Local church
+                      </p>
+                    </div>
                   </li>
                   <li>
                     <input
@@ -63,8 +97,26 @@ class PathwaysMap extends Component {
                       onChange={() => this.props.onStageClick(5)}
                       checked={this.props.selectedStage != 5} />
                     <i></i>
-                    <h2 className="u-margin-bottom-none">Pathway Three</h2>
-                    <p>This is a description of Pathway Three</p>
+                    <h2 className="u-margin-bottom-none">Indigenous Planting</h2>
+                    <div>
+                      <p>
+                        <strong>Church Planter Readiness:</strong><br />
+                        5 year church planting training<br />
+                        Program in conjunction with reformed theological seminary
+                      </p>
+                      <p>
+                        <strong>Probable Location:</strong><br />
+                        Rural areas, ethnic populations, cities and suburbs
+                      </p>
+                      <p>
+                        <strong>Training:</strong><br />
+                        "On Wisconsin" training program
+                      </p>
+                      <p>
+                        <strong>Sender:</strong><br />
+                        Network or local church
+                      </p>
+                    </div>
                   </li>
                 </ul>
               </div>

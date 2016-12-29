@@ -32,9 +32,9 @@ section {
 
   &#pathways {
     padding-top: 0px;
-    min-height: inuit-rem(600px);
-    border-top: inuit-rem(12px) solid $blue;
-    border-bottom: inuit-rem(12px) solid $blue;
+    min-height: 100vh;
+    border-top: inuit-rem(12px) solid $dark-blue;
+    border-bottom: inuit-rem(12px) solid $dark-blue;
     background-color: $white;
   }
 
