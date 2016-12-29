@@ -3,7 +3,7 @@ import { Map, TileLayer, Marker } from 'react-leaflet'
 import { connect } from 'react-redux'
 import { filter } from 'lodash'
 
-import PathwaysButton from './pathways_button'
+import { selectStage } from '../actions/churches'
 
 class PathwaysMap extends Component {
   render() {
@@ -31,11 +31,41 @@ class PathwaysMap extends Component {
               attribution={attribution} />
             {markers}
             <div className="c-panel u-1/4 u-padding">
-              <h1 className="u-text-center">Pathways</h1>
-              <PathwaysButton label="Pathways One" stage="4" />
-              <PathwaysButton label="Pathways Two" stage="3" />
-              <PathwaysButton label="Pathways One" stage="2" />
-              <PathwaysButton label="Particularized" stage="5" />
+              <div className="c-accordion">
+                <h1 className="u-text-center">Pathways</h1>
+                <ul className="o-list-bare">
+                  <li>
+                    <input
+                      type="checkbox"
+                      value="4"
+                      onChange={() => this.props.onStageClick(4)}
+                      checked={this.props.selectedStage != 4} />
+                    <i></i>
+                    <h2 className="u-margin-bottom-none">Pathway One</h2>
+                    <p>This is a description of Pathway One</p>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      value="3"
+                      onChange={() => this.props.onStageClick(3)}
+                      checked={this.props.selectedStage != 3} />
+                    <i></i>
+                    <h2 className="u-margin-bottom-none">Pathway Two</h2>
+                    <p>This is a description of Pathway Two</p>
+                  </li>
+                  <li>
+                    <input
+                      type="checkbox"
+                      value="2"
+                      onChange={() => this.props.onStageClick(5)}
+                      checked={this.props.selectedStage != 5} />
+                    <i></i>
+                    <h2 className="u-margin-bottom-none">Pathway One</h2>
+                    <p>This is a description of Pathway One</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </Map>
         </div>
@@ -54,7 +84,11 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {}
+  return {
+    onStageClick: (stage) => {
+      dispatch(selectStage(stage))
+    }
+  }
 }
 
 export default connect(
