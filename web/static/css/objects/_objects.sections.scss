@@ -31,7 +31,11 @@ section {
   }
 
   &#pathways {
-    min-height: 100vh;
+    padding-top: 0px;
+    min-height: inuit-rem(600px);
+    border-top: inuit-rem(12px) solid $blue;
+    border-bottom: inuit-rem(12px) solid $blue;
+    background-color: $white;
   }
 
   &#directory {

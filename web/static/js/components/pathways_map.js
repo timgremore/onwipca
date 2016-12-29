@@ -63,8 +63,8 @@ class PathwaysMap extends Component {
                       onChange={() => this.props.onStageClick(5)}
                       checked={this.props.selectedStage != 5} />
                     <i></i>
-                    <h2 className="u-margin-bottom-none">Pathway One</h2>
-                    <p>This is a description of Pathway One</p>
+                    <h2 className="u-margin-bottom-none">Pathway Three</h2>
+                    <p>This is a description of Pathway Three</p>
                   </li>
                 </ul>
               </div>

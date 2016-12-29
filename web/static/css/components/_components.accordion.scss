@@ -51,9 +51,13 @@
 
 .c-accordion {
 
+  h1, h2, p {
+    color: $blue;
+  }
+
   li {
     position: relative;
-    border-top: inuit-rem(1px) solid $white;
+    border-top: inuit-rem(1px) solid $blue;
     @extend .flipin;
 
     i {
@@ -65,7 +69,7 @@
       &:before, &:after {
         content: "";
         position: absolute;
-        background-color: $white;
+        background-color: $blue;
         width: 3px;
         height: 9px;
         @extend .transition;

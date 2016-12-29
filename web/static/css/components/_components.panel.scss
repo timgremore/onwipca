@@ -4,5 +4,8 @@
   top: 0px;
   right: inuit-rem(32px);
   bottom: inuit-rem(64px);
-  background-color: $blue;
+  background-color: $white;
+  border-right: inuit-rem(2px) solid $blue;
+  border-left: inuit-rem(2px) solid $blue;
+  border-bottom: inuit-rem(2px) solid $blue;
 }
