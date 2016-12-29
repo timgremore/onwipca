@@ -25,6 +25,8 @@ class PathwaysMap extends Component {
           <Map
             className="c-map"
             center={position}
+            zoomControl={true}
+            scrollWheelZoom={false}
             zoom={zoom}>
             <TileLayer
               url="https://api.mapbox.com/styles/v1/timgremore/ciwgbl364007q2qoih4a4wb4a/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGltZ3JlbW9yZSIsImEiOiJtY01hT2lNIn0.jS2hKzkpWj83rJSrlOz6vg"
