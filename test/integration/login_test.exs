@@ -11,7 +11,7 @@ defmodule Onwipca.LoginTest do
   test "Login" do
     navigate_to "/"
 
-    click({:id, "login"})
+    click({:link_text, "Login"})
 
     fill_field({:id, "user_username"}, "jb")
     fill_field({:id, "user_password"}, "secret")

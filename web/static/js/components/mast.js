@@ -38,7 +38,7 @@ class Mast extends Component {
                   </Scrollchor>
                 </div>
                 <div className="o-pack__item">
-                  <a href="#">Login</a>
+                  <a href="/login">Login</a>
                 </div>
               </div>
             </div>

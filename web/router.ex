@@ -7,7 +7,6 @@ defmodule Onwipca.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug Openmaize.Authenticate
   end
 
   pipeline :api do
@@ -26,7 +25,9 @@ defmodule Onwipca.Router do
     get "/", PageController, :index
 
     resources "/users", UserController
-    resources "/sessions", SessionController, only: [:new, :create, :delete]
+
+    get "/login", SessionController, :new
+    resources "/login", SessionController, only: [:create, :delete]
   end
 
 end
