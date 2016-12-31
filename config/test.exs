@@ -16,4 +16,6 @@ config :onwipca, Onwipca.Repo,
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
+config :comeonin, :bcrypt_log_rounds, 4
+
 import_config "config.secret.exs"

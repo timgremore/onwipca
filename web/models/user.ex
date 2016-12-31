@@ -2,7 +2,7 @@ defmodule Onwipca.User do
   use Onwipca.Web, :model
   use Arc.Ecto.Schema
 
-  alias Openmaize.Database, as: DB
+  alias Comeonin.Bcrypt
   alias Onwipca.Church
 
   schema "users" do
@@ -25,14 +25,30 @@ defmodule Onwipca.User do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:username, :email, :first_name, :last_name])
-    |> cast_attachments(params, [:photo])
     |> validate_required([:username, :email])
     |> unique_constraint(:username)
+    |> unique_constraint(:email)
+    |> cast_attachments(params, [:photo])
   end
 
   def auth_changeset(struct, params) do
     struct
     |> changeset(params)
-    |> DB.add_password_hash(params)
+    |> cast(params, [:password])
+    |> validate_required([:password])
+    |> put_password_hash
+  end
+
+  def authenticate(user, password) do
+    Bcrypt.checkpw(password, user.password_hash)
+  end
+
+  defp put_password_hash(changeset) do
+    case changeset do
+      %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
+        put_change(changeset, :password_hash, Bcrypt.hashpwsalt(pass))
+      _ ->
+        changeset
+    end
   end
 end
