@@ -33,6 +33,16 @@ config :geocoder, Geocoder.Store, [
   precision: 4 # the default
 ]
 
+config :guardian, Guardian,
+  allowed_algos: ["HS512"], # optional
+  verify_module: Guardian.JWT,  # optional
+  issuer: "Onwipca",
+  ttl: { 30, :days },
+  allowed_drift: 2000,
+  verify_issuer: true, # optional
+  secret_key: "smxJJp9+jL6BsJtVW37dtNXhw8+dgfV0xALrngAWE7v/5Sjzo1wVntjX4t/jNDji",
+  serializer: Onwipca.GuardianSerializer
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

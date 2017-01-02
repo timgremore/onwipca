@@ -24,7 +24,7 @@ user_params = %{
 
 founder = case Repo.get_by(User, username: "iam") do
             nil ->
-              User.changeset(%User{}, user_params)
+              User.auth_changeset(%User{}, user_params)
               |> Repo.insert_or_update
             user -> user
           end

@@ -1,9 +1,10 @@
+require IEx
+
 defmodule Onwipca.User do
   use Onwipca.Web, :model
   use Arc.Ecto.Schema
 
   alias Comeonin.Bcrypt
-  alias Onwipca.Church
 
   schema "users" do
     field :username, :string
@@ -14,7 +15,7 @@ defmodule Onwipca.User do
     field :password_hash, :string
     field :photo, Onwipca.Photo.Type
 
-    has_many :churches, Church, foreign_key: :founder_id
+    has_many :churches, Onwipca.Church, foreign_key: :founder_id
 
     timestamps()
   end
@@ -41,6 +42,21 @@ defmodule Onwipca.User do
 
   def authenticate(user, password) do
     Bcrypt.checkpw(password, user.password_hash)
+  end
+
+  def find_and_authenticate(params) do
+    if is_nil(params["username"]) || is_nil(params["password"]) do
+      {:error, false, "Missing username or password"}
+    else
+      case Onwipca.Repo.get_by(Onwipca.User, username: params["username"]) do
+        nil  -> {:error, false, "User not found"}
+        user ->
+          case authenticate(user, params["password"]) do
+            true -> {:ok, user, nil}
+            _    -> {:error, false, "Password invalid"}
+          end
+      end
+    end
   end
 
   defp put_password_hash(changeset) do

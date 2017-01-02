@@ -1,6 +1,6 @@
 <h2>Login</h2>
 
-<%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
+<%= form_for @conn, session_path(@conn, :create), [as: :user, id: "login-form"], fn f -> %>
   <%= if f.errors != [] do %>
     <div class="alert alert-danger">
       <p>Please check the errors below:</p>

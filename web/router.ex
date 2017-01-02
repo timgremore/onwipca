@@ -9,6 +9,11 @@ defmodule Onwipca.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :browser_auth do
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.LoadResource
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -20,14 +25,12 @@ defmodule Onwipca.Router do
   end
 
   scope "/", Onwipca do
-    pipe_through :browser
+    pipe_through [:browser, :browser_auth]
 
     get "/", PageController, :index
 
-    resources "/users", UserController
-
     get "/login", SessionController, :new
     resources "/login", SessionController, only: [:create, :delete]
+    resources "/my-account", UserController, only: [:show], singleton: true
   end
-
 end

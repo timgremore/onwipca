@@ -43,4 +43,33 @@ defmodule Onwipca.UserTest do
     assert User.authenticate(user, "secret123")
     refute User.authenticate(user, "secret")
   end
+
+  test "find_and_authenticate" do
+    User.auth_changeset(%User{}, params_for(:user, %{username: "john", password: "secret"}))
+    |> Onwipca.Repo.insert
+
+    {result, user, msg} = User.find_and_authenticate(%{"username" => "john", "password" => "secret"})
+
+    refute msg
+    assert result == :ok
+    assert user
+
+    {result, user, msg} = User.find_and_authenticate(%{"username" => nil, "password" => "abc"})
+
+    assert "Missing username or password", msg
+    assert result == :error
+    refute user
+
+    {result, user, msg} = User.find_and_authenticate(%{"username" => "john", "password" => "abc"})
+
+    assert "Password invalid", msg
+    assert result == :error
+    refute user
+
+    {result, user, msg} = User.find_and_authenticate(%{"username" => "stranger", "password" => "secret"})
+
+    assert "User not found", msg
+    assert result == :error
+    refute user
+  end
 end
