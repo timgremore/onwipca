@@ -38,7 +38,9 @@ class Mast extends Component {
                   </Scrollchor>
                 </div>
                 <div className="o-pack__item">
-                  <a href="/login">Login</a>
+                  {document.getElementsByName('guardian-token').length > 0 ?
+                    <a href="/logout">Logout</a> :
+                    <a href="/login">Login</a>}
                 </div>
               </div>
             </div>

@@ -11,7 +11,7 @@ defmodule Onwipca.LoginTest do
   end
 
   @tag :integration
-  test "Login" do
+  test "Login and logout" do
     navigate_to "/"
 
     click({:link_text, "Login"})
@@ -21,6 +21,14 @@ defmodule Onwipca.LoginTest do
     submit_element({:id, "login-form"})
 
     assert page_source =~ "Welcome John Baptist"
+    refute page_source =~ "Login"
+
+    navigate_to "/"
+
+    click({:link_text, "Logout"})
+
+    assert page_source =~ "Login"
+    refute page_source =~ "Logout"
   end
 
   @tag :integration

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <%= if Guardian.Plug.current_token(@conn) do %>
+      <meta name='guardian-token' content="<%= Guardian.Plug.current_token(@conn) %>">
+    <% end %>
 
     <title>On WI PCA</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
@@ -15,7 +18,9 @@
   </head>
 
   <body>
-    <h1><%= get_flash(@conn, :info) %></h1>
+    <%= unless is_nil(get_flash(@conn, :info)) do %>
+      <h1><%= get_flash(@conn, :info) %></h1>
+    <% end %>
     <%= render @view_module, @view_template, assigns %>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

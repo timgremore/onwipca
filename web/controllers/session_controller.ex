@@ -5,6 +5,8 @@ defmodule Onwipca.SessionController do
 
   alias Onwipca.User
 
+  plug :scrub_params, "user" when action in [:create]
+
   def new(conn, _params) do
     render conn, "new.html"
   end
@@ -20,5 +22,11 @@ defmodule Onwipca.SessionController do
         |> put_flash(:info, "Invalid username or password")
         |> render("new.html", changeset: changeset)
     end
+  end
+
+  def destroy(conn, _params) do
+    conn
+    |> Guardian.Plug.sign_out
+    |> redirect(to: "/")
   end
 end

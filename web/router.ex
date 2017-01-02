@@ -28,9 +28,10 @@ defmodule Onwipca.Router do
     pipe_through [:browser, :browser_auth]
 
     get "/", PageController, :index
-
     get "/login", SessionController, :new
-    resources "/login", SessionController, only: [:create, :delete]
+    get "/logout", SessionController, :destroy
+
+    resources "/login", SessionController, only: [:create]
     resources "/my-account", UserController, only: [:show], singleton: true
   end
 end
