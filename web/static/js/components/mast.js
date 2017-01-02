@@ -39,7 +39,7 @@ class Mast extends Component {
                 </div>
                 <div className="o-pack__item">
                   {document.getElementsByName('guardian-token').length > 0 ?
-                    <a href="/logout">Logout</a> :
+                    <a href="/my-account">Account</a> :
                     <a href="/login">Login</a>}
                 </div>
               </div>
