@@ -12,6 +12,7 @@ defmodule Onwipca.Router do
   pipeline :browser_auth do
     plug Guardian.Plug.VerifySession
     plug Guardian.Plug.LoadResource
+    plug Onwipca.Plug.CurrentUser
   end
 
   pipeline :api do

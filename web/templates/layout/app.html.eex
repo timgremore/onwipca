@@ -18,6 +18,9 @@
   </head>
 
   <body>
+    <%= if logged_in?(@conn) do %>
+      <h1>Username: <%= @current_user.username %></h1>
+    <% end %>
     <%= unless is_nil(get_flash(@conn, :info)) do %>
       <h1><%= get_flash(@conn, :info) %></h1>
     <% end %>

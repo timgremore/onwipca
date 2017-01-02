@@ -1,5 +1,3 @@
-require IEx
-
 defmodule Onwipca.User do
   use Onwipca.Web, :model
   use Arc.Ecto.Schema

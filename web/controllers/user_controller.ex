@@ -1,8 +1,7 @@
 defmodule Onwipca.UserController do
   use Onwipca.Web, :controller
-  use Guardian.Phoenix.Controller
 
-  def show(conn, _params, user, _claims) do
-    render(conn, "show.html", current_user: user)
+  def show(conn, _params) do
+    render conn, "show.html"
   end
 end

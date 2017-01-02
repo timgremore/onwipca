@@ -1,5 +1,3 @@
-require IEx
-
 defmodule Onwipca.SessionController do
   use Onwipca.Web, :controller
 
