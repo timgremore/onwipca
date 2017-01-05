@@ -1,0 +1,21 @@
+.c-menu {
+  margin: 0px;
+  padding: 0px;
+
+  .c-menu__item {
+    list-style: none;
+    padding: inuit-rem(8px);
+  }
+}
+
+.c-menu--block {
+  width: 100%;
+
+  .c-menu__item {
+    display: block;
+    width: 100%;
+    margin-top: inuit-rem(6px);
+    margin-bottom: inuit-rem(6px);
+    background-color: $white;
+  }
+}
