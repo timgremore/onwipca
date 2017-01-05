@@ -25,6 +25,7 @@ defmodule Onwipca.LoginTest do
 
     navigate_to "/"
 
+    click({:link_text, "Account"})
     click({:link_text, "Logout"})
 
     assert page_source =~ "Login"

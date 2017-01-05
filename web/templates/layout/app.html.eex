@@ -18,20 +18,18 @@
   </head>
 
   <body>
-    <%= if management_page?(@conn) do %>
-      <%= if logged_in?(@conn) do %>
-        <div class="o-layout">
-          <%= render Onwipca.SharedView, "sidebar.html", user: @current_user %>
+    <%= if Onwipca.SharedView.management_page?(@conn) do %>
+      <div class="o-layout">
+        <%= render Onwipca.SharedView, "sidebar.html", conn: @conn, user: @current_user %>
 
-          <div class="o-layout__item u-2/3">
-            <%= unless is_nil(get_flash(@conn, :info)) do %>
-              <h1><%= get_flash(@conn, :info) %></h1>
-            <% end %>
+        <div class="o-layout__item u-2/3">
+          <%= unless is_nil(get_flash(@conn, :info)) do %>
+            <h1><%= get_flash(@conn, :info) %></h1>
+          <% end %>
 
-            <%= render @view_module, @view_template, assigns %>
-          </div>
+          <%= render @view_module, @view_template, assigns %>
         </div>
-      <% end %>
+      </div>
     <% else %>
       <%= unless is_nil(get_flash(@conn, :info)) do %>
         <h1><%= get_flash(@conn, :info) %></h1>

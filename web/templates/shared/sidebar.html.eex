@@ -4,11 +4,16 @@
     <li class=c-menu__item>
       <%= link "Home", to: "/", class: "c-btn c-btn--primary c-btn--full" %>
     </li>
-    <li class=c-menu__item>
-      <%= link "Churches", to: "/churches", class: "c-btn c-btn--primary c-btn--full" %>
-    </li>
-    <li class=c-menu__item>
-      <%= link "Users", to: "/users", class: "c-btn c-btn--primary c-btn--full" %>
-    </li>
+    <%= if logged_in?(@conn) do %>
+      <li class=c-menu__item>
+        <%= link "Churches", to: "/churches", class: "c-btn c-btn--primary c-btn--full" %>
+      </li>
+      <li class=c-menu__item>
+        <%= link "Users", to: "/users", class: "c-btn c-btn--primary c-btn--full" %>
+      </li>
+      <li class=c-menu__item>
+        <%= link "Logout", to: "/logout", class: "c-btn c-btn--secondary c-btn--full" %>
+      </li>
+    <% end %>
   </ul>
 </div>
