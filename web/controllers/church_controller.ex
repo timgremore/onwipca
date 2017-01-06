@@ -8,6 +8,11 @@ defmodule Onwipca.ChurchController do
     render(conn, "index.json", churches: churches)
   end
 
+  def new(conn, %{"church" => church_params}) do
+    church = Church.changeset(%Church{}, church_params)
+    render(conn, "new.html", church: church)
+  end
+
   def create(conn, %{"church" => church_params}) do
     changeset = Church.changeset(%Church{}, church_params)
 

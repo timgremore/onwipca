@@ -1,0 +1,24 @@
+<h2>Listing churches</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for church <- @churches do %>
+    <tr>
+
+      <td class="text-right">
+        <%= link "Show", to: church_path(@conn, :show, church), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: church_path(@conn, :edit, church), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: church_path(@conn, :delete, church), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New church", to: church_path(@conn, :new) %>

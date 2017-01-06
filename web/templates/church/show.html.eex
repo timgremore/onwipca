@@ -1,0 +1,8 @@
+<h2>Show church</h2>
+
+<ul>
+
+</ul>
+
+<%= link "Edit", to: church_path(@conn, :edit, @church) %>
+<%= link "Back", to: church_path(@conn, :index) %>
