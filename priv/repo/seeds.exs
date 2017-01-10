@@ -41,6 +41,7 @@ case Repo.get_by(Church, name: "Christ Covenant Church") do
             particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
             url: "http://ccc-pca.org",
             founder: founder,
+            stage: 5,
             photo: %Plug.Upload{filename: "christ-covenant.jpg", path: Path.join(photo_dir, "christ-covenant.jpg")}
           })
           |> Repo.insert_or_update
@@ -57,6 +58,7 @@ case Repo.get_by(Church, name: "Grace Presbyterian Church") do
             particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
             url: "http://gracepresinfo.com",
             founder: founder,
+            stage: 5,
             photo: %Plug.Upload{filename: "grace-presbyterian.jpg", path: Path.join(photo_dir, "grace-presbyterian.jpg")}
           })
           |> Repo.insert_or_update
@@ -73,6 +75,7 @@ case Repo.get_by(Church, name: "Lake Trails Church") do
             particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
             url: "http://laketrailschurch.org",
             founder: founder,
+            stage: 5,
             photo: %Plug.Upload{filename: "lake-trails.jpg", path: Path.join(photo_dir, "lake-trails.jpg")}
           })
           |> Repo.insert_or_update
@@ -89,6 +92,7 @@ case Repo.get_by(Church, name: "Bible Presbyterian Church") do
             particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
             url: "http://www.biblepreschurch.org",
             founder: founder,
+            stage: 5,
             photo: %Plug.Upload{filename: "bible-presbyterian.jpg", path: Path.join(photo_dir, "bible-presbyterian.jpg")}
           })
           |> Repo.insert_or_update
@@ -105,6 +109,7 @@ case Repo.get_by(Church, name: "Trinity Presbyterian Church") do
             particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
             url: "http://trinitypresbyterianwi.org",
             founder: founder,
+            stage: 5,
             photo: %Plug.Upload{filename: "trinity-presbyterian.jpg", path: Path.join(photo_dir, "trinity-presbyterian.jpg")}
           })
           |> Repo.insert_or_update
@@ -121,6 +126,7 @@ case Repo.get_by(Church, name: "Cornerstone Presbyterian Church") do
             particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
             url: "http://www.cornerstone-pca.com",
             founder: founder,
+            stage: 5,
             photo: %Plug.Upload{filename: "cornerstone-presbyterian.jpg", path: Path.join(photo_dir, "cornerstone-presbyterian.jpg")}
           })
           |> Repo.insert_or_update

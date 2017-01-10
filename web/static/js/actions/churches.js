@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch'
 
 export const RECEIVE_CHURCHES = 'RECEIVE_CHURCHES';
 export const REQUEST_CHURCHES = 'REQUEST_CHURCHES';
+export const SELECT_STAGE = 'SELECT_STAGE';
 
 export function requestChurches(json) {
   return {
@@ -13,6 +14,13 @@ export function receiveChurches(json) {
   return {
     type: RECEIVE_CHURCHES,
     items: json.data
+  }
+}
+
+export function selectStage(stage) {
+  return {
+    type: SELECT_STAGE,
+    stage: stage,
   }
 }
 

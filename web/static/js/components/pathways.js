@@ -1,10 +1,11 @@
 import React, { Component } from "react"
-import PathwaysSlider from './pathways_slider'
+import PathwaysMap from './pathways_map'
 
 class Pathways extends Component {
   render() {
     return (
       <section id="pathways">
+<<<<<<< HEAD
         <div className="o-wrapper">
           <div className="o-layout o-layout--center">
             <div className="o-layout__item u-1/1">
@@ -18,6 +19,9 @@ class Pathways extends Component {
             /* need to insert image of WI with dots & stars for churches */
           </div>
         </div>
+=======
+        <PathwaysMap />
+>>>>>>> 2439807549e17d427ff557a093840e1b0dda3ce2
       </section>
     )
   }

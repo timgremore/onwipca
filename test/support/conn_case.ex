@@ -26,6 +26,7 @@ defmodule Onwipca.ConnCase do
       import Ecto.Query
 
       import Onwipca.Router.Helpers
+      import Onwipca.Factory
 
       # The default endpoint for testing
       @endpoint Onwipca.Endpoint
