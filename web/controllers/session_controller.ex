@@ -14,6 +14,7 @@ defmodule Onwipca.SessionController do
       {:ok, user, _} ->
           conn
           |> Guardian.Plug.sign_in(user)
+          |> put_flash(:info, "Welcome #{user.first_name} #{user.last_name}")
           |> redirect(to: user_path(conn, :show))
       {:error, changeset, _} ->
         conn
