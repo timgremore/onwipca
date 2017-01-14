@@ -1,24 +1,27 @@
-<h2>Listing churches</h2>
-
-<table class="table">
-  <thead>
-    <tr>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for church <- @churches do %>
-    <tr>
-
-      <td class="text-right">
-        <%= link "Show", to: church_path(@conn, :show, church), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: church_path(@conn, :edit, church), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: church_path(@conn, :delete, church), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<%= link "New church", to: church_path(@conn, :new) %>
+<div class="o-layout">
+  <div class="o-layout__item">
+    <h1>Churches</h1>
+    <table class="o-table o-table--tiny">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Founder</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for church <- @churches do %>
+            <tr>
+              <td><%= church.name %></td>
+              <td><%= "church.founder" %></td>
+              <td>
+                <%= link "Show", to: church_path(@conn, :show, church), class: "" %>
+                <%= link "Edit", to: church_path(@conn, :edit, church), class: "" %>
+                <%= link "Delete", to: church_path(@conn, :delete, church), method: :delete, data: [confirm: "Are you sure?"], class: "" %>
+              </td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

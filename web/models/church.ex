@@ -31,7 +31,7 @@ defmodule Onwipca.Church do
     struct
     |> cast(params, [:name, :street, :city, :state, :zipcode, :particularized_at, :url, :stage])
     |> cast_attachments(params, [:photo])
-    |> validate_required([:name, :street, :city, :state, :zipcode, :particularized_at, :url])
+    |> validate_required([:name, :street, :city, :state, :zipcode, :url])
     |> locate
   end
 

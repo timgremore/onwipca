@@ -1,46 +1,32 @@
-defmodule Onwipca.ChurchController do
+defmodule Onwipca.Api.ChurchController do
   use Onwipca.Web, :controller
 
   alias Onwipca.Church
-  alias Onwipca.User
 
   def index(conn, _params) do
-    churches = Repo.all(Church) |> Repo.preload(:founder)
-    render(conn, "index.html", churches: churches)
-  end
-
-  def new(conn, _params) do
-    church = Church.changeset(%Church{})
-    render(conn, "new.html", church: church)
-  end
-
-  def new(conn, %{"church" => church_params}) do
-    church = Church.changeset(%Church{}, church_params)
-    render(conn, "new.html", church: church)
+    churches = Repo.all(Church)
+    render(conn, "index.json", churches: churches)
   end
 
   def create(conn, %{"church" => church_params}) do
-    changeset = Church.changeset(%Church{founder_id: 1}, church_params)
+    changeset = Church.changeset(%Church{}, church_params)
 
     case Repo.insert(changeset) do
       {:ok, church} ->
         conn
         |> put_status(:created)
         |> put_resp_header("location", church_path(conn, :show, church))
-        |> put_flash(:info, "Church created successfully")
-        |> render("show.html", church: church)
+        |> render("show.json", church: church)
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(Onwipca.ChangesetView, "error.html", changeset: changeset)
+        |> render(Onwipca.ChangesetView, "error.json", changeset: changeset)
     end
   end
 
   def show(conn, %{"id" => id}) do
-    church = Repo.one from c in Church,
-      where: c.id == ^id
-
-    render(conn, "show.html", church: church)
+    church = Repo.get!(Church, id)
+    render(conn, "show.json", church: church)
   end
 
   def update(conn, %{"id" => id, "church" => church_params}) do
@@ -49,11 +35,11 @@ defmodule Onwipca.ChurchController do
 
     case Repo.update(changeset) do
       {:ok, church} ->
-        render(conn, "show.html", church: church)
+        render(conn, "show.json", church: church)
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(Onwipca.ChangesetView, "error.html", changeset: changeset)
+        |> render(Onwipca.ChangesetView, "error.json", changeset: changeset)
     end
   end
 

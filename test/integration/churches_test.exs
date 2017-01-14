@@ -3,13 +3,12 @@ defmodule Onwipca.ChurchesTest do
 
   alias Onwipca.Repo
   alias Onwipca.User
-  alias Onwipca.Church
 
   setup do
     User.auth_changeset(%User{}, params_for(:user, password: "secret", username: "jb"))
     |> Repo.insert
 
-    insert(:church, name: "Jacob's Well")
+    insert(:church, name: "Living Stone")
 
     {:ok, %{}}
   end
@@ -25,10 +24,34 @@ defmodule Onwipca.ChurchesTest do
     submit_element({:id, "login-form"})
 
     click({:link_text, "Create Church"})
+
     fill_field({:id, "church_name"}, "Jacob's Well")
-    submit_element({:id, "church-form"})
+    fill_field({:id, "church_url"}, "www.jacobswellgb.org")
+    fill_field({:id, "church_street"}, "3340 Lineville Rd.")
+    fill_field({:id, "church_city"}, "Howard")
+    fill_field({:id, "church_state"}, "WI")
+    fill_field({:id, "church_zipcode"}, "54304")
+    submit_element({:class, "form__church"})
 
     assert page_source =~ "Church created successfully"
     assert page_source =~ "Jacob's Well"
+  end
+
+  @tag :integration
+  test "List churches" do
+    insert(:church, name: "Emmaus Road")
+
+    navigate_to "/"
+
+    click({:link_text, "Login"})
+
+    fill_field({:id, "user_username"}, "jb")
+    fill_field({:id, "user_password"}, "secret")
+    submit_element({:id, "login-form"})
+
+    click({:link_text, "Churches"})
+
+    assert page_source =~ "Living Stone"
+    assert page_source =~ "Emmaus Road"
   end
 end
