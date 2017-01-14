@@ -19,7 +19,7 @@ defmodule Onwipca.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", Onwipca do
+  scope "/api", Onwipca, as: :api do
     pipe_through :api
 
     resources "/churches", Api.ChurchController, only: [:index]

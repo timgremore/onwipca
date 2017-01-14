@@ -54,4 +54,28 @@ defmodule Onwipca.ChurchesTest do
     assert page_source =~ "Living Stone"
     assert page_source =~ "Emmaus Road"
   end
+
+  @tag :integration
+  test "Delete church" do
+    insert(:church, name: "Emmaus Road")
+
+    navigate_to "/"
+
+    click({:link_text, "Login"})
+
+    fill_field({:id, "user_username"}, "jb")
+    fill_field({:id, "user_password"}, "secret")
+    submit_element({:id, "login-form"})
+
+    click({:link_text, "Churches"})
+
+    church_row = find_element(:css, "tr:last-child td:last-child")
+    delete_link = find_within_element(church_row, :link_text, "Delete")
+    click(delete_link)
+    accept_dialog
+
+    assert page_source =~ "Living Stone"
+    assert page_source =~ "Church was deleted successfully"
+    refute page_source =~ "Emmaus Road"
+  end
 end

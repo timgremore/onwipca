@@ -62,8 +62,16 @@ defmodule Onwipca.ChurchController do
 
     # Here we use delete! (with a bang) because we expect
     # it to always work (and if it does not, it will raise).
-    Repo.delete!(church)
-
-    send_resp(conn, :no_content, "")
+    case Repo.delete(church) do
+      {:ok, _struct} ->
+        conn
+        |> put_flash(:info, "Church was deleted successfully")
+        |> redirect(to: church_path(conn, :index))
+      {:error, _changeset} ->
+        conn
+        |> put_status(:unprocessable_entity)
+        |> put_flash(:warn, "Operation failed")
+        |> redirect(to: church_path(conn, :index))
+    end
   end
 end
