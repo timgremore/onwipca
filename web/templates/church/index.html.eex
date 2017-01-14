@@ -1,7 +1,7 @@
 <div class="o-layout">
   <div class="o-layout__item">
     <h1>Churches</h1>
-    <table class="o-table o-table--tiny">
+    <table class="o-table o-table--tiny o-table--striped">
       <thead>
         <tr>
           <th>Name</th>

@@ -1,0 +1,13 @@
+.o-table--striped {
+
+  th {
+    text-align: left;
+  }
+
+  tbody {
+
+    tr:nth-child(even) {
+      background-color: $silver;
+    }
+  }
+}
