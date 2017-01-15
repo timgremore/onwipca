@@ -1,45 +1,41 @@
-<div class="o-layout o-layout--center">
-  <div class="o-layout__item u-1/2">
-    <%= form_for @changeset, @action, [class: "form__church"], fn f -> %>
-      <%= if @changeset.action do %>
-        <div class="alert alert-danger">
-          <p>Oops, something went wrong! Please check the errors below.</p>
-        </div>
-      <% end %>
+<%= form_for @changeset, @action, [class: "form__church"], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
 
-      <div class="c-input">
-        <%= label f, :name, class: 'c-input__label' %>
-        <%= text_input f, :name, class: 'c-input__control' %>
-      </div>
-
-      <div class="c-input">
-        <%= label f, :url, class: 'c-input__label' %>
-        <%= text_input f, :url, class: 'c-input__control' %>
-      </div>
-
-      <div class="c-input">
-        <%= label f, :street, class: 'c-input__label' %>
-        <%= text_input f, :street, class: 'c-input__control' %>
-      </div>
-
-      <div class="c-input">
-        <%= label f, :city, class: 'c-input__label' %>
-        <%= text_input f, :city, class: 'c-input__control' %>
-      </div>
-
-      <div class="c-input">
-        <%= label f, :state, class: 'c-input__label' %>
-        <%= text_input f, :state, class: 'c-input__control' %>
-      </div>
-
-      <div class="c-input">
-        <%= label f, :zipcode, class: 'c-input__label' %>
-        <%= text_input f, :zipcode, class: 'c-input__control' %>
-      </div>
-
-      <div class="c-input c-input--actions">
-        <button type=submit>Create Church</button>
-      </div>
-    <% end %>
+  <div class="c-input">
+    <%= label f, :name, class: 'c-input__label' %>
+    <%= text_input f, :name, class: 'c-input__control' %>
   </div>
-</div>
+
+  <div class="c-input">
+    <%= label f, :url, class: 'c-input__label' %>
+    <%= text_input f, :url, class: 'c-input__control' %>
+  </div>
+
+  <div class="c-input">
+    <%= label f, :street, class: 'c-input__label' %>
+    <%= text_input f, :street, class: 'c-input__control' %>
+  </div>
+
+  <div class="c-input">
+    <%= label f, :city, class: 'c-input__label' %>
+    <%= text_input f, :city, class: 'c-input__control' %>
+  </div>
+
+  <div class="c-input">
+    <%= label f, :state, class: 'c-input__label' %>
+    <%= text_input f, :state, class: 'c-input__control' %>
+  </div>
+
+  <div class="c-input">
+    <%= label f, :zipcode, class: 'c-input__label' %>
+    <%= text_input f, :zipcode, class: 'c-input__control' %>
+  </div>
+
+  <div class="c-input c-input--actions">
+    <button type=submit>Save</button>
+  </div>
+<% end %>

@@ -78,4 +78,19 @@ defmodule Onwipca.ChurchesTest do
     assert page_source =~ "Church was deleted successfully"
     refute page_source =~ "Emmaus Road"
   end
+
+  @tag :integration
+  test "Edit church" do
+    navigate_to "/"
+
+    click({:link_text, "Login"})
+
+    fill_field({:id, "user_username"}, "jb")
+    fill_field({:id, "user_password"}, "secret")
+    submit_element({:id, "login-form"})
+
+    click({:link_text, "Churches"})
+
+    click({:link_text, "Edit"})
+  end
 end

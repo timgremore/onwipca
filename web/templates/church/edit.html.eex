@@ -1,6 +1,7 @@
-<h2>Edit church</h2>
-
-<%= render "form.html", changeset: @changeset,
-                        action: church_path(@conn, :update, @church) %>
-
-<%= link "Back", to: church_path(@conn, :index) %>
+<div class="o-layout o-layout--center">
+  <div class="o-layout__item u-1/2">
+    <h2>Edit Church</h2>
+    <%= render "form.html", changeset: @changeset,
+                            action: church_path(@conn, :update, @church) %>
+  </div>
+</div>

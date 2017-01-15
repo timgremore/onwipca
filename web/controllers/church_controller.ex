@@ -43,6 +43,15 @@ defmodule Onwipca.ChurchController do
     render(conn, "show.html", church: church)
   end
 
+  def edit(conn, %{"id" => id}) do
+    church = Repo.one from c in Church,
+      where: c.id == ^id
+
+    changeset = Church.changeset(church, %{})
+
+    render(conn, "edit.html", changeset: changeset, church: church)
+  end
+
   def update(conn, %{"id" => id, "church" => church_params}) do
     church = Repo.get!(Church, id)
     changeset = Church.changeset(church, church_params)
