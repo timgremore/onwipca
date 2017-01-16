@@ -28,4 +28,13 @@ defmodule Onwipca.SessionController do
     |> Guardian.Plug.sign_out
     |> redirect(to: "/")
   end
+
+  # handle the case where no authenticated user
+  # was found
+  def unauthenticated(conn, params) do
+    conn
+    |> put_status(401)
+    |> put_flash(:info, "Please login")
+    |> redirect(to: "/login")
+  end
 end

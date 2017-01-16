@@ -1,6 +1,8 @@
 defmodule Onwipca.ChurchController do
   use Onwipca.Web, :controller
 
+  plug Guardian.Plug.EnsureAuthenticated, handler: Onwipca.SessionController
+
   alias Onwipca.Church
   alias Onwipca.User
 

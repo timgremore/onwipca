@@ -44,4 +44,10 @@ defmodule Onwipca.LoginTest do
 
     assert page_source =~ "Invalid username or password"
   end
+
+  @tag :integration
+  test "protected pages" do
+    navigate_to "/churches"
+    assert page_source =~ ~r/You are being .*href="\/login.*redirected/
+  end
 end
