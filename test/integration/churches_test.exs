@@ -93,4 +93,27 @@ defmodule Onwipca.ChurchesTest do
 
     click({:link_text, "Edit"})
   end
+
+  @tag :integration
+  test "Church founders" do
+    founder = insert(:user, first_name: "John", last_name: "Baptist")
+
+    navigate_to "/"
+
+    click({:link_text, "Login"})
+
+    fill_field({:id, "user_username"}, "jb")
+    fill_field({:id, "user_password"}, "secret")
+    submit_element({:id, "login-form"})
+
+    click({:link_text, "Churches"})
+
+    click({:link_text, "Edit"})
+
+    click({:css, "option[value='#{founder.id}']"})
+
+    submit_element({:class, "form__church"})
+
+    assert page_source =~ "John Baptist"
+  end
 end

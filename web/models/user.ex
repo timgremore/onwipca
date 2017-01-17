@@ -2,6 +2,8 @@ defmodule Onwipca.User do
   use Onwipca.Web, :model
   use Arc.Ecto.Schema
 
+  import Ecto.Query, only: [from: 2]
+
   alias Comeonin.Bcrypt
 
   schema "users" do
@@ -55,6 +57,11 @@ defmodule Onwipca.User do
           end
       end
     end
+  end
+
+  def founders do
+    query = from Onwipca.User, order_by: [:last_name, :first_name]
+    Onwipca.Repo.all(query)
   end
 
   defp put_password_hash(changeset) do

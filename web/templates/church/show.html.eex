@@ -1,6 +1,7 @@
 <div class="o-layout">
   <div class="o-layout__item u-1/1">
     <h1><%= @church.name %></h1>
+    <p><strong>Founder:</strong> <%= founder_name(@church.founder) %></p>
     <p><strong>URL:</strong> <%= link @church.url, to: @church.url %></p>
     <p><strong>Street:</strong> <%= @church.street %></p>
     <p><strong>City:</strong> <%= @church.city %></p>

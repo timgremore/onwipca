@@ -1,7 +1,25 @@
 defmodule Onwipca.ChurchView do
   use Onwipca.Web, :view
 
+  alias Onwipca.User
   alias Onwipca.UserView
+
+  def founder_options_for_select do
+    User.founders
+    |> Enum.map(&{founder_name(&1), &1.id})
+  end
+
+  def founder_name(nil) do
+    ""
+  end
+
+  def founder_name(user) do
+    if Ecto.assoc_loaded?(user) do
+      "#{user.first_name} #{user.last_name}"
+    else
+      ""
+    end
+  end
 
   def render("index.json", %{churches: churches}) do
     %{data: render_many(churches, Onwipca.ChurchView, "church.json")}

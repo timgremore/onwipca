@@ -11,6 +11,11 @@
   </div>
 
   <div class="c-input">
+    <%= label f, :founder_id, class: 'c-input__label' %>
+    <%= select f, :founder_id, founder_options_for_select, class: 'c-input__control' %>
+  </div>
+
+  <div class="c-input">
     <%= label f, :url, class: 'c-input__label' %>
     <%= text_input f, :url, class: 'c-input__control' %>
   </div>

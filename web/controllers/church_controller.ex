@@ -39,8 +39,8 @@ defmodule Onwipca.ChurchController do
   end
 
   def show(conn, %{"id" => id}) do
-    church = Repo.one from c in Church,
-      where: c.id == ^id
+    query = from c in Church, where: c.id == ^id
+    church = Repo.one(query) |> Repo.preload(:founder)
 
     render(conn, "show.html", church: church)
   end
@@ -60,6 +60,7 @@ defmodule Onwipca.ChurchController do
 
     case Repo.update(changeset) do
       {:ok, church} ->
+        church = church |> Repo.preload(:founder, force: true)
         render(conn, "show.html", church: church)
       {:error, changeset} ->
         conn
