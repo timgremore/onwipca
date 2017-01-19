@@ -13,7 +13,6 @@ defmodule Onwipca.ChurchesTest do
     {:ok, %{}}
   end
 
-  @tag :integration
   test "Create a new church" do
     navigate_to "/"
 
@@ -37,7 +36,6 @@ defmodule Onwipca.ChurchesTest do
     assert page_source =~ "Jacob's Well"
   end
 
-  @tag :integration
   test "List churches" do
     insert(:church, name: "Emmaus Road")
 
@@ -55,7 +53,6 @@ defmodule Onwipca.ChurchesTest do
     assert page_source =~ "Emmaus Road"
   end
 
-  @tag :integration
   test "Delete church" do
     insert(:church, name: "Emmaus Road")
 
@@ -79,7 +76,6 @@ defmodule Onwipca.ChurchesTest do
     refute page_source =~ "Emmaus Road"
   end
 
-  @tag :integration
   test "Edit church" do
     navigate_to "/"
 
@@ -94,7 +90,6 @@ defmodule Onwipca.ChurchesTest do
     click({:link_text, "Edit"})
   end
 
-  @tag :integration
   test "Church founders" do
     founder = insert(:user, first_name: "John", last_name: "Baptist")
 
