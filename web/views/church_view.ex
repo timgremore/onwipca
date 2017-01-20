@@ -2,7 +2,20 @@ defmodule Onwipca.ChurchView do
   use Onwipca.Web, :view
 
   alias Onwipca.User
+  alias Onwipca.Pathway
   alias Onwipca.UserView
+
+  def pathways do
+    Pathway.pathways
+  end
+
+  def pathway_name(pathway) do
+    if Ecto.assoc_loaded?(pathway) do
+      pathway.name
+    else
+      "missing"
+    end
+  end
 
   def founder_options_for_select do
     User.founders

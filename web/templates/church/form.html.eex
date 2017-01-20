@@ -15,6 +15,16 @@
     <%= select f, :founder_id, founder_options_for_select, class: 'c-input__control' %>
   </div>
 
+  <div class="c-input c-input--inline">
+    <%= label f, :pathway_id, class: 'c-input__label' %>
+    <%= for pathway <- pathways do %>
+      <label class=c-input__label>
+        <%= radio_button f, :pathway_id, pathway.id, class: 'c-input__control' %>
+        <%= pathway.name %>
+      </label>
+    <% end %>
+  </div>
+
   <div class="c-input">
     <%= label f, :url, class: 'c-input__label' %>
     <%= text_input f, :url, class: 'c-input__control' %>

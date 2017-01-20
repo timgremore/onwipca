@@ -77,6 +77,9 @@ defmodule Onwipca.ChurchesTest do
   end
 
   test "Edit church" do
+    pathway = insert(:pathway, name: "Pathway One")
+    insert(:pathway, name: "Pathway Two")
+
     navigate_to "/"
 
     click({:link_text, "Login"})
@@ -88,6 +91,14 @@ defmodule Onwipca.ChurchesTest do
     click({:link_text, "Churches"})
 
     click({:link_text, "Edit"})
+
+    fill_field({:id, "church_name"}, "Living Stone")
+    pathway_radio = find_element(:id, "church_pathway_id_#{pathway.id}")
+    click(pathway_radio)
+    submit_element({:class, "form__church"})
+
+    assert page_source =~ "Living Stone"
+    assert page_source =~ "Pathway One"
   end
 
   test "Church founders" do

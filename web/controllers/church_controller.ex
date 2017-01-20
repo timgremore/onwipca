@@ -5,6 +5,7 @@ defmodule Onwipca.ChurchController do
 
   alias Onwipca.Church
   alias Onwipca.User
+  alias Onwipca.Pathway
 
   def index(conn, _params) do
     churches = Repo.all(Church) |> Repo.preload(:founder)
@@ -40,7 +41,7 @@ defmodule Onwipca.ChurchController do
 
   def show(conn, %{"id" => id}) do
     query = from c in Church, where: c.id == ^id
-    church = Repo.one(query) |> Repo.preload(:founder)
+    church = Repo.one(query) |> Repo.preload([:founder, :pathway])
 
     render(conn, "show.html", church: church)
   end
@@ -60,8 +61,8 @@ defmodule Onwipca.ChurchController do
 
     case Repo.update(changeset) do
       {:ok, church} ->
-        church = church |> Repo.preload(:founder, force: true)
-        render(conn, "show.html", church: church)
+        conn
+        |> redirect(to: church_path(conn, :show, church))
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)

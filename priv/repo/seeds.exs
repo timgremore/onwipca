@@ -13,6 +13,46 @@
 alias Onwipca.Repo
 alias Onwipca.User
 alias Onwipca.Church
+alias Onwipca.Pathway
+
+case Repo.get_by(Pathway, name: "Strategic Planning") do
+  nil -> Pathway.changeset(%Pathway{}, %{
+           name: "Strategic Planning",
+           readiness: "Ready Now - MNA Assessment approved",
+           location: "Strategic areas",
+           training: "Provisional session and coach",
+           sender: "Wisconsin MNA Committee",
+           position: 1
+         })
+         |> Repo.insert_or_update
+  pathway -> pathway
+end
+
+case Repo.get_by(Pathway, name: "Apprentice Planting") do
+  nil -> Pathway.changeset(%Pathway{}, %{
+           name: "Apprentice Planting",
+           readiness: "Need 1-3 year internship (ordainable seminary education)",
+           location: "Within 45 minutes of established church",
+           training: "Above plus internship with sending church",
+           sender: "Local church",
+           position: 2
+         })
+         |> Repo.insert_or_update
+  pathway -> pathway
+end
+
+case Repo.get_by(Pathway, name: "Indigenous Planting") do
+  nil -> Pathway.changeset(%Pathway{}, %{
+           name: "Indigenous Planting",
+           readiness: "5 year church planting training within a program in conjunction with reformed theological seminary",
+           location: "Rural areas, ethnic populations, cities and suburbs",
+           training: "\"On Wisconsin\" training program",
+           sender: "Network or local church",
+           position: 3
+         })
+         |> Repo.insert_or_update
+  pathway -> pathway
+end
 
 user_params = %{
   username: "iam",

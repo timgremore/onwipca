@@ -23,4 +23,14 @@ defmodule Onwipca.Factory do
       founder: build(:user),
     }
   end
+
+  def pathway_factory do
+    %Onwipca.Pathway{
+      name: "Jacob's Well",
+      readiness: "Ready now - MNA Assessment approved",
+      location: "Strategic areas",
+      training: "Provisional session and coach",
+      sender: "Wisconsin MNA Committee"
+    }
+  end
 end

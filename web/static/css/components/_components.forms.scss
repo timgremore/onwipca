@@ -22,4 +22,12 @@
       @extend .c-btn--primary;
     }
   }
+
+  &.c-input--inline {
+
+    .c-input__control {
+      display: inline-block;
+      width: auto;
+    }
+  }
 }

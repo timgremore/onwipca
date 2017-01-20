@@ -5,6 +5,7 @@ defmodule Onwipca.Church do
   import Onwipca.Locator
 
   alias Onwipca.User
+  alias Onwipca.Pathway
 
   schema "churches" do
     field :name, :string
@@ -20,6 +21,7 @@ defmodule Onwipca.Church do
     field :stage, :integer, default: 1
 
     belongs_to :founder, User, foreign_key: :founder_id
+    belongs_to :pathway, Pathway
 
     timestamps()
   end
@@ -29,7 +31,7 @@ defmodule Onwipca.Church do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :founder_id, :street, :city, :state, :zipcode, :particularized_at, :url, :stage])
+    |> cast(params, [:name, :founder_id, :pathway_id, :street, :city, :state, :zipcode, :particularized_at, :url, :stage])
     |> cast_attachments(params, [:photo])
     |> validate_required([:name, :street, :city, :state, :zipcode, :url])
     |> locate

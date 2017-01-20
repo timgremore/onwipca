@@ -35,5 +35,6 @@ defmodule Onwipca.Router do
     resources "/login", SessionController, only: [:create]
     resources "/my-account", UserController, only: [:show], singleton: true
     resources "/churches", ChurchController
+    resources "/pathways", PathwayController
   end
 end

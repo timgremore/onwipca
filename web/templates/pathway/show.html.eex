@@ -1,0 +1,23 @@
+<h2>Show pathway</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @pathway.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @pathway.description %>
+  </li>
+
+  <li>
+    <strong>Position:</strong>
+    <%= @pathway.position %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: pathway_path(@conn, :edit, @pathway) %>
+<%= link "Back", to: pathway_path(@conn, :index) %>
