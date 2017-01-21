@@ -9,10 +9,12 @@ import Pathways from './pathways'
 import Funding from './funding'
 
 import { fetchChurches } from '../actions/churches';
+import { fetchPathways } from '../actions/pathways';
 
 class Main extends Component {
   componentDidMount() {
     const { dispatch } = this.props
+    dispatch(fetchPathways())
     dispatch(fetchChurches())
   }
 

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import { connect } from 'react-redux'
-import { filter } from 'lodash'
+import { filter, orderBy } from 'lodash'
 
 import { selectStage } from '../actions/churches'
 
@@ -10,6 +10,7 @@ class PathwaysMap extends Component {
     const position = [44.7844, -88.0]
     const zoom = 7
     const attribution = "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>"
+    const pathways = orderBy(this.props.pathways, ['position', 'name'])
     const churches = filter(this.props.churches, { 'stage': this.props.selectedStage })
     const markers = churches.map((church, index) => {
       const markerPosition = [church.latitude, church.longitude]
@@ -89,7 +90,7 @@ class PathwaysMap extends Component {
                       </p>
                       <p>
                         <strong>Training:</strong><br />
-                        Above plus internship with sending church 
+                        Above plus internship with sending church
                       </p>
                       <p>
                         <strong>Sender:</strong><br />
@@ -136,11 +137,12 @@ class PathwaysMap extends Component {
 }
 
 function mapStateToProps(state) {
-  const { churches } = state
+  const { churches, pathways } = state
 
   return {
     churches: churches.items,
     selectedStage: churches.selectedStage,
+    pathways: pathways.items,
   }
 }
 

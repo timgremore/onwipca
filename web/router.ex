@@ -23,6 +23,7 @@ defmodule Onwipca.Router do
     pipe_through :api
 
     resources "/churches", Api.ChurchController, only: [:index]
+    resources "/pathways", Api.PathwayController, only: [:index]
   end
 
   scope "/", Onwipca do
