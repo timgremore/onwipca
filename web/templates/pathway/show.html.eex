@@ -1,23 +1,10 @@
-<h2>Show pathway</h2>
-
-<ul>
-
-  <li>
-    <strong>Name:</strong>
-    <%= @pathway.name %>
-  </li>
-
-  <li>
-    <strong>Description:</strong>
-    <%= @pathway.description %>
-  </li>
-
-  <li>
-    <strong>Position:</strong>
-    <%= @pathway.position %>
-  </li>
-
-</ul>
-
-<%= link "Edit", to: pathway_path(@conn, :edit, @pathway) %>
-<%= link "Back", to: pathway_path(@conn, :index) %>
+<div class="o-layout">
+  <div class="o-layout__item u-1/1">
+    <h1><%= @pathway.name %></h1>
+    <p><strong>Readiness:</strong> <%= @pathway.readiness %></p>
+    <p><strong>Location:</strong> <%= @pathway.location %></p>
+    <p><strong>Training:</strong> <%= @pathway.training %></p>
+    <p><strong>Sender:</strong> <%= @pathway.sender %></p>
+    <p><strong>Position:</strong> <%= @pathway.position %></p>
+  </div>
+</div>

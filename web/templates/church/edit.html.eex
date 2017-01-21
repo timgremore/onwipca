@@ -1,6 +1,6 @@
-<div class="o-layout o-layout--center">
+<div class="o-layout">
   <div class="o-layout__item u-1/2">
-    <h2>Edit Church</h2>
+    <h1><%= @church.name %></h1>
     <%= render "form.html", changeset: @changeset,
                             action: church_path(@conn, :update, @church) %>
   </div>

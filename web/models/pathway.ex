@@ -9,6 +9,8 @@ defmodule Onwipca.Pathway do
     field :sender, :string
     field :position, :integer
 
+    has_many :churches, Onwipca.Church
+
     timestamps()
   end
 
@@ -24,5 +26,11 @@ defmodule Onwipca.Pathway do
   def pathways do
     query = from Onwipca.Pathway, order_by: [:position]
     Onwipca.Repo.all(query)
+  end
+
+  def church_count(pathway) do
+    pathway_id = pathway.id
+    query = from c in Onwipca.Church, where: c.pathway_id == ^pathway_id
+    Onwipca.Repo.aggregate(query, :count, :id)
   end
 end

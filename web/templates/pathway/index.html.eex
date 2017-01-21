@@ -1,30 +1,29 @@
-<h2>Listing pathways</h2>
+<div class="o-layout">
+  <div class="o-layout__item">
+    <h1>Pathways</h1>
+    <table class="o-table o-table--tiny o-table--striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Church Count</th>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Position</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for pathway <- @pathways do %>
+          <tr>
+            <td><%= pathway.name %></td>
+            <td><%= church_count(pathway) %></td>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for pathway <- @pathways do %>
-    <tr>
-      <td><%= pathway.name %></td>
-      <td><%= pathway.description %></td>
-      <td><%= pathway.position %></td>
+            <td class="text-right">
+              <%= link "Show", to: pathway_path(@conn, :show, pathway), class: "" %>
+              <%= link "Edit", to: pathway_path(@conn, :edit, pathway), class: "" %>
+              <%= link "Delete", to: pathway_path(@conn, :delete, pathway), method: :delete, data: [confirm: "Are you sure?"], class: "" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-      <td class="text-right">
-        <%= link "Show", to: pathway_path(@conn, :show, pathway), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: pathway_path(@conn, :edit, pathway), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: pathway_path(@conn, :delete, pathway), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<%= link "New pathway", to: pathway_path(@conn, :new) %>
+    <%= link "New pathway", to: pathway_path(@conn, :new) %>

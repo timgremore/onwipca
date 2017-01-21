@@ -5,25 +5,43 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= label f, :name, class: "control-label" %>
-    <%= text_input f, :name, class: "form-control" %>
+  <div class="c-input">
+    <%= label f, :name, class: "c-input__label" %>
+    <%= text_input f, :name, class: "c-input__control" %>
     <%= error_tag f, :name %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :description, class: "control-label" %>
-    <%= text_input f, :description, class: "form-control" %>
-    <%= error_tag f, :description %>
+  <div class="c-input">
+    <%= label f, :readiness, class: "c-input__label" %>
+    <%= text_input f, :readiness, class: "c-input__control" %>
+    <%= error_tag f, :readiness %>
   </div>
 
-  <div class="form-group">
-    <%= label f, :position, class: "control-label" %>
-    <%= number_input f, :position, class: "form-control" %>
+  <div class="c-input">
+    <%= label f, :location, class: "c-input__label" %>
+    <%= text_input f, :location, class: "c-input__control" %>
+    <%= error_tag f, :location %>
+  </div>
+
+  <div class="c-input">
+    <%= label f, :training, class: "c-input__label" %>
+    <%= text_input f, :training, class: "c-input__control" %>
+    <%= error_tag f, :training %>
+  </div>
+
+  <div class="c-input">
+    <%= label f, :sender, class: "c-input__label" %>
+    <%= text_input f, :sender, class: "c-input__control" %>
+    <%= error_tag f, :sender %>
+  </div>
+
+  <div class="c-input">
+    <%= label f, :position, class: "c-input__label" %>
+    <%= number_input f, :position, class: "c-input__control" %>
     <%= error_tag f, :position %>
   </div>
 
-  <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+  <div class="c-input c-input--actions">
+    <button type=submit>Save</button>
   </div>
 <% end %>
