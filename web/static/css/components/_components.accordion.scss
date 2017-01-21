@@ -85,10 +85,11 @@
     }
 
     div {
+      height: 0px;
+      opacity: 0;
       position: relative;
       overflow: hidden;
-      opacity: 1;
-      transform: translate(0, 0);
+      transform: translate(0px, 50%);
       @extend .transition;
     }
 
@@ -103,10 +104,10 @@
       &:checked {
 
         &~div {
-          margin-top: 0;
-          max-height: 0;
-          opacity: 0;
-          transform: translate(0px, 50%);
+          height: auto;
+          max-height: 500px;
+          opacity: 1;
+          transform: translate(0, 0);
         }
 
         &~i {

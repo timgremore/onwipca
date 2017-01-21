@@ -10,6 +10,12 @@ defmodule Onwipca.Api.PathwayView do
   end
 
   def render("pathway.json", %{pathway: pathway}) do
-    %{id: pathway.id}
+    %{id: pathway.id,
+      name: pathway.name,
+      readiness: pathway.readiness,
+      location: pathway.location,
+      training: pathway.training,
+      sender: pathway.sender,
+      position: pathway.position}
   end
 end

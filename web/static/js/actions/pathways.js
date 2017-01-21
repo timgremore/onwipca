@@ -2,6 +2,7 @@ import fetch from 'isomorphic-fetch'
 
 export const RECEIVE_PATHWAYS = 'RECEIVE_PATHWAYS';
 export const REQUEST_PATHWAYS = 'REQUEST_PATHWAYS';
+export const SELECT_PATHWAY = 'SELECT_PATHWAY';
 
 export function requestPathways(json) {
   return {
@@ -16,10 +17,10 @@ export function receivePathways(json) {
   }
 }
 
-export function selectStage(stage) {
+export function selectPathway(pathway) {
   return {
-    type: SELECT_STAGE,
-    stage: stage,
+    type: SELECT_PATHWAY,
+    pathway: pathway,
   }
 }
 

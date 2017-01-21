@@ -3,7 +3,7 @@ import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import { connect } from 'react-redux'
 import { filter, orderBy } from 'lodash'
 
-import { selectStage } from '../actions/churches'
+import Pathway from './pathway'
 
 class PathwaysMap extends Component {
   render() {
@@ -11,7 +11,13 @@ class PathwaysMap extends Component {
     const zoom = 7
     const attribution = "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>"
     const pathways = orderBy(this.props.pathways, ['position', 'name'])
-    const churches = filter(this.props.churches, { 'stage': this.props.selectedStage })
+
+    let churches = this.props.churches
+
+    if (this.props.selectedPathway) {
+      churches = filter(churches, { 'pathway_id': this.props.selectedPathway.id })
+    }
+
     const markers = churches.map((church, index) => {
       const markerPosition = [church.latitude, church.longitude]
 
@@ -44,88 +50,11 @@ class PathwaysMap extends Component {
               <div className="c-accordion">
                 <h1 className="u-text-center">Church Plant Pathways</h1>
                 <ul className="o-list-bare">
-                  <li>
-                    <input
-                      type="checkbox"
-                      value="4"
-                      onChange={() => this.props.onStageClick(4)}
-                      checked={this.props.selectedStage != 4} />
-                    <i></i>
-                    <h2 className="u-margin-bottom-none">Strategic Planting</h2>
-                    <div>
-                      <p>
-                        <strong>Church Planter Readiness:</strong><br />
-                        Ready now - MNA Assessment approved
-                      </p>
-                      <p>
-                        <strong>Probable Location:</strong><br />
-                        Strategic areas
-                      </p>
-                      <p>
-                        <strong>Training:</strong><br />
-                        Provisional session and coach
-                      </p>
-                      <p>
-                        <strong>Sender:</strong><br />
-                        Wisconsin MNA Committee
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      value="3"
-                      onChange={() => this.props.onStageClick(3)}
-                      checked={this.props.selectedStage != 3} />
-                    <i></i>
-                    <h2 className="u-margin-bottom-none">Apprentice Planting</h2>
-                    <div>
-                      <p>
-                        <strong>Church Planter Readiness:</strong><br />
-                        Need 1-3 year internship (ordainable seminary education)
-                      </p>
-                      <p>
-                        <strong>Probable Location:</strong><br />
-                        Within 45 minutes of established church
-                      </p>
-                      <p>
-                        <strong>Training:</strong><br />
-                        Above plus internship with sending church
-                      </p>
-                      <p>
-                        <strong>Sender:</strong><br />
-                        Local church
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <input
-                      type="checkbox"
-                      value="2"
-                      onChange={() => this.props.onStageClick(5)}
-                      checked={this.props.selectedStage != 5} />
-                    <i></i>
-                    <h2 className="u-margin-bottom-none">Indigenous Planting</h2>
-                    <div>
-                      <p>
-                        <strong>Church Planter Readiness:</strong><br />
-                        5 year church planting training<br />
-                        Program in conjunction with reformed theological seminary
-                      </p>
-                      <p>
-                        <strong>Probable Location:</strong><br />
-                        Rural areas, ethnic populations, cities and suburbs
-                      </p>
-                      <p>
-                        <strong>Training:</strong><br />
-                        "On Wisconsin" training program
-                      </p>
-                      <p>
-                        <strong>Sender:</strong><br />
-                        Network or local church
-                      </p>
-                    </div>
-                  </li>
+                  {pathways.map((pathway, index) => {
+                    return (
+                      <Pathway key={index} pathway={pathway} />
+                    )
+                  })}
                 </ul>
               </div>
             </div>
@@ -141,7 +70,7 @@ function mapStateToProps(state) {
 
   return {
     churches: churches.items,
-    selectedStage: churches.selectedStage,
+    selectedPathway: pathways.selected,
     pathways: pathways.items,
   }
 }
