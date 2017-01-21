@@ -18,16 +18,10 @@ class Mast extends Component {
 
               <div className="c-navbar o-pack u-float-right u-1/2">
                 <div className="o-pack__item">
-                  <Scrollchor to="history" animate={{offset: offset}}>History</Scrollchor>
-                </div>
-                <div className="o-pack__item">
                   <Scrollchor to="mission" animate={{offset: offset}}>Mission</Scrollchor>
                 </div>
                 <div className="o-pack__item">
                   <Scrollchor to="pathways" animate={{offset: offset}}>Pathways</Scrollchor>
-                </div>
-                <div className="o-pack__item">
-                  <Scrollchor to="directory" animate={{offset: offset}}>Directory</Scrollchor>
                 </div>
                 <div className="o-pack__item">
                   <Scrollchor

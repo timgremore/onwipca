@@ -22,10 +22,8 @@ class Main extends Component {
     return (
       <div>
         <Home />
-        <History />
         <Mission />
         <Pathways />
-        <Directory />
         <Funding />
       </div>
     )
