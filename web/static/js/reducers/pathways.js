@@ -1,11 +1,12 @@
 import {
   RECEIVE_PATHWAYS,
   SELECT_PATHWAY,
+  DESELECT_PATHWAY,
 } from '../actions/pathways';
 
 const pathways = (state = {
   items: [],
-  selected: null,
+  selected: 0,
 }, action) => {
 
   switch (action.type) {
@@ -15,8 +16,14 @@ const pathways = (state = {
       })
 
     case SELECT_PATHWAY:
+      const selectedPathway = state.selected == action.pathway ? 0 : action.pathway
       return Object.assign({}, state, {
-        selected: action.pathway,
+        selected: selectedPathway,
+      })
+
+    case DESELECT_PATHWAY:
+      return Object.assign({}, state, {
+        selected: 0,
       })
 
     default:

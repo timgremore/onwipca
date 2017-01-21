@@ -51,8 +51,10 @@
 
 .c-accordion {
 
-  h1, h2, p {
+  h1, h2, h3, p {
     color: $blue;
+    min-height: inuit-rem(36px);
+    padding: inuit-rem(8px) 0px;
   }
 
   li {

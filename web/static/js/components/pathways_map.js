@@ -3,6 +3,7 @@ import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import { connect } from 'react-redux'
 import { filter, orderBy } from 'lodash'
 
+import { deselectPathway } from '../actions/pathways'
 import Pathway from './pathway'
 
 class PathwaysMap extends Component {
@@ -11,11 +12,15 @@ class PathwaysMap extends Component {
     const zoom = 7
     const attribution = "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>"
     const pathways = orderBy(this.props.pathways, ['position', 'name'])
+    const particularizedChurches = filter(this.props.churches, 'particularized_at')
+    const churchPlants = filter(this.props.churches, (church) => {
+      return !!church.particularized_at && church.pathway_id
+    })
 
     let churches = this.props.churches
 
     if (this.props.selectedPathway) {
-      churches = filter(churches, { 'pathway_id': this.props.selectedPathway.id })
+      churches = filter(churches, { 'pathway_id': +this.props.selectedPathway.id })
     }
 
     const markers = churches.map((church, index) => {
@@ -48,7 +53,8 @@ class PathwaysMap extends Component {
             {markers}
             <div className="c-panel u-1/3 u-padding">
               <div className="c-accordion">
-                <h1 className="u-text-center">Church Plant Pathways</h1>
+                <h1 className="u-text-center u-margin-bottom-tiny">On Wisconsin PCA</h1>
+                <p>The Wisconsin Presbytery consists of {particularizedChurches.length} particularized churches and {churchPlants.length} church plants.</p>
                 <ul className="o-list-bare">
                   {pathways.map((pathway, index) => {
                     return (
@@ -77,8 +83,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onStageClick: (stage) => {
-      dispatch(selectStage(stage))
+    deselectPathway: () => {
+      dispatch(deselectPathway())
     }
   }
 }

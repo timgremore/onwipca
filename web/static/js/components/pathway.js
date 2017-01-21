@@ -7,31 +7,29 @@ class Pathway extends Component {
   render() {
     const { pathway, selectedPathway } = this.props
 
-    console.log((selectedPathway ? selectedPathway.id : ' ') + ", " + pathway.id)
-
     return (
       <li>
         <input
           type="checkbox"
           value={pathway.id}
           onChange={() => this.props.onPathwayClick(pathway)}
-          checked={selectedPathway && selectedPathway.id == pathway.id} />
+          checked={selectedPathway.id == pathway.id} />
         <i></i>
-        <h2 className="u-margin-bottom-none">{pathway.name}</h2>
+        <h3 className="u-margin-bottom-none">{pathway.name}</h3>
         <div>
-          <p>
+          <p className="u-margin-bottom-tiny">
             <strong>Church Planter Readiness:</strong><br />
             {pathway.readiness}
           </p>
-          <p>
+          <p className="u-margin-bottom-tiny">
             <strong>Probable Location:</strong><br />
             {pathway.location}
           </p>
-          <p>
+          <p className="u-margin-bottom-tiny">
             <strong>Training:</strong><br />
             {pathway.training}
           </p>
-          <p>
+          <p className="u-margin-bottom-large">
             <strong>Sender:</strong><br />
             {pathway.sender}
           </p>

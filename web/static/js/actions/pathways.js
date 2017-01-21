@@ -2,7 +2,8 @@ import fetch from 'isomorphic-fetch'
 
 export const RECEIVE_PATHWAYS = 'RECEIVE_PATHWAYS';
 export const REQUEST_PATHWAYS = 'REQUEST_PATHWAYS';
-export const SELECT_PATHWAY = 'SELECT_PATHWAY';
+export const SELECT_PATHWAY   = 'SELECT_PATHWAY';
+export const DESELECT_PATHWAY = 'DESELECT_PATHWAY';
 
 export function requestPathways(json) {
   return {
@@ -21,6 +22,12 @@ export function selectPathway(pathway) {
   return {
     type: SELECT_PATHWAY,
     pathway: pathway,
+  }
+}
+
+export function deselectPathway() {
+  return {
+    type: DESELECT_PATHWAY,
   }
 }
 
