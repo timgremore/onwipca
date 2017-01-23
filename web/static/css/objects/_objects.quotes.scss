@@ -1,0 +1,25 @@
+q, blockquote {
+  font-style: italic;
+  color: darken($silver, 20%);
+  position: relative;
+  margin: inuit-rem($inuit-global-spacing-unit);
+  quotes: "\201C" "\201D" "\2018" "\2019";
+
+  &:before {
+    position: absolute;
+    top: inuit-rem(-42px);
+    left: inuit-rem(-46px);
+    font-size: inuit-rem(96px);
+    color: $silver;
+  }
+
+  &:after {
+    content: no-close-quote;
+  }
+
+  span {
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+}

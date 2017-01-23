@@ -1,0 +1,12 @@
+<div class="o-layout">
+  <div class="o-layout__item u-1/1">
+    <h1><%= @church.name %></h1>
+    <p><strong>Founder:</strong> <%= founder_name(@church.founder) %></p>
+    <p><strong>Pathway:</strong> <%= pathway_name(@church.pathway) %></p>
+    <p><strong>URL:</strong> <%= link @church.url, to: @church.url %></p>
+    <p><strong>Street:</strong> <%= @church.street %></p>
+    <p><strong>City:</strong> <%= @church.city %></p>
+    <p><strong>State:</strong> <%= @church.state %></p>
+    <p><strong>Zipcode:</strong> <%= @church.zipcode %></p>
+  </div>
+</div>

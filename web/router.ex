@@ -7,26 +7,35 @@ defmodule Onwipca.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug Openmaize.Authenticate
+  end
+
+  pipeline :browser_auth do
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.LoadResource
+    plug Onwipca.Plug.CurrentUser
   end
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", Onwipca do
+  scope "/api", Onwipca, as: :api do
     pipe_through :api
 
-    resources "/churches", ChurchController, only: [:index]
+    resources "/churches", Api.ChurchController, only: [:index]
+    resources "/pathways", Api.PathwayController, only: [:index]
   end
 
   scope "/", Onwipca do
-    pipe_through :browser
+    pipe_through [:browser, :browser_auth]
 
     get "/", PageController, :index
+    get "/login", SessionController, :new
+    get "/logout", SessionController, :destroy
 
-    resources "/users", UserController
-    resources "/sessions", SessionController, only: [:new, :create, :delete]
+    resources "/login", SessionController, only: [:create]
+    resources "/my-account", UserController, only: [:show], singleton: true
+    resources "/churches", ChurchController
+    resources "/pathways", PathwayController
   end
-
 end

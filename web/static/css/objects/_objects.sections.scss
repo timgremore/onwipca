@@ -25,8 +25,13 @@ section {
   }
 
   &#mission {
-    background-color: $white;
+    background-color: lighten($silver, 24%);
+    background-image: url(/images/logo.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     color: $blue;
+    min-height: inuit-rem(700px)
   }
 
   &#pathways {

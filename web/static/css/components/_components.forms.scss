@@ -1,0 +1,33 @@
+.c-input {
+  display: block;
+  margin: $inuit-global-spacing-unit 0px;
+
+  .c-input__label {
+    display: block;
+    width: 100%;
+  }
+
+  .c-input__control {
+    display: block;
+    width: 100%;
+    padding: $inuit-global-spacing-unit-tiny;
+  }
+
+  &.c-input--actions {
+    margin-top: $inuit-global-spacing-unit-large;
+
+    button {
+      border: none;
+      @extend .c-btn;
+      @extend .c-btn--primary;
+    }
+  }
+
+  &.c-input--inline {
+
+    .c-input__control {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}

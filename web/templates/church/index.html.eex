@@ -1,0 +1,27 @@
+<div class="o-layout">
+  <div class="o-layout__item">
+    <h1>Churches</h1>
+    <table class="o-table o-table--tiny o-table--striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Founder</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= for church <- @churches do %>
+            <tr>
+              <td><%= church.name %></td>
+              <td><%= founder_name(church.founder) %></td>
+              <td>
+                <%= link "Show", to: church_path(@conn, :show, church), class: "" %>
+                <%= link "Edit", to: church_path(@conn, :edit, church), class: "" %>
+                <%= link "Delete", to: church_path(@conn, :delete, church), method: :delete, data: [confirm: "Are you sure?"], class: "" %>
+              </td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

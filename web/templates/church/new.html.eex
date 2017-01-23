@@ -1,0 +1,7 @@
+<div class="o-layout o-layout--center">
+  <div class="o-layout__item u-1/2">
+    <h2>New Church</h2>
+    <%= render "form.html", changeset: @church,
+                            action: church_path(@conn, :create) %>
+  </div>
+</div>

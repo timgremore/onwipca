@@ -19,7 +19,7 @@ defmodule Onwipca.Mixfile do
   def application do
     [mod: {Onwipca, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :ex_machina, :openmaize_jwt, :arc_ecto,
+                    :phoenix_ecto, :postgrex, :comeonin, :guardian, :ex_machina, :arc_ecto,
                     :ex_aws, :hackney, :poison, :geocoder]]
   end
 
@@ -39,9 +39,10 @@ defmodule Onwipca.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
+     {:comeonin, "~> 3.0"},
+     {:guardian, "~> 0.14.0"},
      {:hound, "~> 1.0"},
      {:ex_machina, "~> 1.0"},
-     {:openmaize_jwt, "~> 1.0.0"},
      {:arc_ecto, "~> 0.5.0-rc1"},
      {:arc, "~> 0.6.0-rc3"},
      {:ex_aws, "~> 1.0.0-rc3"},

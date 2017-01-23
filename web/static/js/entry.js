@@ -3,7 +3,9 @@ import ReactDOM from "react-dom"
 
 import Root from "./root"
 
-ReactDOM.render(
-  <Root />,
-  document.getElementById('fph-app')
-)
+if (document.getElementById('onwipca-app')) {
+  ReactDOM.render(
+    <Root />,
+    document.getElementById('onwipca-app')
+  )
+}

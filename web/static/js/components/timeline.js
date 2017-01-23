@@ -27,7 +27,7 @@ class Timeline extends Component {
           return (
             <li key={index} className={timelineItemClass}>
               <div className="c-timeline__item__container">
-                <img src={item.photo} alt="{item.name}" />
+                <img src={item.logo} alt="{item.name}" />
               </div>
               <div className="c-timeline__item__container">
                 <h4 className="u-margin-none">{item.name}</h4>

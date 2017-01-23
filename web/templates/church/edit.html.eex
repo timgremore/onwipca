@@ -1,0 +1,7 @@
+<div class="o-layout">
+  <div class="o-layout__item u-1/2">
+    <h1><%= @church.name %></h1>
+    <%= render "form.html", changeset: @changeset,
+                            action: church_path(@conn, :update, @church) %>
+  </div>
+</div>

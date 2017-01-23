@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <%= if Guardian.Plug.current_token(@conn) do %>
+      <meta name='guardian-token' content="<%= Guardian.Plug.current_token(@conn) %>">
+    <% end %>
 
     <title>On WI PCA</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
@@ -15,7 +18,25 @@
   </head>
 
   <body>
-    <div id="fph-app"></div>
+    <%= if Onwipca.SharedView.management_page?(@conn) do %>
+      <div class="o-layout">
+        <%= render Onwipca.SharedView, "sidebar.html", conn: @conn, user: @current_user %>
+
+        <div class="o-layout__item u-2/3">
+          <%= unless is_nil(get_flash(@conn, :info)) do %>
+            <h1><%= get_flash(@conn, :info) %></h1>
+          <% end %>
+
+          <%= render @view_module, @view_template, assigns %>
+        </div>
+      </div>
+    <% else %>
+      <%= unless is_nil(get_flash(@conn, :info)) do %>
+        <h1><%= get_flash(@conn, :info) %></h1>
+      <% end %>
+
+      <%= render @view_module, @view_template, assigns %>
+    <% end %>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

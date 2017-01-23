@@ -1,0 +1,7 @@
+<div class="o-layout">
+  <div class="o-layout__item u-1/2">
+    <h1><%= @pathway.name %></h1>
+    <%= render "form.html", changeset: @changeset,
+                            action: pathway_path(@conn, :update, @pathway) %>
+  </div>
+</div>

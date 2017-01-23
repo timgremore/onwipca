@@ -1,25 +1,40 @@
 defmodule Onwipca.SessionController do
   use Onwipca.Web, :controller
 
-  import Onwipca.Authorize
+  alias Onwipca.User
 
-  plug Openmaize.Login when action in [:create]
-  #plug Openmaize.Login, [unique_id: :email] when action in [:create]
+  plug :scrub_params, "user" when action in [:create]
 
   def new(conn, _params) do
     render conn, "new.html"
   end
 
-  def create(%Plug.Conn{private: %{openmaize_error: message}} = conn, _params) do
-    auth_error conn, message, session_path(conn, :new)
-  end
-  def create(%Plug.Conn{private: %{openmaize_user: %{id: id}}} = conn, _params) do
-    put_session(conn, :user_id, id)
-    |> auth_info("You have been logged in", user_path(conn, :index))
+  def create(conn, %{"user" => params}) do
+    case User.find_and_authenticate(params) do
+      {:ok, user, _} ->
+          conn
+          |> Guardian.Plug.sign_in(user)
+          |> put_flash(:info, "Welcome #{user.first_name} #{user.last_name}")
+          |> redirect(to: user_path(conn, :show))
+      {:error, changeset, _} ->
+        conn
+        |> put_flash(:info, "Invalid username or password")
+        |> render("new.html", changeset: changeset)
+    end
   end
 
-  def delete(conn, _params) do
-    configure_session(conn, drop: true)
-    |> auth_info("You have been logged out", page_path(conn, :index))
+  def destroy(conn, _params) do
+    conn
+    |> Guardian.Plug.sign_out
+    |> redirect(to: "/")
+  end
+
+  # handle the case where no authenticated user
+  # was found
+  def unauthenticated(conn, params) do
+    conn
+    |> put_status(401)
+    |> put_flash(:info, "Please login")
+    |> redirect(to: "/login")
   end
 end

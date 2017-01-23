@@ -7,7 +7,6 @@ defmodule Onwipca.IntegrationCase do
       use Hound.Helpers
 
       import Ecto, only: [build_assoc: 2]
-      import Ecto.Model
       import Ecto.Query, only: [from: 2]
       import Onwipca.Router.Helpers
       import Onwipca.Factory
