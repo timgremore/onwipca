@@ -45,6 +45,7 @@ defmodule Onwipca.ChurchView do
   def render("church.json", %{church: church}) do
     %{id: church.id,
       name: church.name,
+      contact: church.contact,
       street: church.street,
       city: church.city,
       state: church.state,
@@ -55,6 +56,6 @@ defmodule Onwipca.ChurchView do
       latitude: church.latitude,
       longitude: church.longitude,
       pathway_id: church.pathway_id,
-      photo: Onwipca.Photo.url({church.photo, church}, :medium)}
+      logo: Onwipca.Photo.url({church.logo, church})}
   end
 end

@@ -14,7 +14,7 @@ class PathwaysMap extends Component {
     const pathways = orderBy(this.props.pathways, ['position', 'name'])
     const particularizedChurches = filter(this.props.churches, 'particularized_at')
     const churchPlants = filter(this.props.churches, (church) => {
-      return !!church.particularized_at && church.pathway_id
+      return !!church.particularized_at == false && church.pathway_id
     })
 
     let churches = this.props.churches
@@ -29,9 +29,9 @@ class PathwaysMap extends Component {
       return (
         <Marker key={index} position={markerPosition}>
           <Popup>
-            <div>
+            <div className="u-text-center">
               <h3>{church.name}</h3>
-              <img src={church.photo} alt="{church.name}" />
+              <img src={church.logo} alt="{church.name}" />
             </div>
           </Popup>
         </Marker>
