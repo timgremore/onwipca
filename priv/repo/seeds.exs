@@ -55,14 +55,14 @@ alias Onwipca.Pathway
                         end
 
 user_params = %{
-  username: "iam",
-  first_name: "I",
-  last_name: "Am",
-  email: "i@am.com",
+  username: "timgremore",
+  first_name: "Tim",
+  last_name: "Gremore",
+  email: "timgremore@gmail.com",
   password: "secret"
 }
 
-founder = case Repo.get_by(User, username: "iam") do
+founder = case Repo.get_by(User, username: "timgremore") do
             nil ->
               User.auth_changeset(%User{}, user_params)
               |> Repo.insert_or_update
