@@ -18,3 +18,7 @@ $blue: darken($base-color, 40%);
 $dark-blue: darken($base-color, 40%);
 $orange: #EB4511;
 $black: #333;
+
+$pathway-one: lighten($blue, 20%);
+$pathway-two: $orange;
+$pathway-three: $red;

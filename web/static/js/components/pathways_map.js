@@ -5,6 +5,9 @@ import { filter, orderBy } from 'lodash'
 
 import { deselectPathway } from '../actions/pathways'
 import Pathway from './pathway'
+import ChurchMarker from './church_marker'
+
+const classNames = require('classnames')
 
 class PathwaysMap extends Component {
   render() {
@@ -24,47 +27,42 @@ class PathwaysMap extends Component {
     }
 
     const markers = churches.map((church, index) => {
-      const markerPosition = [church.latitude, church.longitude]
-
       return (
-        <Marker key={index} position={markerPosition}>
-          <Popup>
-            <div className="u-text-center">
-              <h3>{church.name}</h3>
-              <img src={church.logo} alt="{church.name}" />
-            </div>
-          </Popup>
-        </Marker>
+        <ChurchMarker key={index} church={church} index={index} />
       )
     })
+
+    const map = (
+      <Map
+        className="c-map"
+        center={position}
+        zoomControl={true}
+        scrollWheelZoom={false}
+        zoom={zoom}>
+        <TileLayer
+          url="https://api.mapbox.com/styles/v1/timgremore/ciwgbl364007q2qoih4a4wb4a/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGltZ3JlbW9yZSIsImEiOiJtY01hT2lNIn0.jS2hKzkpWj83rJSrlOz6vg"
+          attribution={attribution} />
+        {markers}
+        <div className="c-panel u-1/3 u-padding">
+          <div className="c-accordion">
+            <h1 className="u-text-center u-margin-bottom-tiny">On Wisconsin PCA</h1>
+            <p>The Wisconsin Presbytery consists of {particularizedChurches.length} particularized churches and {churchPlants.length} church plants.</p>
+            <ul className="o-list-bare">
+              {pathways.map((pathway, index) => {
+                return (
+                  <Pathway key={index} pathway={pathway} />
+                )
+              })}
+            </ul>
+          </div>
+        </div>
+      </Map>
+    )
 
     return (
       <div className="o-layout o-layout--flush o-layout--center">
         <div className="o-layout__item u-1/1">
-          <Map
-            className="c-map"
-            center={position}
-            zoomControl={true}
-            scrollWheelZoom={false}
-            zoom={zoom}>
-            <TileLayer
-              url="https://api.mapbox.com/styles/v1/timgremore/ciwgbl364007q2qoih4a4wb4a/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGltZ3JlbW9yZSIsImEiOiJtY01hT2lNIn0.jS2hKzkpWj83rJSrlOz6vg"
-              attribution={attribution} />
-            {markers}
-            <div className="c-panel u-1/3 u-padding">
-              <div className="c-accordion">
-                <h1 className="u-text-center u-margin-bottom-tiny">On Wisconsin PCA</h1>
-                <p>The Wisconsin Presbytery consists of {particularizedChurches.length} particularized churches and {churchPlants.length} church plants.</p>
-                <ul className="o-list-bare">
-                  {pathways.map((pathway, index) => {
-                    return (
-                      <Pathway key={index} pathway={pathway} />
-                    )
-                  })}
-                </ul>
-              </div>
-            </div>
-          </Map>
+          {map}
         </div>
       </div>
     )

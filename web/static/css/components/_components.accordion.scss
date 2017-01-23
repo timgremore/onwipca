@@ -50,9 +50,9 @@
 }
 
 .c-accordion {
+  color: $blue;
 
   h1, h2, h3, p {
-    color: $blue;
     min-height: inuit-rem(36px);
     padding: inuit-rem(8px) 0px;
   }
@@ -61,6 +61,18 @@
     position: relative;
     border-top: inuit-rem(1px) solid $silver;
     @extend .flipin;
+
+    &:first-child {
+      color: $pathway-one;
+    }
+
+    &:nth-child(2) {
+      color: $pathway-two;
+    }
+
+    &:nth-child(3) {
+      color: $pathway-three;
+    }
 
     i {
       position: absolute;
