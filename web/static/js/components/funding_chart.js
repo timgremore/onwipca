@@ -25,11 +25,9 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 class FundingChart extends Component {
   render() {
     return (
-    	<PieChart width={800} height={400} onMouseEnter={this.onPieEnter}>
+    	<PieChart width={300} height={300} onMouseEnter={this.onPieEnter}>
         <Pie
           data={data}
-          cx={300}
-          cy={200}
           labelLine={false}
           label={renderCustomizedLabel}
           outerRadius={80}
