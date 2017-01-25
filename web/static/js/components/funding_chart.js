@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { PieChart, Pie, Sector, Cell } from 'recharts';
+import { PieChart, Pie, Legend, Sector, Cell } from 'recharts';
 
 const data = [
   {name: 'Wisconsin Presbytery', value: 75},
@@ -25,9 +25,10 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 class FundingChart extends Component {
   render() {
     return (
-    	<PieChart width={300} height={300} onMouseEnter={this.onPieEnter}>
+    	<PieChart width={300} height={520} onMouseEnter={this.onPieEnter}>
         <Pie
           data={data}
+          cy="250"
           labelLine={false}
           label={renderCustomizedLabel}
           outerRadius={150}
@@ -36,6 +37,8 @@ class FundingChart extends Component {
           	data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
           }
         </Pie>
+        <Legend
+          verticalAlign="top" />
       </PieChart>
     )
   }
