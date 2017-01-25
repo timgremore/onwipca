@@ -30,7 +30,7 @@ class FundingChart extends Component {
           data={data}
           labelLine={false}
           label={renderCustomizedLabel}
-          outerRadius={80}
+          outerRadius={150}
           fill="#8884d8">
         	{
           	data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
