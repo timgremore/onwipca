@@ -1,3 +1,5 @@
+require IEx
+
 defmodule Onwipca.ChurchView do
   use Onwipca.Web, :view
 
@@ -10,10 +12,10 @@ defmodule Onwipca.ChurchView do
   end
 
   def pathway_name(pathway) do
-    if Ecto.assoc_loaded?(pathway) do
+    if pathway && Ecto.assoc_loaded?(pathway) do
       pathway.name
     else
-      "missing"
+      'n/a'
     end
   end
 
