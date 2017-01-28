@@ -35,5 +35,6 @@ defmodule Onwipca.Church do
     |> cast_attachments(params, [:logo])
     |> validate_required([:name])
     |> locate
+    |> cast(params, [:latitude, :longitude])
   end
 end

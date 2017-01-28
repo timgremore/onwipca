@@ -55,6 +55,16 @@
     <%= text_input f, :zipcode, class: 'c-input__control' %>
   </div>
 
+  <div class="c-input">
+    <%= label f, :latitude, class: 'c-input__label' %>
+    <%= text_input f, :latitude, class: 'c-input__control' %>
+  </div>
+
+  <div class="c-input">
+    <%= label f, :longitude, class: 'c-input__label' %>
+    <%= text_input f, :longitude, class: 'c-input__control' %>
+  </div>
+
   <div class="c-input c-input--actions">
     <button type=submit>Save</button>
   </div>
