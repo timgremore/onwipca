@@ -9,6 +9,6 @@
   </div>
 
   <div class="o-layout__item u-1/2">
-    <p class=u-text-center><%= link "Create User", to: "/", class: "c-btn c-btn--primary" %></p>
+    <p class=u-text-center><%= link "Create User", to: user_path(@conn, :new), class: "c-btn c-btn--primary" %></p>
   </div>
 </div>

@@ -1,11 +1,36 @@
-<%= form_for @changeset, @action, fn f -> %>
+<%= form_for @changeset, @action, [class: "form__user"], fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
       <p>Oops, something went wrong! Please check the errors below.</p>
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+  <div class="c-input">
+    <%= label f, :username, class: 'c-input__label' %>
+    <%= text_input f, :username, class: 'c-input__control' %>
+  </div>
+
+  <div class="c-input">
+    <%= label f, :first_name, class: 'c-input__label' %>
+    <%= text_input f, :first_name, class: 'c-input__control' %>
+  </div>
+
+  <div class="c-input">
+    <%= label f, :last_name, class: 'c-input__label' %>
+    <%= text_input f, :last_name, class: 'c-input__control' %>
+  </div>
+
+  <div class="c-input">
+    <%= label f, :email, class: 'c-input__label' %>
+    <%= text_input f, :email, class: 'c-input__control' %>
+  </div>
+
+  <div class="c-input">
+    <%= label f, :password, class: 'c-input__label' %>
+    <%= password_input f, :password, class: 'c-input__control' %>
+  </div>
+
+  <div class="c-input c-input--actions">
+    <button type=submit>Save</button>
   </div>
 <% end %>

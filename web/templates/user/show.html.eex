@@ -1,8 +1,8 @@
-<h2>Show user</h2>
-
-<ul>
-
-</ul>
-
-<%= link "Edit", to: user_path(@conn, :edit, @user) %>
-<%= link "Back", to: user_path(@conn, :index) %>
+<div class="o-layout">
+  <div class="o-layout__item u-1/1">
+    <h1><%= @user.username %></h1>
+    <p><strong>First name:</strong> <%= @user.first_name %></p>
+    <p><strong>Last name:</strong> <%= @user.last_name %></p>
+    <p><strong>Email:</strong> <%= @user.email %></p>
+  </div>
+</div>
