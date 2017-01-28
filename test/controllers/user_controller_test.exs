@@ -1,35 +1,13 @@
 defmodule Onwipca.UserControllerTest do
   use Onwipca.ConnCase
 
-  import Onwipca.TestHelpers
   alias Onwipca.User
+  @valid_attrs %{}
+  @invalid_attrs %{}
 
-  @valid_attrs %{username: "bill", email: "bill@mail.com", password: "^hEsdg*F899"}
-  @invalid_attrs %{email: "albert@mail.com", password: "password"}
-
-  setup %{conn: conn} = config do
-    conn = conn |> bypass_through(Onwipca.Router, :browser) |> get("/")
-
-    if username = config[:login] do
-      user = add_user(username)
-      other = add_user("tony")
-
-      conn = conn |> put_session(:user_id, user.id) |> send_resp(:ok, "/")
-      {:ok, %{conn: conn, user: user, other: other}}
-    else
-      {:ok, %{conn: conn}}
-    end
-  end
-
-  @tag login: "reg"
-  test "GET /users for authorized user", %{conn: conn} do
+  test "lists all entries on index", %{conn: conn} do
     conn = get conn, user_path(conn, :index)
-    assert html_response(conn, 200)
-  end
-
-  test "GET /users redirect for unauthorized user", %{conn: conn}  do
-    conn = conn |> get(user_path(conn, :index))
-    assert redirected_to(conn) == session_path(conn, :new)
+    assert html_response(conn, 200) =~ "Listing users"
   end
 
   test "renders form for new resources", %{conn: conn} do
@@ -40,7 +18,7 @@ defmodule Onwipca.UserControllerTest do
   test "creates resource and redirects when data is valid", %{conn: conn} do
     conn = post conn, user_path(conn, :create), user: @valid_attrs
     assert redirected_to(conn) == user_path(conn, :index)
-    assert Repo.get_by(User, %{email: "bill@mail.com"})
+    assert Repo.get_by(User, @valid_attrs)
   end
 
   test "does not create resource and renders errors when data is invalid", %{conn: conn} do
@@ -48,47 +26,41 @@ defmodule Onwipca.UserControllerTest do
     assert html_response(conn, 200) =~ "New user"
   end
 
-  @tag login: "reg"
-  test "GET /users/:id", %{conn: conn, user: user} do
+  test "shows chosen resource", %{conn: conn} do
+    user = Repo.insert! %User{}
     conn = get conn, user_path(conn, :show, user)
-    assert html_response(conn, 200)
+    assert html_response(conn, 200) =~ "Show user"
   end
 
-  @tag login: "reg"
-  test "GET /users/:id/edit", %{conn: conn, user: user} do
+  test "renders page not found when id is nonexistent", %{conn: conn} do
+    assert_error_sent 404, fn ->
+      get conn, user_path(conn, :show, -1)
+    end
+  end
+
+  test "renders form for editing chosen resource", %{conn: conn} do
+    user = Repo.insert! %User{}
     conn = get conn, user_path(conn, :edit, user)
-    assert html_response(conn, 200)
+    assert html_response(conn, 200) =~ "Edit user"
   end
 
-  @tag login: "reg"
-  test "GET /users/:id/edit redirect for other user", %{conn: conn, other: other} do
-    conn = get conn, user_path(conn, :edit, other)
-    assert redirected_to(conn) == user_path(conn, :index)
-  end
-
-  @tag login: "reg"
-  test "PUT /users/:id with valid data", %{conn: conn, user: user} do
+  test "updates chosen resource and redirects when data is valid", %{conn: conn} do
+    user = Repo.insert! %User{}
     conn = put conn, user_path(conn, :update, user), user: @valid_attrs
     assert redirected_to(conn) == user_path(conn, :show, user)
+    assert Repo.get_by(User, @valid_attrs)
   end
 
-  @tag login: "reg"
-  test "PUT /users/:id with invalid data", %{conn: conn, user: user} do
+  test "does not update chosen resource and renders errors when data is invalid", %{conn: conn} do
+    user = Repo.insert! %User{}
     conn = put conn, user_path(conn, :update, user), user: @invalid_attrs
-    assert redirected_to(conn) == user_path(conn, :show, user)
+    assert html_response(conn, 200) =~ "Edit user"
   end
 
-  @tag login: "reg"
-  test "deletes current user", %{conn: conn, user: user} do
+  test "deletes chosen resource", %{conn: conn} do
+    user = Repo.insert! %User{}
     conn = delete conn, user_path(conn, :delete, user)
-    assert redirected_to(conn) == page_path(conn, :index)
-    refute Repo.get(User, user.id)
-  end
-
-  @tag login: "reg"
-  test "cannot delete other user", %{conn: conn, other: other} do
-    conn = delete conn, user_path(conn, :delete, other)
     assert redirected_to(conn) == user_path(conn, :index)
-    assert Repo.get(User, other.id)
+    refute Repo.get(User, user.id)
   end
 end

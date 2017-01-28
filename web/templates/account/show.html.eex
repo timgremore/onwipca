@@ -1,0 +1,14 @@
+<div class="o-box u-margin-bottom-large">
+  <h1 class=u-margin-bottom-none>On Wisconsin PCA</h1>
+  <h4 class=u-margin-top-none>Planting tomrrow's churches today</h4>
+</div>
+
+<div class="o-layout o-layout--center">
+  <div class="o-layout__item u-1/2">
+    <p class=u-text-center><%= link "Create Church", to: church_path(@conn, :new), class: "c-btn c-btn--primary" %></p>
+  </div>
+
+  <div class="o-layout__item u-1/2">
+    <p class=u-text-center><%= link "Create User", to: "/", class: "c-btn c-btn--primary" %></p>
+  </div>
+</div>

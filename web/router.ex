@@ -34,8 +34,9 @@ defmodule Onwipca.Router do
     get "/logout", SessionController, :destroy
 
     resources "/login", SessionController, only: [:create]
-    resources "/my-account", UserController, only: [:show], singleton: true
+    resources "/my-account", AccountController, only: [:show], singleton: true
     resources "/churches", ChurchController
     resources "/pathways", PathwayController
+    resources "/users", UserController
   end
 end
