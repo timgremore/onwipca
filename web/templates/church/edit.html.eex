@@ -1,7 +1,16 @@
 <div class="o-layout">
-  <div class="o-layout__item u-1/2">
-    <h1><%= @church.name %></h1>
-    <%= render "form.html", changeset: @changeset,
-                            action: church_path(@conn, :update, @church) %>
+  <div class="o-layout__item u-1/1">
+    <div class="o-flag o-flag--tiny o-flag--reverse o-flag--top">
+      <div class="o-flag__img">
+        <%= unless is_nil(@church.logo) do %>
+          <%= img_tag(Onwipca.Photo.url({@church.logo, @church}, :medium), class: "o-float-left") %>
+        <% end %>
+      </div>
+      <div class="o-flag__body">
+        <h1><%= @church.name %></h1>
+        <%= render "form.html", changeset: @changeset,
+                                action: church_path(@conn, :update, @church) %>
+      </div>
+    </div>
   </div>
 </div>

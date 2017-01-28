@@ -26,4 +26,6 @@
       </tbody>
     </table>
 
-    <%= link "New pathway", to: pathway_path(@conn, :new) %>
+    <%= link "Create Pathway", to: pathway_path(@conn, :new), class: "c-btn c-btn--primary" %>
+  </div>
+</div>

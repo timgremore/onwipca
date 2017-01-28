@@ -1,22 +1,3 @@
 defmodule Onwipca.UserView do
   use Onwipca.Web, :view
-
-  def render("show.html", %{user: user}) do
-  end
-
-  def render("founder.json", %{user: Ecto.Association.NotLoaded}) do
-    %{}
-  end
-
-  def render("user.json", %{user: user}) do
-    %{id: user.id,
-      first_name: user.first_name,
-      last_name: user.last_name,
-      username: user.username,
-      email: user.email}
-  end
-
-  def render("user.json", %{user: nil}) do
-    %{}
-  end
 end
