@@ -11,8 +11,8 @@
   </div>
 
   <div class="c-input">
-    <%= label f, :founder_id, class: 'c-input__label' %>
-    <%= select f, :founder_id, founder_options_for_select, class: 'c-input__control' %>
+    <%= label f, :founder_id, "Contact", class: 'c-input__label' %>
+    <%= select f, :founder_id, founder_options_for_select, prompt: "", class: 'c-input__control' %>
   </div>
 
   <div class="c-input c-input--inline">
