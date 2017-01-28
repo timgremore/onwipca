@@ -58,6 +58,6 @@ defmodule Onwipca.ChurchView do
       latitude: church.latitude,
       longitude: church.longitude,
       pathway_id: church.pathway_id,
-      logo: Onwipca.Photo.url({church.logo, church})}
+      logo: Onwipca.Photo.url({church.logo, church}, :small)}
   end
 end

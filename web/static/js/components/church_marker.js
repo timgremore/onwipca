@@ -34,7 +34,7 @@ class ChurchMarker extends Component {
         <Popup>
           <div className="u-text-center">
             <h3>{church.name}</h3>
-            <img src={church.logo} alt="{church.name}" />
+            <img src={church.logo} alt={church.name} />
           </div>
         </Popup>
       </Marker>

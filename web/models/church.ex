@@ -33,7 +33,7 @@ defmodule Onwipca.Church do
     struct
     |> cast(params, [:name, :contact, :founder_id, :pathway_id, :street, :city, :state, :zipcode, :particularized_at, :url])
     |> cast_attachments(params, [:logo])
-    |> validate_required([:name, :city, :state, :zipcode, :url])
+    |> validate_required([:name])
     |> locate
   end
 end

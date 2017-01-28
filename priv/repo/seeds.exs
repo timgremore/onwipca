@@ -84,7 +84,7 @@ case Repo.get_by(Church, name: "Christ Covenant Church") do
             particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
             url: "http://ccc-pca.org",
             founder: founder,
-            logo: %Plug.Upload{filename: "emmaus-road-logo.svg", path: Path.join(logo_dir, "emmaus-road-logo.svg")}
+            logo: %Plug.Upload{filename: "emmaus-road-logo.png", path: Path.join(logo_dir, "emmaus-road-logo.png")}
           })
           |> Repo.insert_or_update!
   church -> church
@@ -100,7 +100,7 @@ case Repo.get_by(Church, name: "Grace Presbyterian Church") do
             particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
             url: "http://gracepresinfo.com",
             founder: founder,
-            logo: %Plug.Upload{filename: "jacobs-well-logo.svg", path: Path.join(logo_dir, "jacobs-well-logo.svg")}
+            logo: %Plug.Upload{filename: "jacobs-well-logo.png", path: Path.join(logo_dir, "jacobs-well-logo.png")}
           })
           |> Repo.insert_or_update!
   church -> church
@@ -116,7 +116,7 @@ case Repo.get_by(Church, name: "Lake Trails Church") do
             particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
             url: "http://laketrailschurch.org",
             founder: founder,
-            logo: %Plug.Upload{filename: "emmaus-road-logo.svg", path: Path.join(logo_dir, "emmaus-road-logo.svg")}
+            logo: %Plug.Upload{filename: "emmaus-road-logo.png", path: Path.join(logo_dir, "emmaus-road-logo.png")}
           })
           |> Repo.insert_or_update!
   church -> church
@@ -132,7 +132,7 @@ case Repo.get_by(Church, name: "Bible Presbyterian Church") do
             particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
             url: "http://www.biblepreschurch.org",
             founder: founder,
-            logo: %Plug.Upload{filename: "jacobs-well-logo.svg", path: Path.join(logo_dir, "jacobs-well-logo.svg")}
+            logo: %Plug.Upload{filename: "jacobs-well-logo.png", path: Path.join(logo_dir, "jacobs-well-logo.png")}
           })
           |> Repo.insert_or_update!
   church -> church
@@ -148,7 +148,7 @@ case Repo.get_by(Church, name: "Trinity Presbyterian Church") do
             particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
             url: "http://trinitypresbyterianwi.org",
             founder: founder,
-            logo: %Plug.Upload{filename: "emmaus-road-logo.svg", path: Path.join(logo_dir, "emmaus-road-logo.svg")}
+            logo: %Plug.Upload{filename: "emmaus-road-logo.png", path: Path.join(logo_dir, "emmaus-road-logo.png")}
           })
           |> Repo.insert_or_update!
   church -> church
@@ -164,7 +164,7 @@ case Repo.get_by(Church, name: "Cornerstone Presbyterian Church") do
             particularized_at: %Ecto.DateTime{year: 1992, month: 1, day: 1, hour: 12, min: 0, sec: 0},
             url: "http://www.cornerstone-pca.com",
             founder: founder,
-            logo: %Plug.Upload{filename: "jacobs-well-logo.svg", path: Path.join(logo_dir, "jacobs-well-logo.svg")}
+            logo: %Plug.Upload{filename: "jacobs-well-logo.png", path: Path.join(logo_dir, "jacobs-well-logo.png")}
           })
           |> Repo.insert_or_update!
   church -> church
