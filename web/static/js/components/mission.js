@@ -18,7 +18,7 @@ class Mission extends Component {
                   Presbyterian Church in America (PCA) congregations in Wisconsin.</p>
                 <p>As of 2012 there were only six PCA churches in Wisconsin and no
                   new churches since 1993. Since 2012 two churches have taken root and
-                  three new works have started</p>
+                  five new works have started.</p>
                 <p>Our goal is to plant 16 more churches in Wisconsin in the next 10 years.</p>
               </div>
             </div>
