@@ -5,24 +5,26 @@ const classNames = require('classnames')
 
 class ChurchMarker extends Component {
   render() {
-    const { church } = this.props
+    const { church, position } = this.props
     const markerPosition = [church.latitude, church.longitude]
     const markerClassNames = classNames({
       'c-marker': true,
-      'c-marker--one': this.props.index == 1,
-      'c-marker--two': this.props.index == 2,
-      'c-marker--three': this.props.index == 3,
+      'c-marker--one': position == 1,
+      'c-marker--two': position == 2,
+      'c-marker--three': position == 3,
     })
 
     let iconUrl = 'map-marker.svg'
 
-    if (church.pathway_id == 1) iconUrl = 'map-marker-blue.svg'
-    if (church.pathway_id == 2) iconUrl = 'map-marker-orange.svg'
-    if (church.pathway_id == 3) iconUrl = 'map-marker-red.svg'
+    console.info(position)
+
+    if (position == 1) iconUrl = 'map-marker-one.svg'
+    if (position == 2) iconUrl = 'map-marker-two.svg'
+    if (position == 3) iconUrl = 'map-marker-three.svg'
 
     const icon = L.icon({
       iconUrl: "/images/" + iconUrl,
-      iconSize: 35,
+      iconSize: 20,
       className: 'c-marker',
     })
 

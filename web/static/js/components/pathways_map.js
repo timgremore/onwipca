@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import { connect } from 'react-redux'
-import { filter, orderBy } from 'lodash'
+import { filter, orderBy, minBy, maxBy } from 'lodash'
 
 import { deselectPathway } from '../actions/pathways'
 import Particularized from './particularized'
@@ -12,11 +12,11 @@ const classNames = require('classnames')
 
 class PathwaysMap extends Component {
   render() {
-    const position = [44.7844, -88.0]
-    const zoom = 7
+    const position = [44.2, -88.5]
+    const zoom = 8
     const attribution = "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>"
     const pathways = orderBy(this.props.pathways, ['position', 'name'])
-    const particularizedChurches = filter(this.props.churches, 'particularized_at')
+    const particularizedChurches = filter(this.props.churches, 'particularized')
     const churchPlants = filter(this.props.churches, (church) => {
       return !!church.particularized_at == false && church.pathway_id
     })
@@ -25,11 +25,25 @@ class PathwaysMap extends Component {
 
     if (this.props.selectedPathway) {
       churches = filter(churches, { 'pathway_id': +this.props.selectedPathway.id })
+    } else if (this.props.particularizedChurchesSelected) {
+      churches = particularizedChurches
     }
 
     const markers = churches.map((church, index) => {
+      let pathwayPosition = 0
+      
+      if (church.pathway_id) {
+        if (church.pathway_id == pathways[0].id) {
+          pathwayPosition = 1
+        } else if (church.pathway_id == pathways[pathways.length - 1].id) {
+          pathwayPosition = 3
+        } else {
+          pathwayPosition = 2
+        }
+      }
+
       return (
-        <ChurchMarker key={index} church={church} index={index} />
+        <ChurchMarker key={index} church={church} position={pathwayPosition} />
       )
     })
 
@@ -78,6 +92,7 @@ function mapStateToProps(state) {
     churches: churches.items,
     selectedPathway: pathways.selected,
     pathways: pathways.items,
+    particularizedChurchesSelected: pathways.particularizedChurchesSelected,
   }
 }
 

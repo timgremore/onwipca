@@ -63,14 +63,17 @@
     @extend .flipin;
 
     &:first-child {
-      color: $pathway-one;
     }
 
     &:nth-child(2) {
-      color: $pathway-two;
+      color: $pathway-one;
     }
 
     &:nth-child(3) {
+      color: $pathway-two;
+    }
+
+    &:nth-child(4) {
       color: $pathway-three;
     }
 

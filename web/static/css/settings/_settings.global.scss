@@ -12,6 +12,7 @@ $inuit-offsets: true;
 
 $white: #FEFDFF;
 $red: #AA0916;
+$green: #63A31E;
 $silver: #C1BFB5;
 $base-color: #8EB1C7;
 $blue: darken($base-color, 40%);
@@ -20,5 +21,5 @@ $orange: #EB4511;
 $black: #333;
 
 $pathway-one: lighten($blue, 20%);
-$pathway-two: $orange;
+$pathway-two: $green;
 $pathway-three: $red;

@@ -192,6 +192,7 @@ case Repo.get_by(Church, name: "Christ Church Milwaukee") do
   church -> church
 end
 
+# Pathway 2 churches
 case Repo.get_by(Church, name: "Friend of Sinners") do
   nil -> Church.changeset(%Church{}, %{
             name: "Friend of Sinners",
@@ -201,12 +202,13 @@ case Repo.get_by(Church, name: "Friend of Sinners") do
             url: "http://www.friendofsinners.org",
             logo: %Plug.Upload{filename: "friend-of-sinners-logo.png", path: Path.join(logo_dir, "friend-of-sinners-logo.png")},
             contact: "Dan and Sherri Quakkelaar",
-            pathway_id: pathway_one.id,
+            pathway_id: pathway_two.id,
           })
           |> Repo.insert_or_update!
   church -> church
 end
 
+# Pathway 3 churches
 case Repo.get_by(Church, name: "Resurrection Presbyterian") do
   nil -> Church.changeset(%Church{}, %{
             name: "Resurrection Presbyterian",
@@ -216,7 +218,7 @@ case Repo.get_by(Church, name: "Resurrection Presbyterian") do
             url: "http://www.resurrectionmadison.com",
             logo: %Plug.Upload{filename: "resurrection-madison-logo.jpg", path: Path.join(logo_dir, "resurrection-madison-logo.jpg")},
             contact: "Matt and April Grimsley",
-            pathway_id: pathway_one.id,
+            pathway_id: pathway_three.id,
           })
           |> Repo.insert_or_update!
   church -> church

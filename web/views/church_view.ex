@@ -58,6 +58,7 @@ defmodule Onwipca.ChurchView do
       latitude: church.latitude,
       longitude: church.longitude,
       pathway_id: church.pathway_id,
+      particularized: !is_nil(church.particularized_at) && is_nil(church.pathway_id),
       logo: Onwipca.Photo.url({church.logo, church}, :small)}
   end
 end
