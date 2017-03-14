@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { filter, orderBy } from 'lodash'
 
 import { deselectPathway } from '../actions/pathways'
+import Particularized from './particularized'
 import Pathway from './pathway'
 import ChurchMarker from './church_marker'
 
@@ -48,6 +49,7 @@ class PathwaysMap extends Component {
             <h1 className="u-text-center u-margin-bottom-tiny">On Wisconsin PCA</h1>
             <p>The Wisconsin Presbytery consists of {particularizedChurches.length} particularized churches and {churchPlants.length} church plants.</p>
             <ul className="o-list-bare">
+              <Particularized />
               {pathways.map((pathway, index) => {
                 return (
                   <Pathway key={index} pathway={pathway} />

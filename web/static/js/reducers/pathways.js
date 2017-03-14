@@ -7,6 +7,7 @@ import {
 const pathways = (state = {
   items: [],
   selected: 0,
+  particularizedChurchesSelected: false,
 }, action) => {
 
   switch (action.type) {
@@ -16,14 +17,17 @@ const pathways = (state = {
       })
 
     case SELECT_PATHWAY:
-      const selectedPathway = state.selected == action.pathway ? 0 : action.pathway
+      const selectedPathway = action.showParticularizedChurches || state.selected == action.pathway ? 0 : action.pathway
+
       return Object.assign({}, state, {
         selected: selectedPathway,
+        particularizedChurchesSelected: action.showParticularizedChurches,
       })
 
     case DESELECT_PATHWAY:
       return Object.assign({}, state, {
         selected: 0,
+        particularizedChurchesSelected: false,
       })
 
     default:

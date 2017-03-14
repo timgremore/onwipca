@@ -18,10 +18,11 @@ export function receivePathways(json) {
   }
 }
 
-export function selectPathway(pathway) {
+export function selectPathway(pathway, showParticularizedChurches) {
   return {
     type: SELECT_PATHWAY,
     pathway: pathway,
+    showParticularizedChurches: showParticularizedChurches,
   }
 }
 

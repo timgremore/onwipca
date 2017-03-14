@@ -51,7 +51,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onPathwayClick: (pathway) => {
-      dispatch(selectPathway(pathway))
+      dispatch(selectPathway(pathway, false))
     }
   }
 }
