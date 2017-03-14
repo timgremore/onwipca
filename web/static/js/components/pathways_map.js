@@ -63,7 +63,7 @@ class PathwaysMap extends Component {
             <h1 className="u-text-center u-margin-bottom-tiny">On Wisconsin PCA</h1>
             <p>The Wisconsin Presbytery consists of {particularizedChurches.length} particularized churches and {churchPlants.length} church plants.</p>
             <ul className="o-list-bare">
-              <Particularized />
+              <Particularized churches={particularizedChurches} />
               {pathways.map((pathway, index) => {
                 return (
                   <Pathway key={index} pathway={pathway} />

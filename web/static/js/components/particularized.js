@@ -5,7 +5,7 @@ import { selectPathway } from '../actions/pathways'
 
 class Pathway extends Component {
   render() {
-    const { selectedPathway, particularizedChurchesSelected } = this.props
+    const { churches, selectedPathway, particularizedChurchesSelected } = this.props
 
     return (
       <li>
@@ -17,7 +17,7 @@ class Pathway extends Component {
         <i></i>
         <h3 className="u-margin-bottom-none">Particularized Churches</h3>
         <div>
-          <p>This is a blub about particularized churches</p>
+          <p>{churches.length} particularized churches are part of the Wisconsin Presbytery.</p>
         </div>
       </li>
     )

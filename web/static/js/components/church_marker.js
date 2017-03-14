@@ -16,8 +16,6 @@ class ChurchMarker extends Component {
 
     let iconUrl = 'map-marker.svg'
 
-    console.info(position)
-
     if (position == 1) iconUrl = 'map-marker-one.svg'
     if (position == 2) iconUrl = 'map-marker-two.svg'
     if (position == 3) iconUrl = 'map-marker-three.svg'
