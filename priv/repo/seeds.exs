@@ -15,10 +15,10 @@ alias Onwipca.User
 alias Onwipca.Church
 alias Onwipca.Pathway
 
-{:ok, pathway_one} = case Repo.get_by(Pathway, name: "Path 1: Strategic Planning") do
+{:ok, pathway_one} = case Repo.get_by(Pathway, name: "Path 1: Planting") do
                       nil -> Pathway.changeset(%Pathway{}, %{
-                              name: "Path 1: Strategic Planning",
-                              readiness: "Ready Now - MNA Assessment approved",
+                              name: "Path 1: Planting",
+                              readiness: "Ready Now - MNA assessment approved and ordained",
                               location: "Strategic areas",
                               training: "Provisional session and coach",
                               sender: "Wisconsin MNA Committee",
