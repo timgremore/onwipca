@@ -1,9 +1,24 @@
 import React, { Component } from "react"
+import { connect } from 'react-redux'
 import { Marker, Popup } from 'react-leaflet'
+import { find } from 'lodash'
+
+import { selectPathway } from '../actions/pathways'
 
 const classNames = require('classnames')
 
 class ChurchMarker extends Component {
+  _markerClicked() {
+    const { church, pathways } = this.props
+    const pathway = find(pathways, (item) => { return item.id == church.pathway_id })
+
+    if (church.particularized) {
+      this.props.selectPathway(0, true)
+    } else if (pathway) {
+      this.props.selectPathway(pathway, false)
+    }
+  }
+
   render() {
     const { church, position } = this.props
     const markerPosition = [church.latitude, church.longitude]
@@ -30,6 +45,7 @@ class ChurchMarker extends Component {
       <Marker
         className={markerClassNames}
         icon={icon}
+        onClick={this._markerClicked.bind(this)}
         position={markerPosition}>
         <Popup>
           <div className="u-text-center">
@@ -42,4 +58,23 @@ class ChurchMarker extends Component {
   }
 }
 
-export default ChurchMarker
+function mapStateToProps(state) {
+  const { pathways } = state
+
+  return {
+    pathways: pathways.items,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    selectPathway: (pathway, showParticularizedChurches) => {
+      dispatch(selectPathway(pathway, showParticularizedChurches))
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ChurchMarker)

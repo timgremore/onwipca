@@ -11,6 +11,10 @@ import ChurchMarker from './church_marker'
 const classNames = require('classnames')
 
 class PathwaysMap extends Component {
+  _resetMap() {
+    this.props.deselectPathway()
+  }
+
   render() {
     const position = [44.2, -88.5]
     const zoom = 8
@@ -71,6 +75,9 @@ class PathwaysMap extends Component {
               })}
             </ul>
           </div>
+          {this.props.selectedPathway || this.props.particularizedChurchesSelected ?
+              <a onClick={this._resetMap.bind(this)} className="c-btn c-btn--full u-margin-top">Show All</a> :
+              ""}
         </div>
       </Map>
     )
