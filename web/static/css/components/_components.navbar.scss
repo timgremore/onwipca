@@ -1,24 +1,55 @@
 .c-navbar {
   margin-top: inuit-rem(12px);
 
+  @include mq($until: tablet) {
+    display: block;
+    margin-top: 0;
+  }
+
   .o-pack__item {
     text-align: center;
 
     a {
+      display: block;
       color: $white;
       cursor: pointer;
       text-decoration: none;
       text-align: center;
       padding: inuit-rem(8px) inuit-rem(12px);
       border-radius: $global-radius;
+      width: 100%;
 
       &:hover {
         background-color: $red;
+      }
+
+      @include mq($until: tablet) {
+        padding: inuit-rem(2px) inuit-rem(6px);
+        padding-left: inuit-rem(16px);
+        width: 100%;
+        text-align: left;
+      }
+    }
+
+    &:nth-child(3) {
+      margin-right: inuit-rem(12px);
+
+      @include mq($until: tablet) {
+        margin-right: 0px;
       }
     }
 
     &:last-child {
       border-left: inuit-rem(1px) solid $white;
+
+      @include mq($until: tablet) {
+        display: none;
+      }
+    }
+
+    @include mq($until: tablet) {
+      display: block;
+      text-align: right;
     }
   }
 }

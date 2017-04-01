@@ -24,12 +24,7 @@ class Mast extends Component {
                   <Scrollchor to="pathways" animate={{offset: offset}}>Pathways</Scrollchor>
                 </div>
                 <div className="o-pack__item">
-                  <Scrollchor
-                    to="funding"
-                    className="u-margin-right"
-                    animate={{offset: offset}}>
-                    Funding
-                  </Scrollchor>
+                  <Scrollchor to="funding" animate={{offset: offset}}>Funding</Scrollchor>
                 </div>
                 <div className="o-pack__item">
                   {document.getElementsByName('guardian-token').length > 0 ?
