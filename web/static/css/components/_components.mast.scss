@@ -1,0 +1,9 @@
+.c-mast {
+
+  img {
+
+    @include mq($until: tablet) {
+      margin: inuit-rem(6px);
+    }
+  }
+}

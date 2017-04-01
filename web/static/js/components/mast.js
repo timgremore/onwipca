@@ -11,7 +11,7 @@ class Mast extends Component {
       <Sticky innerZ="10">
         <div className="o-wrapper">
           <div className="o-layout">
-            <div className="o-layout__item u-1/1">
+            <div className="o-layout__item u-1/1 c-mast">
               <Scrollchor to="home">
                 <img src="/images/logo.svg" width="80" />
               </Scrollchor>
