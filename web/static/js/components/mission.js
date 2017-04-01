@@ -13,7 +13,7 @@ class Mission extends Component {
               </div>
             </div>
             <div className="o-layout o-layout--center">
-              <div className="o-layout__item u-1/3">
+              <div className="o-layout__item u-3/4 u-1/3@tablet">
                 <p>&ldquo;On Wisconsin&rdquo; is a church planting network led and funded by
                   Presbyterian Church in America (PCA) congregations in Wisconsin.</p>
                 <p>As of 2012 there were only six PCA churches in Wisconsin and no
@@ -23,7 +23,7 @@ class Mission extends Component {
               </div>
             </div>
             <div className="o-layout o-layout--center">
-              <div className="o-layout__item u-1/2">
+              <div className="o-layout__item u-4/5 u-1/2@tablet">
                 <div className="o-box o-box--large">
                   <q>Now to him who is able to do far more abundantly than all that
                     we ask or think, according to the power at work within us, to him
