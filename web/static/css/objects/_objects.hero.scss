@@ -6,8 +6,10 @@
     font-family: 'Cantana One', serif;
 
     span {
+
       &:first-child {
         font-size: inuit-rem(36px);
+        margin-left: -280px;
       }
 
       &:nth-child(2) {
@@ -21,7 +23,7 @@
         font-weight: 100;
         display: block;
         font-size: inuit-rem(96px);
-        transform: translateX(135px) translateY(-30px);
+        transform: translateX(55px) translateY(-30px);
       }
     }
   }

@@ -6,8 +6,8 @@ class Home extends Component {
       <section id="home">
         <div className="o-wrapper">
           <div className="o-layout o-layout--center">
-            <div className="o-layout__item u-1/3">
-              <div className="o-hero">
+            <div className="o-layout__item u-1/1">
+              <div className="o-hero u-text-center">
                 <h1>
                   <span>On</span>
                   <span>Wisconsin</span>
