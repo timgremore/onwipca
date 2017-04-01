@@ -17,7 +17,7 @@
       text-align: center;
       padding: inuit-rem(8px) inuit-rem(12px);
       border-radius: $global-radius;
-      width: 100%;
+      width: 90%;
 
       &:hover {
         background-color: $red;
@@ -41,6 +41,7 @@
 
     &:last-child {
       border-left: inuit-rem(1px) solid $white;
+      padding-left: inuit-rem(12px);
 
       @include mq($until: tablet) {
         display: none;
