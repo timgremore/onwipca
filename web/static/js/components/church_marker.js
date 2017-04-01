@@ -9,12 +9,12 @@ const classNames = require('classnames')
 
 class ChurchMarker extends Component {
   _markerClicked() {
-    const { church, pathways } = this.props
+    const { church, pathways, selectedPathway } = this.props
     const pathway = find(pathways, (item) => { return item.id == church.pathway_id })
 
     if (church.particularized) {
       this.props.selectPathway(0, true)
-    } else if (pathway) {
+    } else if (pathway && pathway != selectedPathway) {
       this.props.selectPathway(pathway, false)
     }
   }
@@ -63,6 +63,7 @@ function mapStateToProps(state) {
 
   return {
     pathways: pathways.items,
+    selectedPathway: pathways.selected,
   }
 }
 
