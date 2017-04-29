@@ -45,4 +45,11 @@ section {
   &#funding {
     min-height: 100vh;
   }
+
+  &#contact {
+    background-color: $red;
+    height: inuit-rem(220px);
+    min-height: inuit-rem(220px);
+    border-top: inuit-rem(2px) solid $white;
+  }
 }

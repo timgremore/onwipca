@@ -7,6 +7,7 @@ import Mission from './mission'
 import Directory from './directory'
 import Pathways from './pathways'
 import Funding from './funding'
+import Contact from './contact'
 
 import { fetchChurches } from '../actions/churches';
 import { fetchPathways } from '../actions/pathways';
@@ -25,6 +26,7 @@ class Main extends Component {
         <Mission />
         <Pathways />
         <Funding />
+        <Contact />
       </div>
     )
   }

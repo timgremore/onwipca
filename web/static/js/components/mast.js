@@ -16,7 +16,7 @@ class Mast extends Component {
                 <img src="/images/logo.svg" width="80" />
               </Scrollchor>
 
-              <div className="c-navbar o-pack u-float-right u-1/2">
+              <div className="c-navbar o-pack u-float-right u-1/2 u-3/4@tablet u-1/2@desk">
                 <div className="o-pack__item">
                   <Scrollchor to="mission" animate={{offset: offset}}>Mission</Scrollchor>
                 </div>
@@ -25,6 +25,9 @@ class Mast extends Component {
                 </div>
                 <div className="o-pack__item">
                   <Scrollchor to="funding" animate={{offset: offset}}>Funding</Scrollchor>
+                </div>
+                <div className="o-pack__item">
+                  <Scrollchor to="contact" animate={{offset: offset}}>Contact</Scrollchor>
                 </div>
                 <div className="o-pack__item">
                   {document.getElementsByName('guardian-token').length > 0 ?
