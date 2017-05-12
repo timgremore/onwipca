@@ -4,8 +4,6 @@ defmodule Onwipca.ChurchController do
   plug Guardian.Plug.EnsureAuthenticated, handler: Onwipca.SessionController
 
   alias Onwipca.Church
-  alias Onwipca.User
-  alias Onwipca.Pathway
 
   def index(conn, _params) do
     churches = Repo.all(Church) |> Repo.preload(:founder)

@@ -12,7 +12,7 @@
 
   <div class="c-input">
     <%= label f, :founder_id, "Contact", class: 'c-input__label' %>
-    <%= select f, :founder_id, founder_options_for_select, prompt: "", class: 'c-input__control' %>
+    <%= select f, :founder_id, founder_options_for_select(), prompt: "", class: 'c-input__control' %>
   </div>
 
   <div class="c-input">
@@ -27,7 +27,11 @@
 
   <div class="c-input c-input--inline">
     <%= label f, :pathway_id, class: 'c-input__label' %>
-    <%= for pathway <- pathways do %>
+    <label class=c-input__label>
+      <%= radio_button f, :pathway_id, 0, class: 'c-input__control' %>
+      Particularized
+    </label>
+    <%= for pathway <- pathways() do %>
       <label class=c-input__label>
         <%= radio_button f, :pathway_id, pathway.id, class: 'c-input__control' %>
         <%= pathway.name %>

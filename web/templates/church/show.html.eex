@@ -9,6 +9,7 @@
       <div class="o-flag__body">
         <h1><%= @church.name %></h1>
         <p><strong>Contact:</strong> <%= founder_name(@church.founder) %></p>
+        <p><strong>Particularized At:</strong> <%= @church.particularized_at %></p>
         <p><strong>Pathway:</strong> <%= pathway_name(@church.pathway) %></p>
         <p><strong>URL:</strong> <%= @church.url %></p>
         <p><strong>Street:</strong> <%= @church.street %></p>

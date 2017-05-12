@@ -31,10 +31,25 @@ defmodule Onwipca.Church do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name, :contact, :founder_id, :pathway_id, :street, :city, :state, :zipcode, :particularized_at, :url])
+    |> change(particularized_at: date_to_datetime(params["particularized_at"]))
+    |> cast(params, [:name, :contact, :founder_id, :pathway_id, :street, :city, :state, :zipcode, :url])
     |> cast_attachments(params, [:logo])
     |> validate_required([:name])
     |> locate
     |> cast(params, [:latitude, :longitude])
+  end
+
+  @doc """
+  We are only concerned with dates for now and choosing to append time information
+  """
+  def date_to_datetime(date) do
+    if is_nil(date) do
+      nil
+    else
+      {:ok, ecto_date}     = Ecto.Date.cast(date)
+      {:ok, ecto_datetime} = Ecto.DateTime.from_date(ecto_date)
+                             |> Ecto.DateTime.cast
+      ecto_datetime
+    end
   end
 end
