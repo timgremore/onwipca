@@ -15,6 +15,16 @@
     <%= select f, :founder_id, founder_options_for_select, prompt: "", class: 'c-input__control' %>
   </div>
 
+  <div class="c-input">
+    <%= label f, :particularized_at, class: 'c-input__label' %>
+    <%= date_select f, :particularized_at,
+      year: [options: Ecto.Date.utc.year..1980, prompt: ""],
+      month: [prompt: ""],
+      day: [prompt: ""],
+      selected: "",
+      class: 'c-input__control' %>
+  </div>
+
   <div class="c-input c-input--inline">
     <%= label f, :pathway_id, class: 'c-input__label' %>
     <%= for pathway <- pathways do %>
