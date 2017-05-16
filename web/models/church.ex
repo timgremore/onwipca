@@ -47,9 +47,14 @@ defmodule Onwipca.Church do
       nil
     else
       {:ok, ecto_date}     = Ecto.Date.cast(date)
-      {:ok, ecto_datetime} = Ecto.DateTime.from_date(ecto_date)
-                             |> Ecto.DateTime.cast
-      ecto_datetime
+
+      if is_nil(ecto_date) do
+        nil
+      else
+        {:ok, ecto_datetime} = Ecto.DateTime.from_date(ecto_date)
+                              |> Ecto.DateTime.cast
+        ecto_datetime
+      end
     end
   end
 end
