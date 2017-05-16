@@ -1,12 +1,10 @@
 defmodule Onwipca.ChurchController do
   use Onwipca.Web, :controller
 
-  plug Guardian.Plug.EnsureAuthenticated, handler: Onwipca.SessionController
-
   alias Onwipca.Church
 
   def index(conn, _params) do
-    churches = Repo.all(Church) |> Repo.preload(:founder)
+    churches = Repo.all(Church) |> Church.order_by(asc: :name) |> Repo.preload(:founder)
     render(conn, "index.html", churches: churches)
   end
 

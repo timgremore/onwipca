@@ -11,6 +11,7 @@ defmodule Onwipca.Router do
 
   pipeline :browser_auth do
     plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.EnsureAuthenticated, handler: Onwipca.SessionController
     plug Guardian.Plug.LoadResource
     plug Onwipca.Plug.CurrentUser
   end
@@ -27,13 +28,19 @@ defmodule Onwipca.Router do
   end
 
   scope "/", Onwipca do
-    pipe_through [:browser, :browser_auth]
+    pipe_through [:browser]
 
     get "/", PageController, :index
     get "/login", SessionController, :new
+
+    resources "/login", SessionController, only: [:new, :create]
+  end
+
+  scope "/", Onwipca do
+    pipe_through [:browser, :browser_auth]
+
     get "/logout", SessionController, :destroy
 
-    resources "/login", SessionController, only: [:create]
     resources "/my-account", AccountController, only: [:show], singleton: true
     resources "/churches", ChurchController
     resources "/pathways", PathwayController

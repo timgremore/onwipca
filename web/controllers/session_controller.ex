@@ -12,10 +12,10 @@ defmodule Onwipca.SessionController do
   def create(conn, %{"user" => params}) do
     case User.find_and_authenticate(params) do
       {:ok, user, _} ->
-          conn
-          |> Guardian.Plug.sign_in(user)
-          |> put_flash(:info, "Welcome #{user.first_name} #{user.last_name}")
-          |> redirect(to: account_path(conn, :show))
+        conn
+        |> Guardian.Plug.sign_in(user)
+        |> put_flash(:info, "Welcome #{user.first_name} #{user.last_name}")
+        |> redirect(to: account_path(conn, :show))
       {:error, changeset, _} ->
         conn
         |> put_flash(:info, "Invalid username or password")
@@ -33,7 +33,6 @@ defmodule Onwipca.SessionController do
   # was found
   def unauthenticated(conn, params) do
     conn
-    |> put_status(401)
     |> put_flash(:info, "Please login")
     |> redirect(to: "/login")
   end

@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <%= if Onwipca.SharedView.management_page?(@conn) do %>
+    <%= if Onwipca.SharedView.logged_in?(@conn) && Onwipca.SharedView.management_page?(@conn) do %>
       <div class="o-layout">
         <%= render Onwipca.SharedView, "sidebar.html", conn: @conn, user: @current_user %>
 
