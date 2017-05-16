@@ -1,3 +1,31 @@
+.o-table {
+  width: 100%;
+  display: table;
+
+  .o-table__row {
+    display: table-row;
+
+    &:nth-of-type(odd) {
+      background-color: $light;
+    }
+
+    &.o-table__row__header {
+      color: $white;
+      background: $base-color;
+      font-weight: 700;
+
+      .o-table__cell {
+        padding: inuit-rem(12px) inuit-rem(6px);
+      }
+    }
+  }
+
+  .o-table__cell {
+    display: table-cell;
+    padding: inuit-rem(6px) inuit-rem(8px);
+  }
+}
+
 .o-table--striped {
 
   th {

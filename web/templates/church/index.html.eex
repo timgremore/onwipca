@@ -1,25 +1,23 @@
 <div class="o-layout">
   <div class="o-layout__item">
     <h1>Churches</h1>
-    <table class="o-table o-table--tiny o-table--striped">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= for church <- @churches do %>
-            <tr>
-              <td><%= church.name %></td>
-              <td>
-                <%= link "Show", to: church_path(@conn, :show, church), class: "" %>
-                <%= link "Edit", to: church_path(@conn, :edit, church), class: "" %>
-                <%= link "Delete", to: church_path(@conn, :delete, church), method: :delete, data: [confirm: "Are you sure?"], class: "" %>
-              </td>
-            </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <div class="o-table o-table--tiny o-table--striped">
+      <div class="o-table__row o-table__row__header">
+        <div class="o-table__cell">Name</div>
+        <div class="o-table__cell">Status</div>
+        <div class="o-table__cell">Actions</div>
+      </div>
+      <%= for church <- @churches do %>
+        <div class="o-table__row">
+          <div class="o-table__cell"><%= church.name %></div>
+          <div class="o-table__cell"><%= Onwipca.ChurchView.status(church) %></div>
+          <div class="o-table__cell">
+            <%= link "Show", to: church_path(@conn, :show, church), class: "c-btn c-btn--small c-btn--action c-btn--rounded" %>
+            <%= link "Edit", to: church_path(@conn, :edit, church), class: "u-margin-left-small u-margin-right-large c-btn c-btn--small c-btn--action c-btn--rounded" %>
+            <%= link "Delete", to: church_path(@conn, :delete, church), method: :delete, class: "c-btn c-btn--small c-btn--warning c-btn--rounded", data: [confirm: "Are you sure?"], form: [class: "c-form--inline"] %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

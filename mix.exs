@@ -20,7 +20,7 @@ defmodule Onwipca.Mixfile do
     [mod: {Onwipca, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex, :comeonin, :guardian, :ex_machina, :arc_ecto,
-                    :ex_aws, :hackney, :poison, :geocoder]]
+                    :ex_aws, :hackney, :poison, :geocoder, :timex]]
   end
 
   # Specifies which paths to compile per environment.
@@ -49,6 +49,7 @@ defmodule Onwipca.Mixfile do
      {:hackney, "~> 1.5"},
      {:poison, "~> 2.0"},
      {:sweet_xml, "~> 0.5"},
+     {:timex, "~> 3.0"},
      {:geocoder, "~> 0.4"}]
   end
 

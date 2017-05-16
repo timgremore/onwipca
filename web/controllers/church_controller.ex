@@ -5,7 +5,7 @@ defmodule Onwipca.ChurchController do
 
   def index(conn, _params) do
     query = from c in Church, order_by: c.name
-    churches = Repo.all(query) |> Repo.preload(:founder)
+    churches = Repo.all(query) |> Repo.preload(:pathway)
     render(conn, "index.html", churches: churches)
   end
 

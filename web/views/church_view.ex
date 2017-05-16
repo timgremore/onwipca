@@ -15,7 +15,16 @@ defmodule Onwipca.ChurchView do
     if pathway && Ecto.assoc_loaded?(pathway) do
       pathway.name
     else
-      'n/a'
+      ""
+    end
+  end
+
+  def status(church) do
+    if is_nil(church.particularized_at) && church.pathway_id > 0 do
+      pathway_name(church.pathway)
+    else
+      church.particularized_at
+      |> Timex.format!("{Mshort}, {D} {YYYY}")
     end
   end
 
@@ -58,7 +67,7 @@ defmodule Onwipca.ChurchView do
       latitude: church.latitude,
       longitude: church.longitude,
       pathway_id: church.pathway_id,
-      particularized: !is_nil(church.particularized_at) && is_nil(church.pathway_id),
+      particularized: !is_nil(church.particularized_at) && (is_nil(church.pathway_id) || church.pathway_id < 1),
       logo: Onwipca.Photo.url({church.logo, church}, :small)}
   end
 end

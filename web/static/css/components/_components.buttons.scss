@@ -50,7 +50,6 @@
   &:focus {
     background-color: #3774a2;
   }
-
 }
 
 .c-btn--secondary {
@@ -68,7 +67,6 @@
   &:focus {
     background-color: #1d2733;
   }
-
 }
 
 .c-btn--tertiary {
@@ -87,7 +85,42 @@
   &:focus {
     color: #3774a2;
   }
+}
 
+.c-btn--action {
+  background: rgb(66, 184, 221);
+  color: $white;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background: $blue;
+    color: $white;
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+}
+
+.c-btn--warning {
+  text-decoration: none;
+  background-color: rgb(223, 117, 20);
+  color: $white;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: lighten(rgb(223, 117, 20), 10%);
+    color: $white;
+  }
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
 }
 
 
