@@ -5,7 +5,6 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Founder</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -13,7 +12,6 @@
         <%= for church <- @churches do %>
             <tr>
               <td><%= church.name %></td>
-              <td><%= founder_name(church.founder) %></td>
               <td>
                 <%= link "Show", to: church_path(@conn, :show, church), class: "" %>
                 <%= link "Edit", to: church_path(@conn, :edit, church), class: "" %>
