@@ -4,9 +4,12 @@
   </p>
   <ul class='c-menu c-menu--block'>
     <li class='c-menu__item u-margin-bottom-large'>
-      <%= link "Home", to: "/my-account", class: "c-btn c-btn--primary c-btn--full" %>
+      <%= link "Home", to: "/", class: "c-btn c-btn--primary c-btn--full" %>
     </li>
     <%= if logged_in?(@conn) do %>
+      <li class=c-menu__item>
+        <%= link "My Account", to: "/my-account", class: "c-btn c-btn--primary c-btn--full" %>
+      </li>
       <li class=c-menu__item>
         <%= link "Churches", to: "/churches", class: "c-btn c-btn--primary c-btn--full" %>
       </li>

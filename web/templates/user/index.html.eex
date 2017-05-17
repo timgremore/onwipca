@@ -1,29 +1,27 @@
 <div class="o-layout">
   <div class="o-layout__item">
     <h1>Users</h1>
-    <table class="o-table o-table--tiny o-table--striped">
-      <thead>
-        <tr>
-          <th>Last</th>
-          <th>First</th>
-          <th>Email</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= for user <- @users do %>
-          <tr>
-            <td><%= user.last_name %></td>
-            <td><%= user.first_name %></td>
-            <td><%= user.email %></td>
-            <td class="text-right">
-              <%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %>
-              <%= link "Edit", to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" %>
-              <%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <div class="o-table o-table--tiny o-table--striped">
+      <div class="o-table__row o-table__row__header">
+        <div class="o-table__cell">Last</div>
+        <div class="o-table__cell">First</div>
+        <div class="o-table__cell">Email</div>
+        <div class="o-table__cell">Actions</div>
+      </div>
+      <%= for user <- @users do %>
+        <div class="o-table__row">
+          <div class="o-table__cell"><%= user.last_name %></div>
+          <div class="o-table__cell"><%= user.first_name %></div>
+          <div class="o-table__cell"><%= user.email %></div>
+          <div class="o-table__cell">
+            <%= link "Show", to: user_path(@conn, :show, user), class: "c-btn c-btn--small c-btn--action c-btn--rounded" %>
+            <%= link "Edit", to: user_path(@conn, :edit, user), class: "u-margin-left-small u-margin-right-large c-btn c-btn--small c-btn--action c-btn--rounded" %>
+            <%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "c-btn c-btn--small c-btn--warning c-btn--rounded", form: [class: "o-form--inline"] %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <%= link "Create User", to: user_path(@conn, :new), class: "c-btn c-btn--primary u-margin-top" %>
   </div>
 </div>

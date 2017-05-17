@@ -19,5 +19,7 @@
         </div>
       <% end %>
     </div>
+
+    <%= link "Create Church", to: church_path(@conn, :new), class: "c-btn c-btn--primary" %>
   </div>
 </div>
