@@ -35,7 +35,7 @@ class PathwaysMap extends Component {
 
     const markers = churches.map((church, index) => {
       let pathwayPosition = 0
-      
+
       if (church.pathway_id) {
         if (church.pathway_id == pathways[0].id) {
           pathwayPosition = 1
@@ -65,7 +65,7 @@ class PathwaysMap extends Component {
         <div className="c-panel u-4/5 u-1/3@tablet u-padding">
           <div className="c-accordion">
             <h1 className="u-text-center u-margin-bottom-tiny">On Wisconsin PCA</h1>
-            <p>The Wisconsin Presbytery consists of {particularizedChurches.length} particularized churches and {churchPlants.length} church plants.</p>
+            <p>The Wisconsin Presbytery consists of 8 particularized churches and 6 church plants and 3 RTS church planting students.</p>
             <ul className="o-list-bare">
               <Particularized churches={particularizedChurches} />
               {pathways.map((pathway, index) => {
