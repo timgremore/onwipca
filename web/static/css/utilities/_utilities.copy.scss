@@ -11,3 +11,7 @@
 .u-copy-small {
   @include inuit-font-size( 12px);
 }
+
+.u-copy-justify {
+  text-align: justify;
+}

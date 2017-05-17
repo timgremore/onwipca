@@ -13,13 +13,19 @@ class Mission extends Component {
               </div>
             </div>
             <div className="o-layout o-layout--center">
-              <div className="o-layout__item u-3/4 u-1/3@tablet">
-                <p>&ldquo;On Wisconsin&rdquo; is a church planting network led and funded by
+              <div className="o-layout__item u-3/4 u-2/5@tablet">
+                <p className="u-copy-justify">&ldquo;On Wisconsin&rdquo; is a church planting network led and funded by
                   Presbyterian Church in America (PCA) congregations in Wisconsin.</p>
-                <p>As of 2012 there were only six PCA churches in Wisconsin and no
-                  new churches since 1993. Since 2012 two churches have taken root and
-                  five new works have started.</p>
-                <p>Our goal is to plant 16 more churches in Wisconsin in the next 10 years.</p>
+                <p className="u-copy-justify">As of 2012 there were only six PCA churches in Wisconsin and no
+                  new churches since 1993. Since 2012 two churches have taken
+                  root, six new works have started and two RUF chapters have
+                  begun.</p>
+                <p className="u-copy-justify">Our goal is to plant 16 more churches in Wisconsin in the
+                  next 10 years. Wisconsin is well on its way to this goal, but
+                  we need your help. Please consider how you might join this
+                  movement. We are looking for others to join us as church
+                  planters, apprentices, students as well as supporting
+                  partners in this vital work.</p>
               </div>
             </div>
             <div className="o-layout o-layout--center">
