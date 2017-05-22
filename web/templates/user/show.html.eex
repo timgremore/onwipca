@@ -4,5 +4,8 @@
     <p><strong>First name:</strong> <%= @user.first_name %></p>
     <p><strong>Last name:</strong> <%= @user.last_name %></p>
     <p><strong>Email:</strong> <%= @user.email %></p>
+    <%= raw(Onwipca.User.bio_formatted(@user.bio)) %>
+
+    <p><%= link "Edit User", to: user_path(@conn, :edit, @user), class: "c-btn c-btn--primary u-margin-top" %></p>
   </div>
 </div>

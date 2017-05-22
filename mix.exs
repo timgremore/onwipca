@@ -50,7 +50,8 @@ defmodule Onwipca.Mixfile do
      {:poison, "~> 2.0"},
      {:sweet_xml, "~> 0.5"},
      {:timex, "~> 3.0"},
-     {:geocoder, "~> 0.4"}]
+     {:geocoder, "~> 0.4"},
+     {:earmark, "~> 1.2.2"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

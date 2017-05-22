@@ -30,6 +30,11 @@
     <%= password_input f, :password, class: 'c-input__control' %>
   </div>
 
+  <div class="c-input">
+    <%= label f, :bio, class: 'c-input__label' %>
+    <%= textarea f, :bio, class: 'c-input__control', rows: 9 %>
+  </div>
+
   <div class="c-input c-input--actions">
     <button type=submit>Save</button>
   </div>

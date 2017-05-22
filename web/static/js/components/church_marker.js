@@ -41,6 +41,8 @@ class ChurchMarker extends Component {
       className: 'c-marker',
     })
 
+    const contactBio = { __html: church.founder ? church.founder.bio : '' }
+
     return (
       <Marker
         className={markerClassNames}
@@ -51,6 +53,7 @@ class ChurchMarker extends Component {
           <div className="u-text-center">
             <h3>{church.name}</h3>
             <img src={church.logo} alt={church.name} />
+            <div dangerouslySetInnerHTML={contactBio} />
           </div>
         </Popup>
       </Marker>
