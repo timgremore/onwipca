@@ -50,9 +50,9 @@ class ChurchMarker extends Component {
         onClick={this._markerClicked.bind(this)}
         position={markerPosition}>
         <Popup>
-          <div className="u-text-center">
-            <h3>{church.name}</h3>
-            <img src={church.logo} alt={church.name} />
+          <div>
+            <h3 className="u-text-center">{church.name}</h3>
+            <p className="u-text-center"><img src={church.logo} alt={church.name} /></p>
             <div dangerouslySetInnerHTML={contactBio} />
           </div>
         </Popup>
