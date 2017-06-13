@@ -46,9 +46,7 @@ class PathwaysMap extends Component {
         }
       }
 
-      return (
-        <ChurchMarker key={index} church={church} position={pathwayPosition} />
-      )
+      return <ChurchMarker key={church.id} church={church} position={pathwayPosition} />
     })
 
     const map = (
