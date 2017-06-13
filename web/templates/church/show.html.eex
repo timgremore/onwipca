@@ -18,5 +18,6 @@
         <p><strong>Zipcode:</strong> <%= @church.zipcode %></p>
       </div>
     </div>
+    <p class="u-margin-top-large"><%= link "Edit Church", to: church_path(@conn, :edit, @church), class: "c-btn c-btn--primary" %></p>
   </div>
 </div>

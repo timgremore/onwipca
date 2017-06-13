@@ -13,6 +13,7 @@ defmodule Onwipca.User do
     field :last_name, :string
     field :password, :string, virtual: true
     field :password_hash, :string
+    field :bio, :string
     field :photo, Onwipca.Photo.Type
 
     has_many :churches, Onwipca.Church, foreign_key: :founder_id
@@ -25,7 +26,7 @@ defmodule Onwipca.User do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:username, :email, :first_name, :last_name])
+    |> cast(params, [:username, :password, :email, :first_name, :last_name, :bio])
     |> validate_required([:username, :email])
     |> unique_constraint(:username)
     |> unique_constraint(:email)
@@ -70,6 +71,13 @@ defmodule Onwipca.User do
         put_change(changeset, :password_hash, Bcrypt.hashpwsalt(pass))
       _ ->
         changeset
+    end
+  end
+
+  def bio_formatted(bio) do
+    case bio do
+      nil -> ""
+      _   -> Earmark.as_html!(bio)
     end
   end
 end

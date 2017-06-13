@@ -1,8 +1,6 @@
 defmodule Onwipca.Api.ChurchView do
   use Onwipca.Web, :view
 
-  alias Onwipca.UserView
-
   def render("index.json", %{churches: churches}) do
     %{data: render_many(churches, Onwipca.ChurchView, "church.json")}
   end
@@ -21,7 +19,7 @@ defmodule Onwipca.Api.ChurchView do
       zipcode: church.zipcode,
       particularized_at: church.particularized_at,
       url: church.url,
-      founder: render_one(church.founder, UserView, "user.json"),
+      founder: render_one(church.founder, Onwipca.UserView, "user.json"),
       latitude: church.latitude,
       longitude: church.longitude,
       pathway_id: church.pathway_id,
