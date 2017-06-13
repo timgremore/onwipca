@@ -2,29 +2,29 @@
   color: $white;
 
   h1 {
-    line-height: inuit-rem(72px);
+    line-height: inuit-rem(48px);
     font-family: 'Cantana One', serif;
 
     span {
 
       &:first-child {
-        font-size: inuit-rem(36px);
-        margin-left: -280px;
+        display: block;
+        font-size: inuit-rem(28px);
+        transform: translateX(-135px) translateY(20px);
       }
 
       &:nth-child(2) {
         display: block;
         font-family: 'Caveat', cursive;
         font-size: inuit-rem(96px);
-        transform: rotateZ(-10deg) translateX(-10px) translateY(-40px);
+        transform: rotateZ(-10deg);
       }
 
       &:last-child {
         font-weight: 100;
         display: block;
-        font-size: inuit-rem(96px);
-        margin-left: 95px;
-        margin-top: -30px;
+        font-size: inuit-rem(72px);
+        transform: translateX(110px) translateY(5px);
       }
     }
   }

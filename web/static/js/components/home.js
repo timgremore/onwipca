@@ -4,16 +4,22 @@ class Home extends Component {
   render() {
     return (
       <section id="home">
-        <div className="o-wrapper">
+        <div className="o-wrapper u-margin-top-huge">
           <div className="o-layout o-layout--center">
             <div className="o-layout__item u-1/1">
-              <div className="o-hero u-text-center">
-                <h1>
-                  <span>On</span>
-                  <span>Wisconsin</span>
-                  <span>PCA</span>
-                </h1>
-                <h2>Planting tomorrow's churches<br />in Wisconsin</h2>
+              <div className="u-text-center u-margin-bottom">
+                <img src="/images/logo.svg" width="220" />
+              </div>
+              <p className="u-h4 u-text-center">Planting tomorrow's churches in Wisconsin</p>
+            </div>
+            <div className="o-layout__item u-1/1 u-margin-top u-margin-bottom-large">
+              <div className="c-video">
+                <iframe
+                  src="https://player.vimeo.com/video/221165716?title=0&byline=0&portrait=0"
+                  frameborder="0"
+                  webkitallowfullscreen
+                  mozallowfullscreen
+                  allowfullscreen />
               </div>
             </div>
           </div>
