@@ -3,9 +3,21 @@
   position: absolute;
   top: 0px;
   right: inuit-rem(32px);
-  background-color: $white;
-  border-right: inuit-rem(2px) solid $dark-blue;
-  border-left: inuit-rem(2px) solid $dark-blue;
-  border-bottom: inuit-rem(2px) solid $dark-blue;
-  min-height: inuit-rem(500px);
+
+  .c-panel__menu {
+    position: absolute;
+    z-index: 1002;
+    top: inuit-rem(6px);
+    right: inuit-rem(10px);
+  }
+
+  .c-panel__body {
+    position: absolute;
+    z-index: 1001;
+    background-color: $white;
+    border-right: inuit-rem(2px) solid $dark-blue;
+    border-left: inuit-rem(2px) solid $dark-blue;
+    border-bottom: inuit-rem(2px) solid $dark-blue;
+    min-height: 100vh;
+  }
 }
