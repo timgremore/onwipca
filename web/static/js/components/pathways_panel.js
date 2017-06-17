@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import { connect } from 'react-redux'
-import { MdMenu } from 'react-icons/md';
 
 import Particularized from './particularized'
 import Pathway from './pathway'
@@ -21,7 +20,9 @@ class PathwaysPanel extends Component {
     return (
       <div className="c-panel u-4/5 u-1/3@tablet">
         <div className="c-panel__menu">
-          <MdMenu />
+          <a href="#0">
+            <img src="/images/ic_menu_black_24px.svg" width="24" />
+          </a>
         </div>
         <div className="c-panel__body u-padding">
           <div className="c-accordion">

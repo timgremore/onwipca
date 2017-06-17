@@ -7,8 +7,15 @@
   .c-panel__menu {
     position: absolute;
     z-index: 1002;
-    top: inuit-rem(6px);
+    top: inuit-rem(16px);
     right: inuit-rem(10px);
+
+    a {
+      background-color: $white;
+      padding: inuit-rem(7px) inuit-rem(7px) inuit-rem(10px);
+      border: inuit-rem(1px) solid $dark-blue;
+      border-radius: inuit-rem(2px);
+    }
   }
 
   .c-panel__body {
@@ -19,5 +26,8 @@
     border-left: inuit-rem(2px) solid $dark-blue;
     border-bottom: inuit-rem(2px) solid $dark-blue;
     min-height: 100vh;
+    height: 0px;
+    width: 0px;
+    display: none;
   }
 }
