@@ -27,7 +27,7 @@ class Mast extends Component {
   }
 
   render () {
-    const offset = -80;
+    const offset = document.documentElement.clientWidth > 450 ? -80 : -90;
     const packClassNames = classNames({
       'o-pack': true,
       'o-pack--closed': this.state.closed,
