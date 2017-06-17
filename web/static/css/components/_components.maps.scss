@@ -1,6 +1,9 @@
 .c-map {
-  position: relative;
+  position: absolute;
   z-index: 5;
-  width: 100vw;
-  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: inuit-rem(130px);
+  left: 0;
+  border-bottom: inuit-rem(12px) solid $dark-blue;
 }

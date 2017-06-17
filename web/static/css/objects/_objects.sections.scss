@@ -35,10 +35,11 @@ section {
   }
 
   &#pathways {
+    position: relative;
     min-height: 100vh;
     border-top: inuit-rem(12px) solid $dark-blue;
     border-bottom: inuit-rem(12px) solid $dark-blue;
-    background-color: $white;
+    background-color: lighten($dark-blue, 10%);
     padding-top: 0px;
   }
 

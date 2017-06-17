@@ -4,6 +4,30 @@
   top: 0px;
   right: 0px;
 
+  h1 {
+
+    @include mq($until: desktop) {
+      margin-top: inuit-rem(28px);
+      font-size: inuit-rem(24px);
+    }
+
+    @include mq($until: tablet) {
+      margin-top: inuit-rem(36px);
+      font-size: inuit-rem(20px);
+    }
+  }
+
+  h3 {
+
+    @include mq($until: desktop) {
+      font-size: inuit-rem(16px);
+    }
+
+    @include mq($until: tablet) {
+      font-size: inuit-rem(16px);
+    }
+  }
+
   .c-panel__menu {
     position: absolute;
     z-index: 1002;
