@@ -11,8 +11,8 @@ const classNames = require('classnames')
 
 class PathwaysMap extends Component {
   render() {
-    const position = [44.2, -88.5]
-    const zoom = 8
+    const position = [44.2, -89.5]
+    const zoom = document.documentElement.clientWidth > 450 ? 8 : 7
     const attribution = "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>"
     const pathways = orderBy(this.props.pathways, ['position', 'name'])
     const particularizedChurches = filter(this.props.churches, 'particularized')
@@ -85,7 +85,11 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { }
+  return {
+    deselectPathway: () => {
+      dispatch(deselectPathway())
+    }
+  }
 }
 
 export default connect(

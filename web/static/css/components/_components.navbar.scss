@@ -4,6 +4,38 @@
   @include mq($until: tablet) {
     display: block;
     margin-top: 0;
+    text-align: right;
+    width: 100%;
+  }
+
+  .c-navbar__menu {
+    position: absolute;
+    display: none;
+    z-index: 100;
+    top: inuit-rem(8px);
+    right: inuit-rem(8px);
+
+    @include mq($until: tablet) {
+      display: block;
+    }
+  }
+
+  .o-pack {
+
+    @include mq($until: tablet) {
+      display: block;
+      width: 100%;
+      height: 100vh;
+      padding-top: inuit-rem(80px);
+      text-align: center;
+    }
+
+    &.o-pack--closed {
+
+      @include mq($until: tablet) {
+        display: none;
+      }
+    }
   }
 
   .o-pack__item {
@@ -17,17 +49,16 @@
       text-align: center;
       padding: inuit-rem(8px) inuit-rem(12px);
       border-radius: $global-radius;
-      width: 90%;
+      width: 80%;
 
       &:hover {
         background-color: $red;
       }
 
       @include mq($until: tablet) {
-        padding: inuit-rem(2px) inuit-rem(6px);
-        padding-left: inuit-rem(16px);
         width: 100%;
-        text-align: left;
+        text-align: center;
+        padding: inuit-rem(12px);
       }
     }
 
