@@ -85,7 +85,11 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { }
+  return {
+    deselectPathway: () => {
+      dispatch(deselectPathway())
+    }
+  }
 }
 
 export default connect(
