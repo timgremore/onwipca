@@ -43,7 +43,7 @@
 
     a {
       display: block;
-      color: $white;
+      color: darken($red, 10%);
       cursor: pointer;
       text-decoration: none;
       text-align: center;
@@ -52,7 +52,7 @@
       width: 80%;
 
       &:hover {
-        background-color: $red;
+        background-color: $white;
       }
 
       @include mq($until: tablet) {
@@ -71,7 +71,7 @@
     }
 
     &:last-child {
-      border-left: inuit-rem(1px) solid $white;
+      border-left: inuit-rem(1px) solid darken($red, 10%);
       padding-left: inuit-rem(12px);
 
       @include mq($until: tablet) {

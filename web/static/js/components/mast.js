@@ -39,13 +39,13 @@ class Mast extends Component {
           <div className="o-layout">
             <div className="o-layout__item u-1/1 c-mast">
               <Scrollchor to="home">
-                <img src="/images/logo.svg" width="80" />
+                <img src="/images/logo-red.svg" width="80" />
               </Scrollchor>
 
               <div className="c-navbar u-float-right u-3/4@tablet u-1/2@desk">
                 <div className="c-navbar__menu">
                   <a href="#0" onClick={this._toggleMenu.bind(this)}>
-                    <img src="/images/ic_menu_white_24px.svg" />
+                    <img src="/images/ic_menu_black_24px.svg" />
                   </a>
                 </div>
 
