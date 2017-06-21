@@ -10,6 +10,25 @@ import PathwaysPanel from './pathways_panel';
 const classNames = require('classnames')
 
 class PathwaysMap extends Component {
+  constructor() {
+    super()
+    this.state = {
+      closed: true,
+    }
+  }
+
+  _togglePanel() {
+    this.setState({
+      closed: !this.state.closed,
+    })
+  }
+
+  _closePanel() {
+    this.setState({
+      closed: true,
+    })
+  }
+
   render() {
     const position = [44.2, -89.5]
     const zoom = document.documentElement.clientWidth > 450 ? 8 : 7
@@ -50,24 +69,28 @@ class PathwaysMap extends Component {
         center={position}
         zoomControl={true}
         scrollWheelZoom={false}
+        dragging={true}
         zoom={zoom}>
         <TileLayer
           url="https://api.mapbox.com/styles/v1/timgremore/ciwgbl364007q2qoih4a4wb4a/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGltZ3JlbW9yZSIsImEiOiJtY01hT2lNIn0.jS2hKzkpWj83rJSrlOz6vg"
           attribution={attribution} />
         {markers}
-        <PathwaysPanel
-          particularizedChurches={particularizedChurches}
-          particularizedChurchesSelected={this.props.particularizedChurchesSelected}
-          pathways={pathways}
-          selectedPathway={this.props.selectedPathway} />
       </Map>
     )
 
     return (
-      <div className="o-layout o-layout--flush o-layout--center">
+      <div className="o-layout o-layout--flush o-layout--right">
         <div className="o-layout__item u-1/1">
           {map}
-        </div>
+          <PathwaysPanel
+            {...this.state}
+            togglePanel={this._togglePanel.bind(this)}
+            closePanel={this._closePanel.bind(this)}
+            particularizedChurches={particularizedChurches}
+            particularizedChurchesSelected={this.props.particularizedChurchesSelected}
+            pathways={pathways}
+            selectedPathway={this.props.selectedPathway} />
+          </div>
       </div>
     )
   }

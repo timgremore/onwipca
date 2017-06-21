@@ -8,28 +8,9 @@ import Pathway from './pathway'
 const classNames = require('classnames')
 
 class PathwaysPanel extends Component {
-  constructor() {
-    super()
-    this.state = {
-      closed: true,
-    }
-  }
-
   _resetMap() {
     this.props.deselectPathway()
-    this._closePanel()
-  }
-
-  _togglePanel() {
-    this.setState({
-      closed: !this.state.closed,
-    })
-  }
-
-  _closePanel() {
-    this.setState({
-      closed: true,
-    })
+    this.props.closePanel()
   }
 
   render() {
@@ -41,18 +22,17 @@ class PathwaysPanel extends Component {
     } = this.props
 
     const panelClassNames = classNames({
-      'c-panel__body': true,
-      'c-panel__body--closed': this.state.closed,
+      'c-panel--open': !this.props.closed,
     })
 
     return (
-      <div className="c-panel u-1/1 u-1/3@tablet">
+      <div className={["c-panel", panelClassNames].join(' ')}>
         <div className="c-panel__menu">
-          <a href="#0" onClick={this._togglePanel.bind(this)}>
+          <a href="#0" onClick={this.props.togglePanel.bind(this)}>
             <img src="/images/ic_menu_black_24px.svg" width="24" />
           </a>
         </div>
-        <div className={panelClassNames}>
+        <div className="c-panel__body">
           <div className="c-accordion u-padding">
             <h1 className="u-text-center u-margin-bottom-tiny">On Wisconsin PCA</h1>
             <p>The Wisconsin Presbytery consists of 8 particularized churches and 6 church plants and 3 RTS church planting students.</p>

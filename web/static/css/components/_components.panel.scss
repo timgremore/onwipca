@@ -1,8 +1,18 @@
 .c-panel {
   z-index: 1000;
   position: absolute;
-  top: 0px;
+  left: 0px;
   right: 0px;
+
+  &.c-panel--open {
+    display: block;
+    top: 0px;
+    bottom: 0;
+
+    .c-panel__body {
+      display: block;
+    }
+  }
 
   h1 {
 
@@ -44,15 +54,23 @@
   .c-panel__body {
     position: absolute;
     z-index: 1001;
+    top: 0px;
+    right: 0px;
+    bottom: inuit-rem(142px);
     background-color: $white;
     border-right: inuit-rem(2px) solid $dark-blue;
     border-left: inuit-rem(2px) solid $dark-blue;
     border-bottom: inuit-rem(2px) solid $dark-blue;
-    min-height: 100vh;
-    display: block;
+    display: none;
+    width: 100%;
+    overflow-y: scroll;
 
-    &.c-panel__body--closed {
-      display: none;
+    @include mq($from: tablet) {
+      width: 50%;
+    }
+
+    @include mq($from: desktop) {
+      width: 33.3%;
     }
   }
 }

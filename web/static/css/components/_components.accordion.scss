@@ -51,6 +51,7 @@
 
 .c-accordion {
   color: $blue;
+  overflow-y: scroll;
 
   h1, h2, h3, p {
     min-height: inuit-rem(36px);

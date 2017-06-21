@@ -34,7 +34,7 @@ class Mast extends Component {
     })
 
     return (
-      <Sticky innerZ="10">
+      <Sticky innerZ="30">
         <div className="o-wrapper">
           <div className="o-layout">
             <div className="o-layout__item u-1/1 c-mast">
