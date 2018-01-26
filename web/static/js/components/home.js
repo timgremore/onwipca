@@ -15,7 +15,7 @@ class Home extends Component {
             <div className="o-layout__item u-1/1 u-margin-top u-margin-bottom-large">
               <div className="c-video">
                 <iframe
-                  src="https://player.vimeo.com/video/221165716?title=0&byline=0&portrait=0"
+                  src="https://player.vimeo.com/video/234048212?title=0&byline=0&portrait=0"
                   frameborder="0"
                   webkitallowfullscreen
                   mozallowfullscreen
